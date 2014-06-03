@@ -1,0 +1,310 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/* Theme for bootstrap Slate */
+@import "../bootstrap/less/bootstrap.less";
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+@table-border-color: #077107;
+@table-bg-accent: #149014;
+
+.btn-primary {
+    color: #fff;
+    font-weight: bold;
+    background: #fe3300;
+    border-radius: 0;
+    border: none;
+
+    &:hover {
+        background: #a02002;
+    }
+}
+
+body {
+    font-size: 16px;
+}
+
+h1  {
+    font-size: 30px;
+}
+
+h2  {
+    font-size: 24px;
+}
+
+#intro {
+    min-height: 426px;
+    background: #000 url(../img/magicshifter.jpg) left no-repeat;
+
+    &-logo {
+        margin-bottom: 20px;
+    }
+
+    &-teaser {
+        .make-md-column(6);
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &-description {
+        color: #fff;
+    }
+}
+
+#image_feature {
+    background: #0097ff;
+    padding: 40px 0;
+
+    &-description {
+        .make-md-column(7);
+
+        h2 {
+            color: #00497a;
+            margin-top: 0;
+        }
+
+        a {
+            color: #ffff00;
+        }
+        .btn-primary {
+            color: #fff;
+            background: #004270;
+
+            &:hover  {
+                background: #002d4c;
+            }
+        }    
+    }
+
+    &-gallery {
+        .make-md-column(5);
+
+        .feature-thumbnail {
+            .make-md-column(4);
+            margin-bottom: @grid-gutter-width;
+
+            img {
+                max-width: 100%;
+                .img-circle;
+            }
+        }
+    }
+}
+
+#technical_stuff {
+    background: #01b001;
+    padding: 40px 0;
+
+    h2  {
+        color: #014b01;
+        margin-top: 0;
+    }
+
+    a {
+        color: #ff5edb;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background: #004b00;
+
+        &:hover {
+            background: #002d00;
+        }
+    }
+
+    &-source_code {
+        .make-md-column(6);    
+    }
+
+    &-feature_sheet {
+        font-size: 12px;
+
+        .make-md-column(6);
+
+        &_1, &_2 {
+            .make-md-column(6);    
+        }
+    }
+}
+
+#contact {
+    background: #ffff00;
+    text-align: center;
+    padding: 40px;
+
+    h2  {
+        color: #ae9700;
+        margin-top: 0;
+    }
+}
+
+footer {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    border-top: 1px dotted #ccc;
+    padding: 20px;
+
+    #imprint {
+        display: inline-block;
+    }
+
+    #aws {
+        display: inline-block;
+
+        a {
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
