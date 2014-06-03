@@ -3,20 +3,27 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		less: {
-			development: {
+		stylus: {
+			compile: {
+				options: {
+					paths: ['css'],
+					// use embedurl('test.png') to trigger Data URI embedding
+					urlfunc: 'embedurl',
+				},
 				files: {
-					"css/main.css": "css/main.less"
+					// compile and concat into single file
+					'css/main.css': ['css/reset.styl', 'css/main.styl', 'css/custom-widths.styl']
 				}
 			}
 		}
+		
 	});
 
-	// Load the plugin that provides the "uglify" task.
-	grunt.loadNpmTasks('grunt-contrib-less');
+	// Load the plugin that provides the "jade" task.
+	grunt.loadNpmTasks('grunt-contrib-stylus');
 
 	// Default task(s).
-	grunt.registerTask('default', ['less']);
+	grunt.registerTask('default', ['stylus']);
 
 };
 

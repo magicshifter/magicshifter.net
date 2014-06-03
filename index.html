@@ -24,19 +24,24 @@
 				</div>
 			</div>
 		</header>
+
 		<section id="video">
 			<h2>The MagicShifter Video!</h2>
 			<p>Watch this video to learn more about the features and sensors and how to use the MagicShifter.</p>
 			<iframe src="https://www.youtube.com/embed/0MjIy2lzaDo" frameborder="0" allowfullscreen></iframe>
 		</section>
-		<section id="image_feature">
-			<div id="image_feature-description">
+
+		<section id="images">
+			<div id="upload">
 				<h2>Upload your own images!</h2>
 				<p>There is a webapp (runs offline too) to convert your own images to display them on the MagicShifter. You even can create animations if you like.</p>
 				<p>Find more examples in the <a href="http://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/">picture blog</a> on flickr.
-				<p><a href="/MagicConverter.html">The Magic Converter</a> <a href="/UserManualMagicShifter.pdf">MagicShifter Manual</a></p>
+				<p class="btns">
+					<a class="btn" href="/MagicConverter.html">The Magic Converter</a> 
+					<a class="btn" href="/UserManualMagicShifter.pdf">MagicShifter Manual</a>
+				</p>
 			</div>
-			<ul id="image-gallery">
+			<ul id="gallery">
 				<li>
 					<img src="img/magic_icons/1up_green.jpg">
 				</li>
@@ -57,54 +62,75 @@
 				</li> 
 			</ul>
 		</section>
-		<section id="technical_stuff">
-			<div id="source_code">
+
+		<section id="program">
+			<div class="container">
 				<h2>Reprogram the Source Code!</h2>
 				<p>The code is a little rough at the edges and atm only the make file based tool chain is available. We're working on integrating the MagicShifter into the Arduino IDE.</p>
-				<p><a href="https://bitbucket.org/wizard23/magicshifteros">Download it!</a></p>
+				<p class="btns">
+					<a class="btn" href="https://bitbucket.org/wizard23/magicshifteros">Download it!</a>
+				</p>
 			</div>
-			<div id="feature_sheet">
+		</section>
+
+		<section id="technical">
+			<div class="container">
 				<h2>Technical Features</h2>
-				<div id="feature_sheet_1">
-					<table cellspacing="0" cellpadding="0">
+				<table cellspacing="0" cellpadding="0">
+					<thead>
 						<tr>
-							<td>LEDs</td>
-							<td>16 / RGB</td>
+							<th>Description</th>
+							<th>Id</th>
+							<th>Datasheet</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>16 / RGB LEDS</td>
+							<td>OS67SRS</td>
+							<td><a href="/datasheets/OS67SRS.pdf">PDF</a>
 						</tr>
 						<tr>
-							<td>accelerometer</td>
-							<td>3-axis</td>
+							<td>UV LED</td>
+							<td>SAFW43sf</td>
+							<td><a href="/datasheets/SM1206UV-395-IL.pdf">PDF</a>
 						</tr>
 						<tr>
-							<td>color sensor</td>
-							<td>RGB</td>
+							<td>High Power White LED</td>
+							<td>GFW232spgj</td>
+							<td><a href="/datasheets/GFW232spgj.pdf">PDF</a>
 						</tr>
 						<tr>
-							<td>IR distance sensor</td>
-							<td>&nbsp;</td>
+							<td>High Power Infrafred LED</td>
+							<td>HIR11-21C/L11/TR8</td>
+							<td><a href="/datasheets/HIR11-21C_L11_TR8.pdf">PDF</a>
 						</tr>
-					</table>
-				</div>
-				<div id="feature_sheet_2">
-					<table cellspacing="0" cellpadding="0">
+
 						<tr>
-							<td>LED</td>
-							<td>1 / white</td>
+							<td>High Power Infrafred LED</td>
+							<td>HIR11-21C/L11/TR8</td>
+							<td><a href="/datasheets/HIR11-21C_L11_TR8.pdf">PDF</a>
 						</tr>
+
 						<tr>
-							<td>LED</td>
-							<td>1 / UV</td>
+							<td>High Power Infrafred LED</td>
+							<td>HIR11-21C/L11/TR8</td>
+							<td><a href="/datasheets/HIR11-21C_L11_TR8.pdf">PDF</a>
 						</tr>
+
 						<tr>
-							<td>real time clock</td>
-							<td>&nbsp;</td>
+							<td>High Power Infrafred LED</td>
+							<td>HIR11-21C/L11/TR8</td>
+							<td><a href="/datasheets/HIR11-21C_L11_TR8.pdf">PDF</a>
 						</tr>
+
 						<tr>
-							<td>CPU</td>
-							<td>ATMEGA32U4</td>
+							<td>High Power Infrafred LED</td>
+							<td>HIR11-21C/L11/TR8</td>
+							<td><a href="/datasheets/HIR11-21C_L11_TR8.pdf">PDF</a>
 						</tr>
-					</table>
-				</div>
+					</tbody>
+				</table>
 			</div>
 		</section>
 
@@ -112,6 +138,7 @@
 			<h2>Questions? Just contact us!</h2>
 			<p>If you have questions or suggestions just contact us per <a href="mailto:wizards23+magicshifter@gmail.com">email</a>.</p>
 		</section>
+
 		<footer class="main">
 			<div id="imprint">
 				created by 
@@ -121,11 +148,11 @@
 			</div>
 			<div id="aws">
 				<a href="http://www.awsg.at/kreativwirtschaft"><img src="img/AWS-Logo.jpg"></a> 
-				supported by 
+				<span>supported by </span> 
 				<a href="http://www.awsg.at/kreativwirtschaft">aws impulse XL</a>
 			</div>
-		</div>
 		</footer>
+
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-35739153-1', 'magicshifter.net');ga('send', 'pageview');
 		</script>
