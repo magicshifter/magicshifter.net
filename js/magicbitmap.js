@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<!-- link type="text/css" rel="stylesheet" href="style.css" / -->
-	<!-- <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'> -->
-	<script src="js/libs/jquery-1.9.1.min.js"></script>
-	<script src="js/libs/FileSaver.js"></script>
-
-<script type="text/javascript">
-
 var COLOR_CODING = "RGB";
 //var COLOR_CODING = "BRG";
 //var COLOR_CODING = "GRB"; // chinese
@@ -43,14 +33,43 @@ $("document").ready(function() {
 
 			$('#bitmapFileName')[0].value = createFileName(event.target.files[0].name, "magicBitmap");
 		}
+
+		if ( event.target.files[0].type === 'image/gif' ) {
+			load_gif(img, function() {
+				var canvasx = sup1.get_canvas().getContext('2d');
+				var frame_len = sup1.get_length();
+
+				var w = img.width;
+				var h = img.height;
+
+				$("#nrOfFrames")[0].value = frame_len;
+				$("#frameWidth")[0].value = w;
+				$("#frameHeight")[0].value = h;
+				canvas.width = w*frame_len;
+				canvas.height = h; 
+
+				var ctx = canvas.getContext('2d');
+
+				for (var i=0;i<frame_len;i++)
+				{
+					canvasx.clearRect (0 , 0 , w , h );
+					sup1.move_relative(1);
+					var frameData = canvasx.getImageData(0,0,w,h);
+					ctx.putImageData(frameData, i*w, 0);
+				}
+
+				var imgData = ctx.getImageData(0,0,w*frame_len,h);
+				CreateScaledCanvas(imgData, document.getElementById('canvasScaledBitmap'), 6);
+
+				$('#bitmapFileName')[0].value = createFileName(event.target.files[0].name, "magicBitmap");
+			});
+		}
 		img.src = URL.createObjectURL(event.target.files[0]);
-	}); 
+	});
 
 	$("#uploadFont").change(function(event) {
 		CreateFontFromFile(event.target.files[0]);
 	});
-
-
 });
 
 function SaveBitmap()
@@ -68,7 +87,7 @@ function SaveBitmap()
 	var shifterFileData = CreateMagicShifterFile(imgData, "bitmap", bitPerPixel, frameWidth, frameHeight, frames, 0, delayMs);
 	var fileName = $('#bitmapFileName')[0].value;
 	
-	SaveToFile(fileName, shifterFileData)
+	SaveToFile(fileName, shifterFileData);
 }
 
 function SaveFont()
@@ -379,40 +398,6 @@ function writeGenericPixels(imgData, w, h, setFn, calcFn)
 function writeRGB24Pixels(imgData, shifterPixel, offset, w, h)
 {
 	writeGenericPixels(imgData, w, h, function(x, y, c) { SetPixel24Bit(shifterPixel, offset, w, h, x, y, c); }, Code24Bit);
-/*
-	if (w > imgData.width)
-	{
-		alert("writeRGB24Pixels: shifterPixel width larger than imgData: " + w);
-		return;
-	}
-	if (h > imgData.height)
-	{
-		alert("writeRGB24Pixels: shifterPixel height larger than imgData: " + w);
-		return;
-	}
-
-	for (var x = 0; x < w; x++)
-	{
-		for (var y = 0; y < h; y++)
-		{
-			var idx = 4*(y * imgData.width + x);
-			var r, g, b, a;
-			
-			r = imgData.data[idx];
-			g = imgData.data[idx+1];
-			b = imgData.data[idx+2];
-			a = imgData.data[idx+3];
-			if (a != 255)
-			{
-				r = Math.round(a*r/255.0);
-				g = Math.round(a*g/255.0);
-				b = Math.round(a*b/255.0);
-			}
-
-			setRGB24(shifterPixel, offset, w, h, x, y, r, g, b); 
-		}
-	}
-*/
 }
 
 function CalcBufferSize(bitPerPixel, w, h)
@@ -519,105 +504,8 @@ function SetPixel1Bit(LEDS_VALUES, offset, w, h, x, y, color)
 	}
 }
 
-/*
-function setRGB24(LEDS_VALUES, offset, w, h, x, y, rr, gg, bb)
+function load_gif(image,callback)
 {
-	x = Math.floor(x);
-	y = Math.floor(y);
-
-	var r, g, b;
-	if (COLOR_CODING == "BRG")
-	{
-		r = bb;
-		g = rr;
-		b = gg;
-	}
-	if (COLOR_CODING == "GRB")
-	{
-		r = gg;
-		g = rr;
-		b = bb;
-	}
-	else if (COLOR_CODING == "BGR")
-	{
-		r = bb;
-		g = gg;
-		b = rr;
-	}
-	else // assume "RGB"
-	{
-		r = rr;
-		g = gg;
-		b = bb;
-	}
-
-	var byteIndex = offset + 3*(y + h * x);
-	LEDS_VALUES[byteIndex++] = r;
-	LEDS_VALUES[byteIndex++] = g;
-	LEDS_VALUES[byteIndex++] = b;
+	var sup1 = new SuperGif({ gif: image} ); //document.getElementById('uploaded_gif') } );
+	sup1.load(callback);
 }
-*/
-
-</script>
-
-
-</head>
-<body>
-	<form name="controls" action="">
-
-	<div>
-		<h1>Create MagicShifter Animation/Bitmap</h1>
-		Select Bitmap for animation/bitmap: <input type="file" value="upload" id="uploadBitmap" /><br />
-		Frames: <input type="text" id="nrOfFrames" value="1"></br />
-		Frame Width: <input type="text" id="frameWidth" value="16"></br />
-		Frame Height: <input type="text" id="frameHeight" value="16"></br />
-		Frame Delay (ms): <input type="text" id="frameDelayMs" value="16"></br />
-		Bit/Pixel: <select id="bitmapBitPerPixel">
-          <option value="24">24</option>
-          <option value="8">8</option>
-          <option value="1">1</option>
-  		</select><br />
-		Animation/Bitmap Filename: <input type="text" id="bitmapFileName" value = "" /><br />
-		<input type="button" id="saveAsBitmap" value="save animation/bitmap" onclick="SaveBitmap();">
-		<div>
-			<canvas id="canvasActiveBitmap" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-			<canvas id="canvasScaledBitmap" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-		</div>
-	</div>
-
-	<div>
-		<h1>Create MagicShifter Font</h1>
-		Font Width: <input type="text" id="fontWidth" value="10"></br />
-		Font Height: <input type="text" id="fontHeight" value="16"></br />
-		Font Start Char: <input type="text" id="fontStartChar" value="32"></br />
-		Font End Char: <input type="text" id="fontEndChar" value="127"></br />
-		Enter Font CSS: <input type="text" id="fontCSS" value="18px Courier"> 	<input type="button" id="createFont" value="create font from CSS" onclick="CreateFontFromCss();"> <br />
-		OR select Bitmap for font: <input type="file" value="upload" id="uploadFont" /><br />
-		<input type = "checkbox" id = "fontInvert" value = "invert" /><label for = "fontInvert">invert pixels</label><br />
-		Bit/Pixel: <select id="fontBitPerPixel">
-                <option value="24">24</option>
-                <option value="8">8</option>
-                <option value="1">1</option>
-      </select><br />
-		Font Filename: <input type="text" id="fontFileName" value = "" /><input type="button" id="saveAsFont" value="save as font" onclick="SaveFont();">
-		<div>
-			<canvas id="canvasActiveFont" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-			<canvas id="canvasScaledFont" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-			<canvas id="canvasImportFont" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-		</div>
-	</div>
-
-
-	<input type="button" id="extractFont" value="extract font" onclick="CreateFont(function(canvas, startChar, endChar, fontWidth, fontHeight) {  ExtractPixelFont(document.getElementById('canvasBuffer'), canvas, startChar, endChar, fontWidth, fontHeight); }, FONT_START_CHAR, FONT_END_CHAR, FONT_CHAR_WIDTH, FONT_CHAR_HEIGHT);">
-
-
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-35739153-1', 'magicshifter.net');
-  ga('send', 'pageview');
-	</script>
-</body>
-</html>

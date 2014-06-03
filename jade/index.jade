@@ -1,0 +1,116 @@
+extends layout.jade
+
+block content
+	section#video
+		h2 The MagicShifter Video!
+
+		div#player: iframe(src="https://www.youtube.com/embed/0MjIy2lzaDo", frameborder="0", allowfullscreen="allowfullscreen")
+
+		p Watch this video to learn more about the features and sensors and how to use the MagicShifter.
+
+	section.gallery.first
+		ul
+			li: img(src="img/magic_icons/space_invader.jpg")
+			li: img(src="img/magic_icons/mario.jpg")
+			li: img(src="img/magic_icons/nyan_cat.jpg")
+
+	section#upload
+		div#images
+			h2 Upload your own images!
+			p There is a webapp (runs offline too) to convert your own images to display them on the MagicShifter. You even can create animations if you like.
+			p 
+				| Find more examples in the 
+				a(href="http://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/") picture blog
+				| on flickr.
+
+			p.btns
+				a.btn(href="/MagicConverter.html") The Magic Converter
+				a.btn(href="/UserManualMagicShifter.pdf") MagicShifter Manual
+		
+	section.gallery.second
+		ul
+			li: img(src="img/magic_icons/dragon.jpg")
+			li: img(src="img/magic_icons/1up_green.jpg")
+			li: img(src="img/magic_icons/heart.jpg")
+
+	section#program
+		div.container
+			h2 Reprogram the Source Code!
+			p The code is a little rough at the edges and atm only the make file based tool chain is available. p We're working on integrating the MagicShifter into the Arduino IDE.
+			p.btns: a.btn(href="https://bitbucket.org/wizard23/magicshifteros") Download it!
+			
+	section.gallery.third
+		ul
+			li: img(src="img/magic_icons/space_invader.jpg")
+			li: img(src="img/magic_icons/mario.jpg")
+			li: img(src="img/magic_icons/nyan_cat.jpg")
+
+	section#technical
+		div.container
+			h2 Technical Features
+			table(cellspacing="0", cellpadding="0")
+				thead
+					tr
+						th Description
+						th Id
+						th Datasheet
+				tbody
+					tr
+						td 16 / RGB LEDS
+						td OS67SRS
+						td: a(href="/datasheets/OS67SRS.pdf") PDF
+					tr
+						td UV LED
+						td SAFW43sf
+						td: a(href="/datasheets/SM1206UV-395-IL.pdf") PDF
+					tr
+						td High Power White LED
+						td GFW232spgj
+						td: a(href="/datasheets/GFW232spgj.pdf") PDF
+					tr
+						td High Power Infrafred LED
+						td HIR11-21C/L11/TR8
+						td a(href="/datasheets/HIR11-21C_L11_TR8.pdf") PDF
+					tr
+						td High Power Infrafred LED
+						td HIR11-21C/L11/TR8
+						td: a(href="/datasheets/HIR11-21C_L11_TR8.pdf") PDF
+					tr
+						td High Power Infrafred LED
+						td HIR11-21C/L11/TR8
+						td a(href="/datasheets/HIR11-21C_L11_TR8.pdf") PDF
+					tr
+						td High Power Infrafred LED
+						td HIR11-21C/L11/TR8
+						td a(href="/datasheets/HIR11-21C_L11_TR8.pdf") PDF
+					tr
+						td High Power Infrafred LED
+						td HIR11-21C/L11/TR8
+						td: a(href="/datasheets/HIR11-21C_L11_TR8.pdf") PDF
+						
+
+		section.gallery.fourth
+			ul
+				li: img(src="img/magic_icons/space_invader.jpg") 
+				li: img(src="img/magic_icons/mario.jpg") 
+				li: img(src="img/magic_icons/nyan_cat.jpg")
+
+		section#contact
+			h2 Questions? Just contact us!
+			p 
+				| If you have questions or suggestions just contact us per 
+				a(href="mailto:wizards23+magicshifter@gmail.com") email.
+
+			p 
+				| Found anything wrong about this homepage? 
+				a(href="https://github.com/magicshifter/magicshifter.net") file an issue on github.
+
+		footer.main 
+			div#imprint
+				| created by 
+				a(href="https://metalab.at/wiki/Benutzer:Wizard23") wizard23
+				| @ 
+				a(href="http://www.metalab.at") img(src="img/metalab.png" alt="Metalab")
+			
+			div#aws
+				span supported by a(href="http://www.awsg.at/kreativwirtschaft") img(src="img/aws-logo.jpg")
