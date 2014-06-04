@@ -16,6 +16,7 @@ uninstall:
 	sudo npm remove -g grunt-cli
 	#install needed packages for grunt
 	rm -rf ./node_modules
+	rm -rf ./build
 
 deploy:
 	#install needed packages for grunt
@@ -29,7 +30,7 @@ deploy:
 
 	#add your details here, this will prompt for your password or keyphrase
 	#dont actually do it yet.
-	#scp -r name@hostname:/var/www/html/ .
+	#scp -r name@hostname:/var/www/html/ ./build/*
 
 clean:
 	rm -rf ./build
