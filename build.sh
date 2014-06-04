@@ -2,5 +2,9 @@
 
 #install needed packages for grunt
 npm install
+
+#remove build dir
+rm -rf ./build
+
 #compile css, grunt all that needs to be grunted
-grunt
+grunt --rootPathUrl=$1

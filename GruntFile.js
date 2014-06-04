@@ -1,8 +1,11 @@
 module.exports = function(grunt) {
-	// var root = '/'
-	var root = 'file://' + process.cwd() + '/build/'
+
+	var rootPathUrl = grunt.option( "rootPathUrl" ) || 'file://' + process.cwd() + '/build/'
+	  , root = rootPathUrl
 	  , img_folder = root + 'img/'
 	  , static_folder = root + 'static/';
+
+	console.log("Grunt starting, server root = " + rootPathUrl);
 
 	// Project configuration.
 	grunt.initConfig({
