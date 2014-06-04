@@ -222,8 +222,13 @@ header.main
     text-align center
 
     .btn
-        background-color darken(program-bg-color, 40%)
-
+        background-color program-bg-color
+        background-image -webkit-gradient(linear,0 0,0 100%,from(program-bg-color),to(darken(program-bg-color, btn-bg-color-darken)))
+        background-image -webkit-linear-gradient(top,program-bg-color,darken(program-bg-color, btn-bg-color-darken))
+        background-image -o-linear-gradient(top,program-bg-color,darken(program-bg-color, btn-bg-color-darken))
+        background-image linear-gradient(to bottom,program-bg-color,darken(program-bg-color, btn-bg-color-darken))
+        background-image -moz-linear-gradient(top,program-bg-color,darken(program-bg-color, btn-bg-color-darken))
+program
 
 #technical
     color #000
