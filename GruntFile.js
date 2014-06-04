@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 			compile: {
 				files: {
 					// compile and concat into single file
-					'css/main.css': ['css/reset.styl', 'css/main.styl', 'css/custom-widths.styl']
+					'build/css/main.css': ['css/reset.styl', 'css/main.styl', 'css/custom-widths.styl']
 				}
 			}
 		},
@@ -15,8 +15,8 @@ module.exports = function(grunt) {
 			compile: {
 				options: {
 					data: {
-				 		debug: false
-				 	}
+						debug: false
+					}
 				},
 				files: {
 					'build/index.html': ['jade/index.jade'],
@@ -24,6 +24,30 @@ module.exports = function(grunt) {
 					'build/MagicFont.html': ['jade/magicfont.jade']
 				}
 			}
+		},
+		concat: {
+			options: {
+				separator: ';',
+			},
+			files: {
+				'build/js/ga.js': ['js/ga.js'],
+				'build/js/magic.js': [
+					'js/libs/jquery-1.9.1.min.js',
+					'js/libs/FileSaver.js',
+					'js/libs/libgif-js/libgif.js',
+					'js/magicbitmap.js'
+				]
+			}
+		},
+		copy: {
+		  main: {
+			files: [
+				//copy images
+				{expand: true, src: ['img/**'], dest: 'build'},
+				//copy static files
+				{expand: true, src: ['static/**'], dest: 'build'}
+			]
+		  }
 		}
 	});
 
@@ -33,8 +57,14 @@ module.exports = function(grunt) {
 	// Load the plugin that provides the 'jade' task.
 	grunt.loadNpmTasks('grunt-contrib-jade');
 
+	// Load the plugin that provides the 'concat' task.
+	grunt.loadNpmTasks('grunt-contrib-concat');
+
+	//used to copy the images and static files to the build directory
+	grunt.loadNpmTasks('grunt-contrib-copy');
+
 	// Default task(s).
-	grunt.registerTask('default', ['stylus', 'jade']);
+	grunt.registerTask('default', ['stylus', 'jade', 'concat', 'copy']);
 
 };
 
