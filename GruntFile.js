@@ -19,7 +19,7 @@ module.exports = function(grunt) {
 			compile: {
 				files: {
 					// compile and concat into single file
-					'build/css/main.css': [
+					'build/static/css/main.css': [
 						'assets/css/reset.styl', 
 						'assets/css/main.styl', 
 						'assets/css/custom-widths.styl'
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 			},
 			basic: {
 				src: ['assets/js/ga.js'],
-				dest: 'build/js/ga.js',
+				dest: 'build/static/js/ga.js',
 			},
 			extras: {
 				src: [
@@ -59,14 +59,15 @@ module.exports = function(grunt) {
 					'assets/js/libs/libgif-js/libgif.js',
 					'assets/js/magicbitmap.js'
 				],
-				dest: 'build/js/magic.js',
+				dest: 'build/static/js/magic.js',
 			},
 		},
 		copy: {
 			main: {
 				files: [
 					//copy static files
-					{expand: false, src: ['static/**'], dest: 'build/'}
+					{expand: false, src: ['static/**'], dest: 'build/'},
+					{expand: false, src: ['favicon.ico'], dest: 'build/'}
 				]
 			}
 		}
