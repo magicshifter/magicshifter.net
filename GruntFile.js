@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-	var root = 'file://' + process.cwd()
+	var root = 'file://' + process.cwd() + '/build/'
 	  , img_folder = root + 'img/'
 	  , static_folder = root + 'static/';
 
