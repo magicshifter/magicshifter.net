@@ -11,8 +11,10 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		stylus: {
-			define: {
-				'header_bg': img_folder + 'magicshifter.jpg'
+			options: {
+				define: {
+					img_folder: img_folder
+				}
 			},
 			compile: {
 				files: {
@@ -63,6 +65,7 @@ module.exports = function(grunt) {
 					{expand: true, src: ['img/**'], dest: 'build'},
 					//copy static files
 					{expand: true, src: ['static/**'], dest: 'build'},
+					//copy favicon to build root
 					{expand: false, src: ['favicon.ico'], dest: 'build/favicon.ico'}
 				]
 			}
@@ -83,6 +86,5 @@ module.exports = function(grunt) {
 
 	// Default task(s).
 	grunt.registerTask('default', ['stylus', 'jade', 'concat', 'copy']);
-
 };
 
