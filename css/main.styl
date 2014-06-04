@@ -24,6 +24,12 @@ gallery-bg-color-second = #ff9d1c
 gallery-bg-color-third = #0097ff
 gallery-bg-color-fourth = #fff
 
+base-path = 'file:///home/j/dev/magicshifter.net/build/'
+
+bg-image(image)
+  background: url(base-path + image)
+
+
 body
     font-size 16px
     font-family "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -88,7 +94,7 @@ a.btn
 
 
 header.main
-    background-image url(../img/magicshifter.jpg)
+    bg-image('img/magicshifter.jpg')
     padding 3em 0
     width 100%
     box-sizing border-box

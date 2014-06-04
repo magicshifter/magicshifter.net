@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-	var root = 'file:///home/j/dev/magicshifter.net/build/'
+	var root = 'file://' + process.cwd()
 	  , img_folder = root + 'img/'
 	  , static_folder = root + 'static/';
 
@@ -7,11 +7,8 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		stylus: {
-			options: {
-				data: {
-					root: root,
-					img_folder: img_folder
-				}
+			define: {
+				'header_bg': img_folder + 'magicshifter.jpg'
 			},
 			compile: {
 				files: {
@@ -57,7 +54,8 @@ module.exports = function(grunt) {
 				//copy images
 				{expand: true, src: ['img/**'], dest: 'build'},
 				//copy static files
-				{expand: true, src: ['static/**'], dest: 'build'}
+				{expand: true, src: ['static/**'], dest: 'build'},
+				{expand: false, src: ['favicon.ico'], dest: 'build/favicon.ico'}
 			]
 		  }
 		}
