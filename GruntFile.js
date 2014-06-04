@@ -20,8 +20,8 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'build/index.html': ['jade/index.jade'],
-					'build/MagicBitmap.html': ['jade/MagicBitmap.jade'],
-					'build/MagicFont.html': ['jade/MagicFont.jade']
+					'build/MagicBitmap.html': ['jade/magicbitmap.jade'],
+					'build/MagicFont.html': ['jade/magicfont.jade']
 				}
 			}
 		}
