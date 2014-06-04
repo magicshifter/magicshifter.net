@@ -4,7 +4,7 @@ all:
 	#remove build dir
 	rm -rf ./build
 
-	#compile css, grunt all that needs to be grunted
+	#grunt all that needs to be grunted
 	grunt --rootPathUrl=${p}
 
 install:
@@ -25,7 +25,7 @@ deploy:
 	rm -rf ./build
 
 	#compile css, grunt all that needs to be grunted
-	grunt --rootPathUrl=${p}
+	grunt --rootPathUrl=${p} --deploy="true"
 
 	#add your details here, this will prompt for your password or keyphrase
 	#dont actually do it yet.

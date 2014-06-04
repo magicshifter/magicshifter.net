@@ -1,9 +1,9 @@
 module.exports = function(grunt) {
-
-	var rootPathUrl = grunt.option( "rootPathUrl" ) || 'file://' + process.cwd() + '/build/'
+	var defaultRoot = grunt.option('deploy') ? "/" : 'file://' + process.cwd() + '/build/'
+	  , rootPathUrl = grunt.option( "rootPathUrl" ) || defaultRoot
 	  , root = rootPathUrl
-	  , img_folder = root + 'img/'
-	  , static_folder = root + 'static/';
+	  , static_folder = root + 'static/'
+	  , img_folder = static_folder + 'img/';
 
 	console.log("Grunt starting, server root = " + rootPathUrl);
 
@@ -19,7 +19,11 @@ module.exports = function(grunt) {
 			compile: {
 				files: {
 					// compile and concat into single file
-					'build/css/main.css': ['css/reset.styl', 'css/main.styl', 'css/custom-widths.styl']
+					'build/css/main.css': [
+						'assets/css/reset.styl', 
+						'assets/css/main.styl', 
+						'assets/css/custom-widths.styl'
+					]
 				}
 			}
 		},
@@ -34,9 +38,9 @@ module.exports = function(grunt) {
 					}
 				},
 				files: {
-					'build/index.html': ['jade/index.jade'],
-					'build/bitmap.html': ['jade/magicbitmap.jade'],
-					'build/font.html': ['jade/magicfont.jade']
+					'build/index.html': ['assets/jade/index.jade'],
+					'build/bitmap.html': ['assets/jade/magicbitmap.jade'],
+					'build/font.html': ['assets/jade/magicfont.jade']
 				}
 			}
 		},
@@ -45,15 +49,15 @@ module.exports = function(grunt) {
 				separator: ';',
 			},
 			basic: {
-				src: ['js/ga.js'],
+				src: ['assets/js/ga.js'],
 				dest: 'build/js/ga.js',
 			},
 			extras: {
 				src: [
-					'js/libs/jquery-1.9.1.min.js',
-					'js/libs/FileSaver.js',
-					'js/libs/libgif-js/libgif.js',
-					'js/magicbitmap.js'
+					'assets/js/libs/jquery-1.9.1.min.js',
+					'assets/js/libs/FileSaver.js',
+					'assets/js/libs/libgif-js/libgif.js',
+					'assets/js/magicbitmap.js'
 				],
 				dest: 'build/js/magic.js',
 			},
@@ -61,12 +65,8 @@ module.exports = function(grunt) {
 		copy: {
 			main: {
 				files: [
-					//copy images
-					{expand: true, src: ['img/**'], dest: 'build'},
 					//copy static files
-					{expand: true, src: ['static/**'], dest: 'build'},
-					//copy favicon to build root
-					{expand: false, src: ['favicon.ico'], dest: 'build/favicon.ico'}
+					{expand: false, src: ['static/**'], dest: 'build/'}
 				]
 			}
 		}
