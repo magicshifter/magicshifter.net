@@ -11,4 +11,4 @@ rm -rf ./build
 grunt --rootPathUrl=$1
 
 #add your details here, this will prompt for your password or keyphrase
-scp -r jascha@jaeh.at:/home/jascha/test/ .
+#scp -r jascha@jaeh.at:/home/jascha/test/ .
