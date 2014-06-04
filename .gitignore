@@ -1,7 +1,7 @@
 musicbox/*
 old/*
 *~
-magicshifter.net.sublime-project
-magicshifter.net.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 node_modules
 build
