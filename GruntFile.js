@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+	// var root = '/'
 	var root = 'file://' + process.cwd() + '/build/'
 	  , img_folder = root + 'img/'
 	  , static_folder = root + 'static/';
@@ -29,8 +30,8 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'build/index.html': ['jade/index.jade'],
-					'build/magic/bitmap.html': ['jade/magicbitmap.jade'],
-					'build/magic/font.html': ['jade/magicfont.jade']
+					'build/bitmap.html': ['jade/magicbitmap.jade'],
+					'build/font.html': ['jade/magicfont.jade']
 				}
 			}
 		},
@@ -38,26 +39,30 @@ module.exports = function(grunt) {
 			options: {
 				separator: ';',
 			},
-			files: {
-				'build/js/ga.js': ['js/ga.js'],
-				'build/js/magic.js': [
+			basic: {
+				src: ['js/ga.js'],
+				dest: 'build/js/ga.js',
+			},
+			extras: {
+				src: [
 					'js/libs/jquery-1.9.1.min.js',
 					'js/libs/FileSaver.js',
 					'js/libs/libgif-js/libgif.js',
 					'js/magicbitmap.js'
-				]
-			}
+				],
+				dest: 'build/js/magic.js',
+			},
 		},
 		copy: {
-		  main: {
-			files: [
-				//copy images
-				{expand: true, src: ['img/**'], dest: 'build'},
-				//copy static files
-				{expand: true, src: ['static/**'], dest: 'build'},
-				{expand: false, src: ['favicon.ico'], dest: 'build/favicon.ico'}
-			]
-		  }
+			main: {
+				files: [
+					//copy images
+					{expand: true, src: ['img/**'], dest: 'build'},
+					//copy static files
+					{expand: true, src: ['static/**'], dest: 'build'},
+					{expand: false, src: ['favicon.ico'], dest: 'build/favicon.ico'}
+				]
+			}
 		}
 	});
 
