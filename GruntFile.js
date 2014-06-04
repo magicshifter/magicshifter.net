@@ -1,9 +1,18 @@
 module.exports = function(grunt) {
+	var root = 'file:///home/j/dev/magicshifter.net/build/'
+	  , img_folder = root + 'img/'
+	  , static_folder = root + 'static/';
 
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		stylus: {
+			options: {
+				data: {
+					root: root,
+					img_folder: img_folder
+				}
+			},
 			compile: {
 				files: {
 					// compile and concat into single file
@@ -15,13 +24,16 @@ module.exports = function(grunt) {
 			compile: {
 				options: {
 					data: {
-						debug: false
+						debug: false,
+						root: root,
+						img_folder: img_folder,
+						static_folder: static_folder
 					}
 				},
 				files: {
 					'build/index.html': ['jade/index.jade'],
-					'build/MagicBitmap.html': ['jade/magicbitmap.jade'],
-					'build/MagicFont.html': ['jade/magicfont.jade']
+					'build/magic/bitmap.html': ['jade/magicbitmap.jade'],
+					'build/magic/font.html': ['jade/magicfont.jade']
 				}
 			}
 		},
