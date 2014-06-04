@@ -34,11 +34,12 @@ box-shadow(value)
     -moz-box-shadow value
     box-shadow value
 
-background-gradient (gradient, color, color-dark)
+background-gradient (color, color-dark)
     background-image -webkit-gradient( linear, 0 0, 0 100%,from( color ), to( color-dark ) )
     background-image -webkit-linear-gradient( top, color, color-dark )
     background-image -o-linear-gradient( top, color, color-dark )
     background-image -moz-linear-gradient( top, color, color-dark )
+    background-image linear-gradient( top, color, color-dark )
 
 body
     font-size 16px
@@ -76,7 +77,7 @@ a.btn
     color #fff
     text-shadow 0 -1px 0 rgba(0,0,0,0.25)
     background-color btn-bg-color
-    background-gradient( 'to bottom' btn-bg-color darken( btn-bg-color, btn-bg-color-darken ) )
+    background-gradient( btn-bg-color darken( btn-bg-color, btn-bg-color-darken ) )
 
     background-repeat repeat-x
     border-radius 4px
@@ -222,12 +223,7 @@ header.main
 
     .btn
         background-color program-bg-color
-        background-image -webkit-gradient(linear,0 0,0 100%,from(program-bg-color),to(darken(program-bg-color, btn-bg-color-darken)))
-        background-image -webkit-linear-gradient(top,program-bg-color,darken(program-bg-color, btn-bg-color-darken))
-        background-image -o-linear-gradient(top,program-bg-color,darken(program-bg-color, btn-bg-color-darken))
-        background-image linear-gradient(to bottom,program-bg-color,darken(program-bg-color, btn-bg-color-darken))
-        background-image -moz-linear-gradient(top,program-bg-color,darken(program-bg-color, btn-bg-color-darken))
-program
+        background-gradient( program-bg-color, darken( program-bg-color, btn-bg-color-darken ) )
 
 #technical
     color #000
