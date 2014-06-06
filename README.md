@@ -3,21 +3,19 @@ magicshifter.net
 
 the page at magicshifter.net
 
+comes with a makescript
+	
+	//install needed dependencies (grunt and grunt-contrib packages)
+	make install
 
-build:
+	//make build for local preview (rootPath is set to "file:///" + process.cwd()  by default)
+	make
 
-    //install grunt dependency
-    sudo npm install -g grunt-cli
+	//make build for server deployment (rootPath is set to "/" by default)
+	make deploy
 
-    git clone https://github.com/magicshifter/magicshifter.net
-    cd magicshifter.net
+	//delete the build directory
+	make clean
 
-    //install nodejs packages in node_modules folder
-    npm install
-
-    //this will create the css/main.css file out of the stylus files in the css directory
-    //see the Gruntfile.js for more info
-    grunt
-  
-
-  
+	//delete node_modules, grunt-cli
+	make uninstall

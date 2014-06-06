@@ -1,29 +1,6 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<!-- link type="text/css" rel="stylesheet" href="style.css" / -->
-	<!-- <link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'> -->
-	<script src="src/libs/jquery-1.9.1.min.js"></script>
-	<script src="src/libs/FileSaver.js"></script>
-
-                <script type="text/javascript" src="src/libs/libgif-js/libgif.js"></script>
-                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-                        
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-
 var COLOR_CODING = "RGB";
 //var COLOR_CODING = "BRG";
-//var COLOR_CODING = "GRB";
+//var COLOR_CODING = "GRB"; // chinese
 var DEBUG_COLOR_LEVEL = true;
 
 var FONT_START_CHAR = 33;
@@ -38,83 +15,61 @@ var globalShifterData;
 $("document").ready(function() {
 	$("#uploadBitmap").change(function(event) {
 		var img = new Image;
-
-
-
-		img.onload = function() 
-		{
+		img.onload = function() {
 			var canvas = document.getElementById('canvasActiveBitmap');
 
+			var w = img.width;
+			var h = img.height;
+			$("#frameWidth")[0].value = w;
+			$("#frameHeight")[0].value = h;
+			canvas.width = w;
+			canvas.height = h; 
 
-			if (event.target.files[0].name.substr(-4).toLowerCase() == ".gif")
-			{
-				var callback = function()
-	  			{
-					var canvasx = sup1.get_canvas().getContext('2d');
-					var frame_len = sup1.get_length();
+			var ctx = canvas.getContext('2d');
+			ctx.drawImage(img, 0, 0);
 
-					var w = img.width;
-					var h = img.height;
+			var imgData = ctx.getImageData(0,0,w,h);
+			CreateScaledCanvas(imgData, document.getElementById('canvasScaledBitmap'), 6);
 
-					$("#nrOfFrames")[0].value = frame_len;
-					$("#frameWidth")[0].value = w;
-					$("#frameHeight")[0].value = h;
-					canvas.width = w*frame_len;
-					canvas.height = h; 
+			$('#bitmapFileName')[0].value = createFileName(event.target.files[0].name, "magicBitmap");
+		}
 
-					var ctx = canvas.getContext('2d');
+		if ( event.target.files[0].type === 'image/gif' ) {
+			load_gif(img, function() {
+				var canvasx = sup1.get_canvas().getContext('2d');
+				var frame_len = sup1.get_length();
 
-
-					for (var i=0;i<frame_len;i++)
-					{
-						canvasx.clearRect (0 , 0 , w , h );
-						sup1.move_relative(1);
-						var frameData = canvasx.getImageData(0,0,w,h);
-						ctx.putImageData(frameData, i*w, 0);
-										  //ctx.drawImage(img, w*i, 0);
-					//			  sup1.move_relative(1);
-					}
-
-					var imgData = ctx.getImageData(0,0,w*frame_len,h);
-					CreateScaledCanvas(imgData, document.getElementById('canvasScaledBitmap'), 6);
-
-					$('#bitmapFileName')[0].value = createFileName(event.target.files[0].name, "magicBitmap");
-				}
-		      load_gif(img,callback);
-			}
-			else
-			{
 				var w = img.width;
 				var h = img.height;
-				$("#nrOfFrames")[0].value = 1;
+
+				$("#nrOfFrames")[0].value = frame_len;
 				$("#frameWidth")[0].value = w;
 				$("#frameHeight")[0].value = h;
-				canvas.width = w;
+				canvas.width = w*frame_len;
 				canvas.height = h; 
 
 				var ctx = canvas.getContext('2d');
-				ctx.drawImage(img, 0, 0);
 
-				var imgData = ctx.getImageData(0,0,w,h);
+				for (var i=0;i<frame_len;i++)
+				{
+					canvasx.clearRect (0 , 0 , w , h );
+					sup1.move_relative(1);
+					var frameData = canvasx.getImageData(0,0,w,h);
+					ctx.putImageData(frameData, i*w, 0);
+				}
+
+				var imgData = ctx.getImageData(0,0,w*frame_len,h);
 				CreateScaledCanvas(imgData, document.getElementById('canvasScaledBitmap'), 6);
 
 				$('#bitmapFileName')[0].value = createFileName(event.target.files[0].name, "magicBitmap");
-			}
-
+			});
 		}
 		img.src = URL.createObjectURL(event.target.files[0]);
-
-		
-	}); 
-
-
-
+	});
 
 	$("#uploadFont").change(function(event) {
 		CreateFontFromFile(event.target.files[0]);
 	});
-
-
 });
 
 function SaveBitmap()
@@ -132,7 +87,7 @@ function SaveBitmap()
 	var shifterFileData = CreateMagicShifterFile(imgData, "bitmap", bitPerPixel, frameWidth, frameHeight, frames, 0, delayMs);
 	var fileName = $('#bitmapFileName')[0].value;
 	
-	SaveToFile(fileName, shifterFileData)
+	SaveToFile(fileName, shifterFileData);
 }
 
 function SaveFont()
@@ -169,9 +124,6 @@ function SaveToFile(fileName, shifterFileData)
 	if (shifterFileData) 
 	{
 		var dataView = new DataView(shifterFileData.buffer);
-		var neededSectors = dataView.byteLength/4096;
-		if (neededSectors > 1)
-			alert("large file! needs " + Math.ceil(neededSectors) + " sectors (" + neededSectors + ")");
 		var blob = new Blob([dataView], {type: "application/octet-stream"});
 		saveAs(blob, fileName);
 	}	
@@ -446,40 +398,6 @@ function writeGenericPixels(imgData, w, h, setFn, calcFn)
 function writeRGB24Pixels(imgData, shifterPixel, offset, w, h)
 {
 	writeGenericPixels(imgData, w, h, function(x, y, c) { SetPixel24Bit(shifterPixel, offset, w, h, x, y, c); }, Code24Bit);
-/*
-	if (w > imgData.width)
-	{
-		alert("writeRGB24Pixels: shifterPixel width larger than imgData: " + w);
-		return;
-	}
-	if (h > imgData.height)
-	{
-		alert("writeRGB24Pixels: shifterPixel height larger than imgData: " + w);
-		return;
-	}
-
-	for (var x = 0; x < w; x++)
-	{
-		for (var y = 0; y < h; y++)
-		{
-			var idx = 4*(y * imgData.width + x);
-			var r, g, b, a;
-			
-			r = imgData.data[idx];
-			g = imgData.data[idx+1];
-			b = imgData.data[idx+2];
-			a = imgData.data[idx+3];
-			if (a != 255)
-			{
-				r = Math.round(a*r/255.0);
-				g = Math.round(a*g/255.0);
-				b = Math.round(a*b/255.0);
-			}
-
-			setRGB24(shifterPixel, offset, w, h, x, y, r, g, b); 
-		}
-	}
-*/
 }
 
 function CalcBufferSize(bitPerPixel, w, h)
@@ -586,124 +504,8 @@ function SetPixel1Bit(LEDS_VALUES, offset, w, h, x, y, color)
 	}
 }
 
-/*
-function setRGB24(LEDS_VALUES, offset, w, h, x, y, rr, gg, bb)
-{
-	x = Math.floor(x);
-	y = Math.floor(y);
-
-	var r, g, b;
-	if (COLOR_CODING == "BRG")
-	{
-		r = bb;
-		g = rr;
-		b = gg;
-	}
-	if (COLOR_CODING == "GRB")
-	{
-		r = gg;
-		g = rr;
-		b = bb;
-	}
-	else if (COLOR_CODING == "BGR")
-	{
-		r = bb;
-		g = gg;
-		b = rr;
-	}
-	else // assume "RGB"
-	{
-		r = rr;
-		g = gg;
-		b = bb;
-	}
-
-	var byteIndex = offset + 3*(y + h * x);
-	LEDS_VALUES[byteIndex++] = r;
-	LEDS_VALUES[byteIndex++] = g;
-	LEDS_VALUES[byteIndex++] = b;
-}
-*/
-
-</script>
-
-
-</head>
-<body>
-
-
-                        <script type="text/javascript">
-
-
-var sup1= 0;
-
-
-
-
 function load_gif(image,callback)
 {
-
-//
-                               sup1 = new SuperGif({ gif: image} ); //document.getElementById('uploaded_gif') } );
-                                sup1.load(callback);
+	var sup1 = new SuperGif({ gif: image} ); //document.getElementById('uploaded_gif') } );
+	sup1.load(callback);
 }
-
-
-
-                        </script>
-
-
-
-
-
-
-	<form name="controls" action="">
-
-	<div>
-		<h1>Create MagicShifter Animation/Bitmap</h1>
-		Select Bitmap for animation/bitmap: <input type="file" value="upload" id="uploadBitmap" /><br />
-		Frames: <input type="text" id="nrOfFrames" value="1"></br />
-		Frame Width: <input type="text" id="frameWidth" value="16"></br />
-		Frame Height: <input type="text" id="frameHeight" value="16"></br />
-		Frame Delay (ms): <input type="text" id="frameDelayMs" value="16"></br />
-		Bit/Pixel: <select id="bitmapBitPerPixel">
-          <option value="24">24</option>
-          <option value="8">8</option>
-          <option value="1">1</option>
-  		</select><br />
-		Animation/Bitmap Filename: <input type="text" id="bitmapFileName" value = "" /><br />
-		<input type="button" id="saveAsBitmap" value="save animation/bitmap" onclick="SaveBitmap();">
-		<div>
-			<canvas id="canvasActiveBitmap" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-			<canvas id="canvasScaledBitmap" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-		</div>
-	</div>
-
-	<div>
-		<h1>Create MagicShifter Font</h1>
-		Font Width: <input type="text" id="fontWidth" value="10"></br />
-		Font Height: <input type="text" id="fontHeight" value="16"></br />
-		Font Start Char: <input type="text" id="fontStartChar" value="32"></br />
-		Font End Char: <input type="text" id="fontEndChar" value="127"></br />
-		Enter Font CSS: <input type="text" id="fontCSS" value="18px Courier"> 	<input type="button" id="createFont" value="create font from CSS" onclick="CreateFontFromCss();"> <br />
-		OR select Bitmap for font: <input type="file" value="upload" id="uploadFont" /><br />
-		<input type = "checkbox" id = "fontInvert" value = "invert" /><label for = "fontInvert">invert pixels</label><br />
-		Bit/Pixel: <select id="fontBitPerPixel">
-                <option value="24">24</option>
-                <option value="8">8</option>
-                <option value="1">1</option>
-      </select><br />
-		Font Filename: <input type="text" id="fontFileName" value = "" /><input type="button" id="saveAsFont" value="save as font" onclick="SaveFont();">
-		<div>
-			<canvas id="canvasActiveFont" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-			<canvas id="canvasScaledFont" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-			<canvas id="canvasImportFont" width="100" height="100" style="background-color:#000000; color:#FFFFFF;"></canvas>
-		</div>
-	</div>
-
-
-	<input type="button" id="extractFont" value="extract font" onclick="CreateFont(function(canvas, startChar, endChar, fontWidth, fontHeight) {  ExtractPixelFont(document.getElementById('canvasBuffer'), canvas, startChar, endChar, fontWidth, fontHeight); }, FONT_START_CHAR, FONT_END_CHAR, FONT_CHAR_WIDTH, FONT_CHAR_HEIGHT);">
-
-
-</body>
-</html>
