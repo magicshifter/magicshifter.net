@@ -28,7 +28,10 @@ module.exports = function(grunt) {
 			  , visible: false
 			},
 			{
-				script: '(function(i){var f,s=document.getElementById(i);f=document.createElement("iframe");f.src="//api.flattr.com/button/view/?uid=wizard23&url="+encodeURIComponent(document.URL);f.title="Flattr";f.height=62;f.width=55;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})("fbjnmyd");'
+				link: 'https://flattr.com/submit/auto?user_id=jaeh&url=http%3A%2F%2Fmagicshifter.net'
+			  , img: social_dir + 'flattr.png'
+			  , alt: "Flattr this"
+			  , title: "Flattr this"
 			  , visible: true
 			}
 	  ];
