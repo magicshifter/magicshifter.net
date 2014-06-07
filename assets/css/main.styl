@@ -27,267 +27,281 @@ gallery-bg-color-fourth = #ff9d1c
 base-path = 'file:///home/j/dev/magicshifter.net/build/'
 
 bg-image(image)
-  background: url(img_folder + image)
+  background: url(img_dir + image)
 
 box-shadow(value)
-    -webkit-box-shadow value
-    -moz-box-shadow value
-    box-shadow value
+	-webkit-box-shadow value
+	-moz-box-shadow value
+	box-shadow value
 
 background-gradient (color, color-dark)
-    background-image -webkit-gradient( linear, 0 0, 0 100%,from( color ), to( color-dark ) )
-    background-image -webkit-linear-gradient( top, color, color-dark )
-    background-image -o-linear-gradient( top, color, color-dark )
-    background-image -moz-linear-gradient( top, color, color-dark )
-    background-image linear-gradient( top, color, color-dark )
+	background-image -webkit-gradient( linear, 0 0, 0 100%,from( color ), to( color-dark ) )
+	background-image -webkit-linear-gradient( top, color, color-dark )
+	background-image -o-linear-gradient( top, color, color-dark )
+	background-image -moz-linear-gradient( top, color, color-dark )
+	background-image linear-gradient( top, color, color-dark )
 
 body
-    font-size 16px
-    font-family "Helvetica Neue", Helvetica, Arial, sans-serif
-    color #333
+	font-size 16px
+	font-family "Helvetica Neue", Helvetica, Arial, sans-serif
+	color #333
 
 
 section
-    clear both
-    padding 2em 10%
-    margin -5px 0 0
-    box-sizing border-box
+	clear both
+	padding 2em 10%
+	margin -5px 0 0
+	box-sizing border-box
 
-    h2
-        font-size 1.5em
-        padding 0 0 0.7em
-        text-align center
+	h2
+		font-size 1.5em
+		padding 0 0 0.7em
+		text-align center
 
 a, a:visited
-    text-decoration none
-    color link-color
+	text-decoration none
+	color link-color
 
-    &:hover
-        color #000
+	&:hover
+		color #000
 
 p
-    margin 0 0 0.5em
+	margin 0 0 0.5em
 
-    &.btns 
-        padding 1em 0 0
+	&.btns 
+		padding 1em 0 0
 
 a.btn
-    font-weight bold
-    padding 6px 12px
-    font-size 0.9em
-    color link-color
-    margin 0 1.5em 0 0
-    border-radius 5px
-    color #fff
-    text-shadow 0 -1px 0 rgba(0,0,0,0.25)
-    background-color btn-bg-color
-    background-gradient( btn-bg-color darken( btn-bg-color, btn-bg-color-darken ) )
+	font-weight bold
+	padding 6px 12px
+	font-size 0.9em
+	color link-color
+	margin 0 1.5em 0 0
+	border-radius 5px
+	color #fff
+	text-shadow 0 -1px 0 rgba(0,0,0,0.25)
+	background-color btn-bg-color
+	background-gradient( btn-bg-color darken( btn-bg-color, btn-bg-color-darken ) )
 
-    background-repeat repeat-x
-    border-radius 4px
-    display inline-block
-    text-align center
-    vertical-align middle
-    cursor pointer
-    border 1px solid #bbb
-    border-color rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25)
-    box-shadow('inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05)')
+	background-repeat repeat-x
+	border-radius 4px
+	display inline-block
+	text-align center
+	vertical-align middle
+	cursor pointer
+	border 1px solid #bbb
+	border-color rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25)
+	box-shadow('inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05)')
 
-    &:hover
-        background-position
+	&:hover
+		background-position
 
 
 header.main
-    bg-image('magicshifter.jpg')
-    padding 3em 0
-    width 100%
-    box-sizing border-box
-    font-size 1.1em
-    line-height 1.1em
-    color #fff
+	bg-image('magicshifter.jpg')
+	padding 3em 0
+	width 100%
+	box-sizing border-box
+	font-size 1.1em
+	line-height 1.1em
+	color #fff
 
-    .container
-        padding 1em 
-        margin 0 5%
-        background-color rgba(0,0,0,0.5)
-        display inline-block
-        border-radius 30px
+	.container
+		padding 1em 
+		margin 0 5%
+		background-color rgba(0,0,0,0.5)
+		display inline-block
+		border-radius 30px
 
-    img#logo,
-    a,
-    div.desc
-        float left
+	img#logo,
+	a,
+	div.desc
+		float left
 
 
-    img#logo
-        height 120px
+	img#logo
+		height 120px
 
-    div.desc
-        margin 0 0 0 2em
-        width 45%
+	div.desc
+		margin 0 0 0 2em
+		width 45%
 
-        p
-            margin 0 0 0.2em
-            clear both
+		p
+			margin 0 0 0.2em
+			clear both
 
-    h1
-        font-size 1.2em
-        margin 0 0 .5em
+	h1
+		font-size 1.2em
+		margin 0 0 .5em
 
-    h2
-        font-size 1.1em
-        margin 0 0 0.5em
+	h2
+		font-size 1.1em
+		margin 0 0 0.5em
 
-    div.shop
-        width 20%
-        font-weight bold
-        font-size 1.1em
-        text-align center
-        float right
-        line-height 1.3em
+	div.social,
+	div.shop
+		width 20%
+		text-align center
+		float right
+	
+	div.social
+		ul
+			li
+				margin 0 1.5em
 
-        a 
-            color link-color
+				a:hover
+					opacity 0.8
 
-            &:hover
-                text-shadow 0 .1em .2em yellow
 
-        span
-            display block
+	div.shop
+		font-weight bold
+		font-size 1.1em
+		line-height 1.3em
 
-        img
-            max-width 100%
-            margin 0.3em 0 0
+		a 
+			color link-color
+
+			&:hover
+				text-shadow 0 .1em .2em yellow
+
+		span
+			display block
+
+		img
+			max-width 100%
+			margin 0.3em 0 0
+
 
 #video
-    #player
-        position relative
-        padding-bottom 75%
-        height 0px
-        margin 0px auto
+	#player
+		position relative
+		padding-bottom 75%
+		height 0px
+		margin 0px auto
 
-        iframe
-            position absolute
-            top 0px
-            left 0px
-            width 100%
-            height 100%
+		iframe
+			position absolute
+			top 0px
+			left 0px
+			width 100%
+			height 100%
 
-    text-align center
-    background-color video-bg-color
+	text-align center
+	background-color video-bg-color
 
-    p
-        margin 1em 0 0
+	p
+		margin 1em 0 0
 
 
 
 #upload
-    background-color upload-bg-color
+	background-color upload-bg-color
 
-    #images
-        width 80%
-        text-align center
-        margin 0 auto
+	#images
+		width 80%
+		text-align center
+		margin 0 auto
 
-    .btn
-        background-color darken(upload-bg-color, 40%)
+	.btn
+		background-color darken(upload-bg-color, 40%)
 
-    a
-        color #ffff00
+	a
+		color #ffff00
 
-        &.btn
-            color #fff
+		&.btn
+			color #fff
 
 .gallery
-    ul
-        display inline-block
-        width 100%
-        margin 0 auto
+	ul
+		display inline-block
+		width 100%
+		margin 0 auto
 
-        li
-            display inline-block
-            margin 0 1%
-            width 31%
+		li
+			display inline-block
+			margin 0 1%
+			width 31%
 
-        img
-            border-radius 100%
-            max-width 100%
-            max-height 100%
-            width 100%
-            height 100%
-    
-    &.first
-        background-color gallery-bg-color-first
-    &.second
-        background-color gallery-bg-color-second
-    &.third
-        background-color gallery-bg-color-third
-    &.fourth
-        background-color gallery-bg-color-fourth
+		img
+			border-radius 100%
+			max-width 100%
+			max-height 100%
+			width 100%
+			height 100%
+	
+	&.first
+		background-color gallery-bg-color-first
+	&.second
+		background-color gallery-bg-color-second
+	&.third
+		background-color gallery-bg-color-third
+	&.fourth
+		background-color gallery-bg-color-fourth
 
 #program 
-    background-color program-bg-color
-    text-align center
+	background-color program-bg-color
+	text-align center
 
-    .btn
-        background-color program-bg-color
-        background-gradient( program-bg-color, darken( program-bg-color, btn-bg-color-darken ) )
+	.btn
+		background-color program-bg-color
+		background-gradient( program-bg-color, darken( program-bg-color, btn-bg-color-darken ) )
 
 #technical
-    color #000
-    background-color technical-bg-color
+	color #000
+	background-color technical-bg-color
 
-    .container
-        margin 0 2em 0 0
+	.container
+		margin 0 2em 0 0
 
-    
-    table
-        border 1px solid darken(technical-bg-color, 35%)
-        text-align left
-        width 100%
+	
+	table
+		border 1px solid darken(technical-bg-color, 35%)
+		text-align left
+		width 100%
 
-        thead tr 
-            background-color darken(technical-bg-color, 25%)
+		thead tr 
+			background-color darken(technical-bg-color, 25%)
  
-        tr
-            line-height 1.5
+		tr
+			line-height 1.5
 
-        td, th
-            border 1px solid darken(technical-bg-color, 35%)
-            padding 0.2em
+		td, th
+			border 1px solid darken(technical-bg-color, 35%)
+			padding 0.2em
 
-        a
-            color #ffff00
+		a
+			color #ffff00
 
-            &:hover
-                color darken(technical-bg-color, 80%)
+			&:hover
+				color darken(technical-bg-color, 80%)
 
 
 #contact
-    background-color contact-bg-color
-    text-align center
+	background-color contact-bg-color
+	text-align center
 
 footer.main
-    text-align center
-    padding 1.5em 0 .5em
+	text-align center
+	padding 1.5em 0 .5em
 
-    div
-        height 100%
-        line-height 3em
-        vertical-align top
+	div
+		height 100%
+		line-height 3em
+		vertical-align top
 
-        a, span 
-            vertical-align top
+		a, span 
+			vertical-align top
 
-        img
-            padding 0 0.5em
-    #aws img
-        height 60px
+		img
+			padding 0 0.5em
+	#aws img
+		height 60px
 
 #contact,
 footer.main
-    a
-        color upload-bg-color
+	a
+		color upload-bg-color
 
-        &:hover
-            color #000
+		&:hover
+			color #000
+

@@ -10,9 +10,9 @@ block content
 
 	section.gallery.first
 		ul
-			li: img(src=img_folder + "magic_icons/giraffe.jpg")
-			li: img(src=img_folder + "magic_icons/1up_green.jpg")
-			li: img(src=img_folder + "magic_icons/heart.jpg")
+			li: img(src=img_dir + "magic_icons/giraffe.jpg")
+			li: img(src=img_dir + "magic_icons/1up_green.jpg")
+			li: img(src=img_dir + "magic_icons/heart.jpg")
 
 	section#upload
 		div#images
@@ -26,13 +26,13 @@ block content
 			p.btns
 				a.btn(href=root +"bitmap.html") Bitmap Converter
 				a.btn(href=root + "font.html") Font Converter
-				a.btn(href=static_folder + "/UserManualMagicShifter.pdf") MagicShifter Manual
+				a.btn(href=static_dir + "/UserManualMagicShifter.pdf") MagicShifter Manual
 		
 	section.gallery.second
 		ul
-			li: img(src=img_folder + "magic_icons/space_invader.jpg")
-			li: img(src=img_folder + "magic_icons/mario.jpg")
-			li: img(src=img_folder + "magic_icons/nyan_cat.jpg")
+			li: img(src=img_dir + "magic_icons/space_invader.jpg")
+			li: img(src=img_dir + "magic_icons/mario.jpg")
+			li: img(src=img_dir + "magic_icons/nyan_cat.jpg")
 
 	section#program
 		div.container
@@ -43,13 +43,13 @@ block content
 				a.btn(href="https://bitbucket.org/wizard23/magicshifteros" target="utopia") Download it!
 			p
 				a(href="http://www.gnu.org/licenses/quick-guide-gplv3.html" target="gnutopia")
-					img(src=img_folder + "gnugpl.png" alt="Gnu GPL")
+					img(src=img_dir + "gnugpl.png" alt="Gnu GPL")
 			
 	section.gallery.third
 		ul
-			li: img(src=img_folder + "magic_icons/29c3.jpg")
-			li: img(src=img_folder + "magic_icons/pointer.jpg")
-			li: img(src=img_folder + "magic_icons/dragon.jpg")
+			li: img(src=img_dir + "magic_icons/29c3.jpg")
+			li: img(src=img_dir + "magic_icons/pointer.jpg")
+			li: img(src=img_dir + "magic_icons/dragon.jpg")
 
 	section#technical
 		div.container
@@ -64,7 +64,7 @@ block content
 					tr
 						td 16 / RGB LEDS
 						td CLV6A-FKB-CK1P1G1BB7R3R3
-						td: a(href=static_folder + "datasheets/SM1206UV-395-IL.pdf") PDF
+						td: a(href=static_dir + "datasheets/SM1206UV-395-IL.pdf") PDF
 					tr
 						td UV LED
 						td 
@@ -76,30 +76,30 @@ block content
 					tr
 						td High Power Infrafred LED
 						td HIR11-21C/L11/TR8
-						td: a(href=static_folder + "datasheets/SFH464X.pdf") PDF
+						td: a(href=static_dir + "datasheets/SFH464X.pdf") PDF
 					tr
 						td 3 Axis Accelerometer
 						td MMA8452QT
-						td: a(href=static_folder + "datasheets/MMA8451Q.pdf") PDF
+						td: a(href=static_dir + "datasheets/MMA8451Q.pdf") PDF
 					tr
 						td uC, Atmega32U4-MU
 						td: atmega32U4-MU
-						td: a(href=static_folder + "datasheets/atmega32u4.pdf") PDF
+						td: a(href=static_dir + "datasheets/atmega32u4.pdf") PDF
 					tr
 						td SPI EEPROM 1MBt
 						td SST25VF080B-80-4I-SAE
-						td: a(href=static_folder + "datasheets/EEPROM8Mbit.pdf") PDF
+						td: a(href=static_dir + "datasheets/EEPROM8Mbit.pdf") PDF
 					tr
 						td I2CTM Real-Time Clock
 						td MCP79410-I/MS
-						td: a(href=static_folder + "datasheets/MCP7941X.pdf") PDF
+						td: a(href=static_dir + "datasheets/MCP7941X.pdf") PDF
 						
 
 	section.gallery.fourth
 		ul
-			li: img(src=img_folder + "magic_icons/circles.jpg") 
-			li: img(src=img_folder + "magic_icons/smiley.jpg") 
-			li: img(src=img_folder + "magic_icons/shadows.jpg")
+			li: img(src=img_dir + "magic_icons/circles.jpg") 
+			li: img(src=img_dir + "magic_icons/smiley.jpg") 
+			li: img(src=img_dir + "magic_icons/shadows.jpg")
 
 	section#contact
 		h2 Questions? Just contact us!
@@ -117,9 +117,9 @@ block content
 			a(href="https://metalab.at/wiki/Benutzer:Wizard23" target="wizard23") wizard23
 			| @ 
 			a(href="http://www.metalab.at" target="metalab")
-				img(src=img_folder + "metalab.png" alt="Metalab")
+				img(src=img_dir + "metalab.png" alt="Metalab")
 		
 		div#aws
 			span supported by 
 			a(href="http://www.awsg.at/kreativwirtschaft" target="aws")
-				img(src=img_folder + "aws-logo.jpg")
+				img(src=img_dir + "aws-logo.jpg")

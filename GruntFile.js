@@ -1,11 +1,39 @@
 module.exports = function(grunt) {
-	var defaultRoot = grunt.option('deploy') ? "/" : 'file://' + process.cwd() + '/build/'
-	  , rootPathUrl = grunt.option( "rootPathUrl" ) || defaultRoot
+	var defaultRoot = grunt.option('deploy') ? '/' : 'file://' + process.cwd() + '/build/'
+	  , rootPathUrl = grunt.option( 'rootPathUrl' ) || defaultRoot
 	  , root = rootPathUrl
-	  , static_folder = root + 'static/'
-	  , img_folder = static_folder + 'img/';
+	  , static_dir = root + 'static/'
+	  , img_dir = static_dir + 'img/'
+	  , social_dir = img_dir + 'social_icons/'
+	  , social_accounts = [
+			{
+				link: 'http://magicshifter.soup.io/'
+			  , img: social_dir + 'soup.png'
+			  , alt: 'soup'
+			  , title: 'repost Magicshifter on soup'
+			  , visible: true
+			},
+			{
+				link: 'https://twitter.com/magicshifter'
+			  , img: social_dir + '/twitter.png'
+			  , alt: 'twitter'
+			  , title: 'follow Magicshifter on twitter'
+			  , visible: true
+			},
+			{
+				link: 'https://www.facebook.com/magicshifter/'
+			  , img: social_dir + 'facebook.png'
+			  , alt: 'facebook'
+			  , title: 'like magicshifter on facebook'
+			  , visible: false
+			},
+			{
+				script: '(function(i){var f,s=document.getElementById(i);f=document.createElement("iframe");f.src="//api.flattr.com/button/view/?uid=wizard23&url="+encodeURIComponent(document.URL);f.title="Flattr";f.height=62;f.width=55;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})("fbjnmyd");'
+			  , visible: true
+			}
+	  ];
 
-	console.log("Grunt starting, server root = " + rootPathUrl);
+	console.log('Grunt starting, server root = ' + rootPathUrl);
 
 	// Project configuration.
 	grunt.initConfig({
@@ -13,7 +41,7 @@ module.exports = function(grunt) {
 		stylus: {
 			options: {
 				define: {
-					img_folder: img_folder
+					img_dir: img_dir
 				}
 			},
 			compile: {
@@ -31,10 +59,11 @@ module.exports = function(grunt) {
 			compile: {
 				options: {
 					data: {
-						debug: false,
-						root: root,
-						img_folder: img_folder,
-						static_folder: static_folder
+						debug: false
+					  ,	root: root
+					  ,	img_dir: img_dir
+					  ,	static_dir: static_dir
+					  , social_accounts: social_accounts
 					}
 				},
 				files: {

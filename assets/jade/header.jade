@@ -1,6 +1,6 @@
 header.main
 	div.container
-		a(href="/"): img#logo(src=img_folder + "logo.png", alt="magicshifter")
+		a(href="/"): img#logo(src=img_dir + "logo.png", alt="magicshifter")
 
 		div.desc
 			h1
@@ -12,9 +12,21 @@ header.main
 			p Charge and reprogram it over USB!
 			p
 				| Get one of the limited first batch for 
-				span.bold 99,90 EUR
+				span.bold 99 EUR
 
 		div.shop
 			a(href="http://www.hackerspaceshop.com/magicshifter-pro.html", target="hackerspaceshop")
 				span Get it now @
-				span: img(src=img_folder + "hackerspaceshop.png", alt="hackerspaceshop.com")
+				span: img(src=img_dir + "hackerspaceshop.png", alt="hackerspaceshop.com")
+
+		if social_accounts
+			div.social
+				ul
+					for social in social_accounts
+						if social.visible === true
+							li
+								if social.script
+									script#fbjnmyd!= social.script
+								else
+									a(href=social.link, target="utopia", title=social.title)
+										img(src=social.img, alt=social.alt)
