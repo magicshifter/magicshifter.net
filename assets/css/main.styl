@@ -145,13 +145,17 @@ header.main
 		float right
 	
 	div.social
+		margin 0.5em 0 0
+
 		ul
 			li
-				margin 0 1.5em
+				display inline
 
-				a:hover
+				a
+					float none
+					display inline
+				&:hover
 					opacity 0.8
-
 
 	div.shop
 		font-weight bold
@@ -249,10 +253,6 @@ header.main
 #technical
 	color #000
 	background-color technical-bg-color
-
-	.container
-		margin 0 2em 0 0
-
 	
 	table
 		border 1px solid darken(technical-bg-color, 35%)
