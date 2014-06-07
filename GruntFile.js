@@ -28,7 +28,7 @@ module.exports = function(grunt) {
 			  , visible: false
 			},
 			{
-				link: 'https://flattr.com/submit/auto?user_id=jaeh&url=http%3A%2F%2Fmagicshifter.net'
+				link: 'https://flattr.com/submit/auto?user_id=wizard23&url=http%3A%2F%2Fmagicshifter.net'
 			  , img: social_dir + 'flattr.png'
 			  , alt: "Flattr this"
 			  , title: "Flattr this"
