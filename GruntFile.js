@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 	  , social_dir = img_dir + 'social_icons/'
 	  , social_accounts = [
 			{
-				link: 'http://magicshifter.soup.io/'
+				link: 'http://blog.magicshifter.net/'
 			  , img: social_dir + 'soup.png'
 			  , alt: 'soup'
 			  , title: 'repost Magicshifter on soup'
