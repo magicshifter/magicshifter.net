@@ -24,8 +24,6 @@ gallery-bg-color-second = #ff9d1c
 gallery-bg-color-third = #0097ff
 gallery-bg-color-fourth = #ff9d1c
 
-base-path = 'file:///home/j/dev/magicshifter.net/build/'
-
 bg-image(image)
   background: url(img_dir + image)
 
@@ -58,18 +56,15 @@ section
 		padding 0 0 0.7em
 		text-align center
 
+a
+	max-width 100%
+
 a, a:visited
 	text-decoration none
 	color link-color
 
 	&:hover
 		color #000
-
-p
-	margin 0 0 0.5em
-
-	&.btns 
-		padding 1em 0 0
 
 a.btn
 	font-weight bold
@@ -96,6 +91,11 @@ a.btn
 	&:hover
 		background-position
 
+p
+	margin 0 0 0.5em
+
+	&.btns 
+		padding 1em 0 0
 
 header.main
 	bg-image('magicshifter.jpg')
