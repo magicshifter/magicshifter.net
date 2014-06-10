@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 			  , img: social_dir + 'facebook.png'
 			  , alt: 'facebook'
 			  , title: 'like magicshifter on facebook'
-			  , visible: false
+			  , visible: true
 			},
 			{
 				link: 'https://flattr.com/submit/auto?user_id=wizard23&url=http%3A%2F%2Fmagicshifter.net'
