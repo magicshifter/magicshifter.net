@@ -46,4 +46,4 @@ block content
 			div.field
 				input(type="button", id="extractFont", value="extract font", onclick="CreateFont(function(canvas, startChar, endChar, fontWidth, fontHeight) {  ExtractPixelFont(document.getElementById('canvasBuffer'), canvas, startChar, endChar, fontWidth, fontHeight); }, FONT_START_CHAR, FONT_END_CHAR, FONT_CHAR_WIDTH, FONT_CHAR_HEIGHT);")
 
-	script(src=root + "js/magic.js")
+	script(src=static_dir + "js/magic.js")
