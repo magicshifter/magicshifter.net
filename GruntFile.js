@@ -6,34 +6,48 @@ module.exports = function(grunt) {
 	  , img_dir = static_dir + 'img/'
 	  , social_dir = img_dir + 'social_icons/'
 	  , social_accounts = [
-			{
-				link: 'http://blog.magicshifter.net/'
-			  , img: social_dir + 'soup.png'
-			  , alt: 'soup'
-			  , title: 'repost Magicshifter on soup'
-			  , visible: true
-			},
-			{
-				link: 'https://twitter.com/magicshifter'
-			  , img: social_dir + '/twitter.png'
-			  , alt: 'twitter'
-			  , title: 'follow Magicshifter on twitter'
-			  , visible: true
-			},
-			{
-				link: 'https://www.facebook.com/magicshifter/'
-			  , img: social_dir + 'facebook.png'
-			  , alt: 'facebook'
-			  , title: 'like magicshifter on facebook'
-			  , visible: true
-			},
-			{
-				link: 'https://flattr.com/submit/auto?user_id=wizard23&url=http%3A%2F%2Fmagicshifter.net'
-			  , img: social_dir + 'flattr.png'
-			  , alt: "Flattr this"
-			  , title: "Flattr this"
-			  , visible: true
-			}
+		{
+		    link: 'http://blog.magicshifter.net/'
+		  , img: social_dir + 'soup.png'
+		  , alt: 'soup'
+		  , title: 'repost Magicshifter on soup'
+		  , visible: true
+		},
+		{
+		    link: 'https://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/'
+		  , img: social_dir + 'flickr.png'
+		  , alt: 'MagicShifter picture blog on Flickr'
+		  , title: 'MagicShifter picture blog on Flickr'
+		  , visible: true
+		},
+		{
+		    link: 'http://www.reddit.com/r/MagicShifter/'
+		  , img: social_dir + 'reddit.png'
+		  , alt: 'MagicShifter Forum on Reddit'
+		  , title: 'MagicShifter Forum on Reddit'
+		  , visible: true
+		},
+		{
+		    link: 'https://twitter.com/magicshifter'
+		  , img: social_dir + '/twitter.png'
+		  , alt: 'twitter'
+		  , title: 'follow Magicshifter on twitter'
+		  , visible: true
+		},
+		{
+		    link: 'https://www.facebook.com/magicshifter/'
+		  , img: social_dir + 'facebook.png'
+		  , alt: 'facebook'
+		  , title: 'like magicshifter on facebook'
+		  , visible: true
+		},
+		{
+		    link: 'https://flattr.com/submit/auto?user_id=wizard23&url=http%3A%2F%2Fmagicshifter.net'
+		  , img: social_dir + 'flattr.png'
+		  , alt: 'Flattr this'
+		  , title: 'Flattr this'
+		  , visible: true
+		}
 	  ];
 
 	console.log('Grunt starting, server root = ' + rootPathUrl);
