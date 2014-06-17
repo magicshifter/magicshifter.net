@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
 	var defaultRoot = grunt.option('deploy') ? '/' : 'file://' + process.cwd() + '/build/'
 	  , rootPathUrl = grunt.option( 'rootPathUrl' ) || defaultRoot
-	  , root = rootPathUrl
-	  , static_dir = root + 'static/'
+	  , root_dir = rootPathUrl
+	  , static_dir = root_dir + 'static/'
 	  , img_dir = static_dir + 'img/'
 	  , social_dir = img_dir + 'social_icons/'
 	  , social_accounts = [
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 				options: {
 					data: {
 						debug: false
-					  ,	root: root
+					  ,	root_dir: root_dir
 					  ,	img_dir: img_dir
 					  ,	static_dir: static_dir
 					  , social_accounts: social_accounts
