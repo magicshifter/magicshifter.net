@@ -5,3 +5,4 @@ old/*
 *.sublime-workspace
 node_modules
 build
+.DS_Store
