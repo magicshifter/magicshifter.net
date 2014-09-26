@@ -7,5 +7,9 @@
 		"grunt-contrib-jade": "~0.12.0",
 		"grunt-contrib-concat": "~0.4.0",
 		"grunt-contrib-copy": "~0.5.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/magicshifter/magicshifter.net.git"
 	}
 }
