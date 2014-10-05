@@ -94,7 +94,7 @@ a.btn
 p
 	margin 0 0 0.5em
 
-	&.btns 
+	&.btns
 		padding 1em 0 0
 
 header.main
@@ -107,7 +107,7 @@ header.main
 	color #fff
 
 	.container
-		padding 1em 
+		padding 1em
 		margin 0 5%
 		background-color rgba(0,0,0,0.5)
 		display inline-block
@@ -147,7 +147,7 @@ header.main
 		width 30%
 		text-align center
 		float right
-	
+
 	div.social
 		width 100%
 		margin 0.5em 0 0
@@ -169,7 +169,7 @@ header.main
 		font-size 1.1em
 		line-height 1.3em
 
-		a 
+		a
 			color link-color
 
 			&:hover
@@ -188,17 +188,18 @@ header.main
 	background-color video-bg-color
 
 	#player
-		padding-bottom 75%
-		height 0px
-		margin 0px auto
+    position relative
+    padding-bottom 56.25%
+    padding-top 30px
+    height 0px
+    overflow hidden
 
 		iframe
-			position relative
-			top 0px
-			left 0px
-			width 100%
-			height 100%
-			max-height 80%
+      position absolute
+      top 0px
+      left 0px
+      width 100%
+      height 100%
 
 	p
 		margin 1em 0 0
@@ -240,7 +241,7 @@ header.main
 			max-height 100%
 			width 100%
 			height 100%
-	
+
 	&.first
 		background-color gallery-bg-color-first
 	&.second
@@ -250,7 +251,7 @@ header.main
 	&.fourth
 		background-color gallery-bg-color-fourth
 
-#program 
+#program
 	background-color program-bg-color
 	text-align center
 
@@ -261,15 +262,15 @@ header.main
 #technical
 	color #000
 	background-color technical-bg-color
-	
+
 	table
 		border 1px solid darken(technical-bg-color, 35%)
 		text-align left
 		width 100%
 
-		thead tr 
+		thead tr
 			background-color darken(technical-bg-color, 25%)
- 
+
 		tr
 			line-height 1.5
 
@@ -297,7 +298,7 @@ footer.main
 		line-height 3em
 		vertical-align top
 
-		a, span 
+		a, span
 			vertical-align top
 
 		img
@@ -312,4 +313,3 @@ footer.main
 
 		&:hover
 			color #000
-
