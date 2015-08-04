@@ -13,7 +13,6 @@ install:
 	npm install
 
 uninstall:
-	sudo npm remove -g grunt-cli
 	#install needed packages for grunt
 	rm -rf ./node_modules
 	rm -rf ./build
