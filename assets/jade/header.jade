@@ -2,31 +2,10 @@ header.main
 	div.container
 		a(href="/"): img#logo(src=img_dir + "logo.png" alt="magicshifter")
 
-		div.desc
-			h1
-				span MagicShifter
-				span  - 
-				span the Open Source Magic Lamp!
-
-			p It's an open source hardware gadget for lighting, gaming, and POV applications.
-			p Charge and reprogram it over USB!
-			p 
-				| Get one of the limited first batch 
-				a(href="http://www.hackerspaceshop.com/magicshifter.html") @hackerspaceshop
-
-		div.shop
-			a(href="http://www.hackerspaceshop.com/magicshifter.html" target="hackerspaceshop")
-				span Get it now @
-				span: img(src=img_dir + "hackerspaceshop.png" alt="hackerspaceshop.com")
-
-		if social_accounts
-			div.social
+		if menu_items
+			nav.main
 				ul
-					for social in social_accounts
-						if social.visible === true
+					for item in menu_items
+						if item.href && item.text
 							li
-								if social.script
-									script#fbjnmyd!= social.script
-								else
-									a(href=social.link target="utopia" title=social.title)
-										img(src=social.img alt=social.alt height="50px" width="50px")
+								a(href=item.href)= item.text
