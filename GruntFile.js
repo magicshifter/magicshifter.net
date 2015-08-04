@@ -6,48 +6,57 @@ module.exports = function(grunt) {
 	  , img_dir = static_dir + 'img/'
 	  , social_dir = img_dir + 'social_icons/'
 	  , social_accounts = [
-		{
-		    link: 'http://blog.magicshifter.net/'
-		  , img: social_dir + 'soup.png'
-		  , alt: 'soup'
-		  , title: 'repost Magicshifter on soup'
-		  , visible: true
-		},
-		{
-		    link: 'https://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/'
-		  , img: social_dir + 'flickr.png'
-		  , alt: 'MagicShifter picture blog on Flickr'
-		  , title: 'MagicShifter picture blog on Flickr'
-		  , visible: true
-		},
-		{
-		    link: 'http://www.reddit.com/r/MagicShifter/'
-		  , img: social_dir + 'reddit.png'
-		  , alt: 'MagicShifter Forum on Reddit'
-		  , title: 'MagicShifter Forum on Reddit'
-		  , visible: true
-		},
-		{
-		    link: 'https://twitter.com/magicshifter'
-		  , img: social_dir + '/twitter.png'
-		  , alt: 'twitter'
-		  , title: 'follow Magicshifter on twitter'
-		  , visible: true
-		},
-		{
-		    link: 'https://www.facebook.com/magicshifter/'
-		  , img: social_dir + 'facebook.png'
-		  , alt: 'facebook'
-		  , title: 'like magicshifter on facebook'
-		  , visible: true
-		},
-		{
-		    link: 'https://flattr.com/submit/auto?user_id=wizard23&url=http%3A%2F%2Fmagicshifter.net'
-		  , img: social_dir + 'flattr.png'
-		  , alt: 'Flattr this'
-		  , title: 'Flattr this'
-		  , visible: true
-		}
+			{
+			    link: 'http://blog.magicshifter.net/'
+			  , img: social_dir + 'soup.png'
+			  , alt: 'soup'
+			  , title: 'repost Magicshifter on soup'
+			  , visible: true
+			},
+			{
+			    link: 'https://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/'
+			  , img: social_dir + 'flickr.png'
+			  , alt: 'MagicShifter picture blog on Flickr'
+			  , title: 'MagicShifter picture blog on Flickr'
+			  , visible: true
+			},
+			{
+			    link: 'http://www.reddit.com/r/MagicShifter/'
+			  , img: social_dir + 'reddit.png'
+			  , alt: 'MagicShifter Forum on Reddit'
+			  , title: 'MagicShifter Forum on Reddit'
+			  , visible: true
+			},
+			{
+			    link: 'https://twitter.com/magicshifter'
+			  , img: social_dir + '/twitter.png'
+			  , alt: 'twitter'
+			  , title: 'follow Magicshifter on twitter'
+			  , visible: true
+			},
+			{
+			    link: 'https://www.facebook.com/magicshifter/'
+			  , img: social_dir + 'facebook.png'
+			  , alt: 'facebook'
+			  , title: 'like magicshifter on facebook'
+			  , visible: true
+			},
+			{
+			    link: 'https://flattr.com/submit/auto?user_id=wizard23&url=http%3A%2F%2Fmagicshifter.net'
+			  , img: social_dir + 'flattr.png'
+			  , alt: 'Flattr this'
+			  , title: 'Flattr this'
+			  , visible: true
+			}
+	  ]
+	  , menu_items = [
+	  	{href: '#about', text: 'about'},
+	  	{href: '#video', text: 'video'},
+	  	{href: '#upload', text: 'upload'},
+	  	{href: '#program', text: 'program'},
+	  	{href: '#features', text: 'features'},
+	  	{href: '#questions', text: 'contact'},
+
 	  ];
 
 	console.log('Grunt starting, server root = ' + rootPathUrl);
@@ -59,14 +68,15 @@ module.exports = function(grunt) {
 			options: {
 				define: {
 					img_dir: img_dir
-				}
+				},
+				pretty: true,
 			},
 			compile: {
 				files: {
 					// compile and concat into single file
 					'build/static/css/main.css': [
-						'assets/css/reset.styl', 
-						'assets/css/main.styl', 
+						'assets/css/reset.styl',
+						'assets/css/main.styl',
 						'assets/css/custom-widths.styl'
 					]
 				}
@@ -77,11 +87,12 @@ module.exports = function(grunt) {
 				options: {
 					pretty: true,
 					data: {
-						debug: false
+							debug: false
 					  ,	root_dir: root_dir
 					  ,	img_dir: img_dir
 					  ,	static_dir: static_dir
 					  , social_accounts: social_accounts
+					  , menu_items: menu_items
 					}
 				},
 				files: {
