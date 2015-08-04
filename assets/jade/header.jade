@@ -1,11 +1,11 @@
 header.main
-	div.container
-		a(href="/"): img#logo(src=img_dir + "logo.png" alt="magicshifter")
+  div.container
+    a(href="/"): img#logo(src=img_dir + "logo.png" alt="magicshifter")
 
-		if menu_items
-			nav.main
-				ul
-					for item in menu_items
-						if item.href && item.text
-							li
-								a(href=item.href)= item.text
+    if menu_items
+      nav.main
+        ul
+          for item in menu_items
+            if item.href && item.text
+              li
+                a(href=item.href)= item.text

@@ -4,18 +4,18 @@ magicshifter.net
 the page at magicshifter.net
 
 comes with a makescript
-	
-	//install needed dependencies (grunt and grunt-contrib packages)
-	make install
 
-	//make build for local preview (rootPath is set to "file:///" + process.cwd()  by default)
-	make
+  //install needed dependencies (grunt and grunt-contrib packages)
+  make install
 
-	//make build for server deployment (rootPath is set to "/" by default)
-	make deploy
+  //make build for local preview (rootPath is set to "file:///" + process.cwd()  by default)
+  make
 
-	//delete the build directory
-	make clean
+  //make build for server deployment (rootPath is set to "/" by default)
+  make deploy
 
-	//delete node_modules, grunt-cli
-	make uninstall
+  //delete the build directory
+  make clean
+
+  //delete node_modules, grunt-cli
+  make uninstall
