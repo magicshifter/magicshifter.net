@@ -107,8 +107,8 @@ module.exports = function(grunt) {
         separator: ';',
       },
       basic: {
-        src: ['assets/js/ga.js'],
-        dest: 'build/static/js/ga.js',
+        src: ['assets/js/ga.js', 'assets/js/header.js'],
+        dest: 'build/static/js/ms.js',
       },
       extras: {
         src: [
