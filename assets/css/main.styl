@@ -113,12 +113,34 @@ header.main
   line-height 1.1em
   width 100%
   height 82px
-  padding .5em 0 0 .5em
+  transition padding .5s
+
+  &.big
+    padding .5em 0 0 .5em
+
+    .container
+      background-color transparent
+
+    #logo
+      height 60px
+
+    nav
+      margin 1.2em 0 0
+
+
+  .container
+    width 100%
+    z-index 1
+    position fixed
+    padding .1em .5em 0
+    background-color rgba(0, 0, 0, .5)
+    transition background-color .5s
 
   nav
     float right
     min-width 50%
-    margin 1.2em 0 0
+    margin .2em 0 0
+    transition margin .5s
 
     ul li
       float left
@@ -133,7 +155,8 @@ header.main
       text-decoration underline
 
   img#logo
-    height 70px
+    height 30px
+    transition height .5s
 
 #social
   background-color social-bg-color
