@@ -1,58 +1,4 @@
-$max-page-width = 900px
-
-$orange = #ff9d1c
-$blue = #0097ff
-$green = #01b001
-$purple = #cc5adb
-$yellow = #ffff00
-$white = #fff
-
-
-$header-bg-color = rgba(0,0,0,0.6)
-
-$social-bg-color = $yellow
-
-$about-bg-color = $orange
-
-$video-bg-color = $purple
-
-$upload-bg-color = blue
-
-$contact-bg-color = $yellow
-
-$program-bg-color = $purple
-
-$technical-bg-color = $green
-
-$footer-bg-color = $white
-
-$btn-bg-color = #004270
-$btn-bg-color-hover = #002d4c
-$btn-bg-color-darken = 30%
-
-$text-color = #333
-$link-color = $white
-
-gallery-bg-color-first = $yellow
-gallery-bg-color-second = $orange
-gallery-bg-color-third = $blue
-gallery-bg-color-fourth = $orange
-gallery-bg-color-fifth = $blue
-
-bg-image(image)
-  background-image: url(img_dir + image)
-
-box-shadow(value)
-  -webkit-box-shadow value
-  -moz-box-shadow value
-  box-shadow value
-
-background-gradient (color, color-dark)
-  background-image -webkit-gradient( linear, 0 0, 0 100%,from( color ), to( color-dark ) )
-  background-image -webkit-linear-gradient( top, color, color-dark )
-  background-image -o-linear-gradient( top, color, color-dark )
-  background-image -moz-linear-gradient( top, color, color-dark )
-  background-image linear-gradient( top, color, color-dark )
+@import variables
 
 *
   box-sizing border-box
@@ -88,15 +34,15 @@ section
         width 100%
 
     &.first
-      background-color gallery-bg-color-first
+      background-color $gallery-bg-color-first
     &.second
-      background-color gallery-bg-color-second
+      background-color $gallery-bg-color-second
     &.third
-      background-color gallery-bg-color-third
+      background-color $gallery-bg-color-third
     &.fourth
-      background-color gallery-bg-color-fourth
+      background-color $gallery-bg-color-fourth
     &.fifth
-      background-color gallery-bg-color-fifth
+      background-color $gallery-bg-color-fifth
 
   &#social
     padding .5em 5%
@@ -144,7 +90,7 @@ a.btn
     background-position
 
 p
-  margin 0 0 0.5em
+  margin 0 0 .5em
 
   &.btns
     padding 1em 0 0
@@ -255,13 +201,13 @@ header.main
   ul
     li
       display inline-block
-      margin 0 0.5em
+      margin 0 .5em
 
       a
         display inline
         float none
       &:hover
-        opacity 0.8
+        opacity .8
 
 #about
   background-color $about-bg-color
@@ -335,7 +281,7 @@ header.main
 
     td, th
       border 1px solid darken($technical-bg-color, 35%)
-      padding 0.2em
+      padding .2em
 
     a
       color $yellow
@@ -360,7 +306,7 @@ footer.main
       vertical-align top
 
     img
-      padding 0 0.5em
+      padding 0 .5em
   #aws img
     height 60px
 
