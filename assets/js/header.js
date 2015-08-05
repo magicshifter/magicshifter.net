@@ -20,9 +20,13 @@
   function menuToggleClickHandler(e) {
     nav.classList.toggle('show');
 
-    document.body.addEventListener('click', menuToggleClickHandler);
+    if (e.currentTarget.className.indexOf('menu-toggle') > -1) {
+      document.body.addEventListener('click', menuToggleClickHandler);
+    } else {
+      menuToggle.addEventListener('click', menuToggleClickHandler);
+    }
 
-    e.target.removeEventListener('click');
+    e.currentTarget.removeEventListener('click', menuToggleClickHandler);
 
     e.stopPropagation();
     return false;
