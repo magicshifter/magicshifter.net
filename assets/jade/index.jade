@@ -1,53 +1,63 @@
 extends layout.jade
 
 block content
-  section#social
-    if social_accounts
-      ul
-        for social in social_accounts
-          if social.visible === true
-            li
-              a(href=social.link target="utopia" title=social.title)
-                img(src=social.img alt=social.alt height="30px" width="30px")
-
 
   section#about
-    h1
+    div.container
       img(src=img_dir + 'logo-about.png')
-      span  the Open Source Magic Lamp!
+      h1
+        span  the Open Source Magic Lamp!
 
-    p It's an open source hardware gadget for lighting, gaming, and POV applications.
-    p Charge and reprogram it over USB!
-    p
-      | Get one of the limited first batch:
+      p It's an open source hardware gadget for lighting, gaming, and POV applications.
+      p Charge and reprogram it over USB!
+      p
+        | Get one of the limited first batch:
 
-    div.shop
-      a(
-        href="http://www.hackerspaceshop.com/magicshifter.html"
-        target="hackerspaceshop"
-      )
-        img(src=img_dir + "hackerspaceshop.png" alt="hackerspaceshop.com")
+      div.shop
+        a(
+          href="http://www.hackerspaceshop.com/magicshifter.html"
+          target="hackerspaceshop"
+        )
+          img(src=img_dir + "hackerspaceshop.png" alt="hackerspaceshop.com")
+
+  section#social
+    div.container
+      if social_accounts
+        ul
+          for social in social_accounts
+            if social.visible === true
+              li
+                a(href=social.link target="utopia" title=social.title)
+                  img(src=social.img alt=social.alt height="30px" width="30px")
+
 
   section#video
-    h2 The MagicShifter Video!
+    div.container
+      h2 The MagicShifter Video!
 
-    div#player: iframe(src="https://www.youtube.com/embed/0MjIy2lzaDo" frameborder="0" allowfullscreen="allowfullscreen")
+      div#player: iframe(src="https://www.youtube.com/embed/0MjIy2lzaDo" frameborder="0" allowfullscreen="allowfullscreen")
 
-    p Watch this video to learn more about the features and sensors and how to use the MagicShifter.
+      p Watch this video to learn more about the features and sensors and how to use the MagicShifter.
 
   section.gallery.first
-    ul
-      li: img(src=img_dir + "magic_icons/giraffe.jpg")
-      li: img(src=img_dir + "magic_icons/1up_green.jpg")
-      li: img(src=img_dir + "magic_icons/heart.jpg")
+    div.container
+      ul
+        li
+          span.girafe
+        li
+          span.oneup
+        li
+          span.heart
 
   section#upload
-    div#images
+    div.container#images
       h2 Upload your own images!
       p There is a webapp (runs offline too) to convert your own images to display them on the MagicShifter. You even can create animations if you like.
       p
         | Find more examples in the
-        a(href="http://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/") picture blog
+        a.textflow(
+          href="http://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/"
+        ) picture blog
         | on flickr.
 
       p.btns
@@ -57,10 +67,14 @@ block content
         a.btn(href="https://docs.google.com/document/d/1_cqh2J4C_Npqz5KXsosdRo691K8Sucw97ZeopUi3K8k/", target="gdocs") MagicShifter Manual (google docs)
 
   section.gallery.second
-    ul
-      li: img(src=img_dir + "magic_icons/space_invader.jpg")
-      li: img(src=img_dir + "magic_icons/mario.jpg")
-      li: img(src=img_dir + "magic_icons/nyan_cat.jpg")
+    div.container
+      ul
+        li
+          span.invader
+        li
+          span.mario
+        li
+          span.nyan
 
   section#program
     div.container
@@ -74,10 +88,14 @@ block content
           img(src=img_dir + "gnugpl.png" alt="Gnu GPL")
 
   section.gallery.third
-    ul
-      li: img(src=img_dir + "magic_icons/29c3.jpg")
-      li: img(src=img_dir + "magic_icons/pointer.jpg")
-      li: img(src=img_dir + "magic_icons/dragon.jpg")
+    div.container
+      ul
+        li
+          span.ccc29
+        li
+          span.cursor
+        li
+          span.bubblebobble
 
   section#technical
     div.container
@@ -135,24 +153,40 @@ block content
             td: a(href=static_dir + "datasheets/ahk3292.pdf") PDF
 
 
-  section.gallery.fourth
-    ul
-      li: img(src=img_dir + "magic_icons/circles.jpg")
-      li: img(src=img_dir + "magic_icons/smiley.jpg")
-      li: img(src=img_dir + "magic_icons/shadows.jpg")
+  section.gallery.fourth#contact-gallery
+    div.container
+      ul
+        li
+          span.shadows-2
+        li
+          span.goggles
+        li
+          span.shadows
 
   section#contact
-    h2 Questions? Just contact us!
-    p
-      | If you have questions or suggestions just contact us via
-      a.textflow(href="mailto:wizards23+magicshifter@gmail.com") email.
+    div.container
+      h2 Questions? Just contact us!
+      p
+        | If you have questions or suggestions just contact us via
+        a.textflow(href="mailto:wizards23+magicshifter@gmail.com") email.
 
-    p
-      | Found a bug on this homepage?
-      a(href="https://github.com/magicshifter/magicshifter.net" target="utopia") file an issue on github.
+      p
+        | Found a bug on this homepage?
+        a.textflow(href="https://github.com/magicshifter/magicshifter.net" target="utopia") file an issue on github.
+
+  section.gallery.fifth
+    div.container
+      ul
+        li
+          span.circles
+        li
+          span.smiley
+        li
+          span.bike
+
 
   footer.main
-    div#imprint
+    div.container#imprint
       | created by
       a.textflow(
         href="https://metalab.at/wiki/Benutzer:Wizard23"
