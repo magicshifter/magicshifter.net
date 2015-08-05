@@ -1,32 +1,43 @@
-header-bg-color = rgba(0,0,0,0.5)
+$max-page-width = 900px
 
-social-bg-color = #ffff00
+$orange = #ff9d1c
+$blue = #0097ff
+$green = #01b001
+$purple = #cc5adb
+$yellow = #ffff00
+$white = #fff
 
-about-bg-color = #ff9d1c
 
-video-bg-color = #cc5adb
+$header-bg-color = rgba(0,0,0,0.6)
 
-upload-bg-color = #0097ff
+$social-bg-color = $yellow
 
-contact-bg-color = #ffff00
+$about-bg-color = $orange
 
-program-bg-color = #cc5adb
+$video-bg-color = $purple
 
-technical-bg-color = #01b001
+$upload-bg-color = blue
 
-footer-bg-color = #fff
+$contact-bg-color = $yellow
 
-btn-bg-color = #004270
-btn-bg-color-hover = #002d4c
-btn-bg-color-darken = 30%
+$program-bg-color = $purple
 
-text-color = #333
-link-color = #fff
+$technical-bg-color = $green
 
-gallery-bg-color-first = #ffff00
-gallery-bg-color-second = #ff9d1c
-gallery-bg-color-third = #0097ff
-gallery-bg-color-fourth = #ff9d1c
+$footer-bg-color = $white
+
+$btn-bg-color = #004270
+$btn-bg-color-hover = #002d4c
+$btn-bg-color-darken = 30%
+
+$text-color = #333
+$link-color = $white
+
+gallery-bg-color-first = $yellow
+gallery-bg-color-second = $orange
+gallery-bg-color-third = $blue
+gallery-bg-color-fourth = $orange
+gallery-bg-color-fifth = $blue
 
 bg-image(image)
   background-image: url(img_dir + image)
@@ -43,7 +54,6 @@ background-gradient (color, color-dark)
   background-image -moz-linear-gradient( top, color, color-dark )
   background-image linear-gradient( top, color, color-dark )
 
-
 *
   box-sizing border-box
 
@@ -54,11 +64,42 @@ body
 
 section
   clear both
-  padding 2em 10%
+  padding 3.5em 10%
   margin -5px 0 0
 
+  &.gallery
+    padding 2em 0
+    ul
+      display inline-block
+      margin 0 auto
+      text-align center
+      width 100%
+
+      li
+        display inline-block
+        margin 0 1%
+        width 25%
+
+      img
+        border-radius 100%
+        height 100%
+        max-height 100%
+        max-width 100%
+        width 100%
+
+    &.first
+      background-color gallery-bg-color-first
+    &.second
+      background-color gallery-bg-color-second
+    &.third
+      background-color gallery-bg-color-third
+    &.fourth
+      background-color gallery-bg-color-fourth
+    &.fifth
+      background-color gallery-bg-color-fifth
+
   &#social
-    padding .5em 10%
+    padding .5em 5%
 
   h2
     font-size 1.5em
@@ -71,21 +112,24 @@ a
 
 a, a:visited
   text-decoration none
-  color link-color
+  color $link-color
 
   &:hover
     color #000
+
+  &.textflow
+    margin 0 .3em 0
 
 a.btn
   font-weight bold
   padding 6px 12px
   font-size 0.9em
-  color link-color
-  margin 0 1.5em 0 0
-  color #fff
+  color $link-color
+  margin 0 1.5em .5em 0
+  color $white
   text-shadow 0 -1px 0 rgba(0,0,0,0.25)
-  background-color btn-bg-color
-  background-gradient( btn-bg-color darken( btn-bg-color, btn-bg-color-darken ) )
+  background-color $btn-bg-color
+  background-gradient( $btn-bg-color darken( $btn-bg-color, $btn-bg-color-darken ) )
   background-repeat repeat-x
   border-radius 4px
   display inline-block
@@ -105,61 +149,107 @@ p
   &.btns
     padding 1em 0 0
 
+body
+  > article
+    section
+      .container
+        max-width $max-page-width
+        margin 0 auto
+
+  &.js
+    header.main
+      transition padding .2s
+
+      &.big
+        #logo
+          img
+            transition height .4s
+
+      #logo
+        img
+          transition height .2s
+
+      .wrapper
+        transition background-color .2s, height .2s
+
+      nav
+        transition margin .2s, top .2s, right .2s
+
+
 header.main
   background-size cover
   bg-image('header-background.png')
-  color #fff
+  color $white
   font-size 1.1em
+  height 82px
   line-height 1.1em
   width 100%
-  height 82px
-  transition padding .5s
 
-  &.big
-    padding .5em 0 0 .5em
+  .menu-toggle
+    display none
+    float right
+    margin .5em 0
+    width 50px
 
-    .container
-      background-color transparent
+    span
+      background-color $white
+      border-radius 5px
+      display block
+      height 5px
+      margin 5px 0
+      width 100%
 
-    #logo
-      height 60px
+  &.small
+    .wrapper
+      padding .2em .5em 0
+      height 36px
+
+    #logo img
+      height 30px
 
     nav
-      margin 1.2em 0 0
+      margin .2em 0 0
+
+    .menu-toggle
+      width 40px
+      span
+        height 3px
+        margin 3px 0
 
 
-  .container
+  .wrapper
     width 100%
     z-index 1
     position fixed
-    padding .1em .5em 0
-    background-color rgba(0, 0, 0, .5)
-    transition background-color .5s
+    background-color $header-bg-color
+    height 77px
+    padding .6em .5em 0
+
+    .container
+      max-width $max-page-width
+      margin 0 auto
 
   nav
     float right
-    min-width 50%
-    margin .2em 0 0
-    transition margin .5s
+    margin 1.2em 0 0
 
     ul li
       float left
       margin 0 .2em
 
   a
-    &.textflow
-      margin 0 .3em 0
-
     &:hover
-      color #fff
+      color $white
       text-decoration underline
 
-  img#logo
-    height 30px
-    transition height .5s
+  a#logo
+    float left
+
+    img
+      height 60px
 
 #social
-  background-color social-bg-color
+  background-color $social-bg-color
   text-align center
 
   ul
@@ -174,8 +264,8 @@ header.main
         opacity 0.8
 
 #about
-  background-color about-bg-color
-  color #fff
+  background-color $about-bg-color
+  color $white
   text-align center
 
   h1
@@ -183,7 +273,7 @@ header.main
     margin 0 0 1em
 
 #video
-  background-color video-bg-color
+  background-color $video-bg-color
   text-align center
 
   #player
@@ -204,7 +294,7 @@ header.main
     margin 1em 0 0
 
 #upload
-  background-color upload-bg-color
+  background-color $upload-bg-color
 
   #images
     margin 0 auto
@@ -212,77 +302,49 @@ header.main
     width 80%
 
   .btn
-    background-color darken(upload-bg-color, 40%)
+    background-color darken($upload-bg-color, 40%)
 
   a
-    color #ffff00
+    color $yellow
 
     &.btn
-      color #fff
-
-.gallery
-  ul
-    display inline-block
-    margin 0 auto
-    text-align center
-    width 100%
-
-    li
-      display inline-block
-      margin 0 1%
-      width 18%
-
-    img
-      border-radius 100%
-      height 100%
-      max-height 100%
-      max-width 100%
-      width 100%
-
-  &.first
-    background-color gallery-bg-color-first
-  &.second
-    background-color gallery-bg-color-second
-  &.third
-    background-color gallery-bg-color-third
-  &.fourth
-    background-color gallery-bg-color-fourth
+      color $white
 
 #program
-  background-color program-bg-color
+  background-color $program-bg-color
   text-align center
 
   .btn
-    background-color program-bg-color
-    background-gradient( program-bg-color, darken( program-bg-color, btn-bg-color-darken ) )
+    background-color $program-bg-color
+    background-gradient( $program-bg-color, darken( $program-bg-color, $btn-bg-color-darken ) )
 
 #technical
-  background-color technical-bg-color
+  background-color $technical-bg-color
   color #000
 
   table
-    border 1px solid darken(technical-bg-color, 35%)
+    border 1px solid darken($technical-bg-color, 35%)
     text-align left
     width 100%
 
     thead tr
-      background-color darken(technical-bg-color, 25%)
+      background-color darken($technical-bg-color, 25%)
 
     tr
       line-height 1.5
 
     td, th
-      border 1px solid darken(technical-bg-color, 35%)
+      border 1px solid darken($technical-bg-color, 35%)
       padding 0.2em
 
     a
-      color #ffff00
+      color $yellow
 
       &:hover
-        color darken(technical-bg-color, 80%)
+        color darken($technical-bg-color, 80%)
 
 #contact
-  background-color contact-bg-color
+  background-color $contact-bg-color
   text-align center
 
 footer.main
@@ -305,10 +367,56 @@ footer.main
 #contact,
 footer.main
   a
-    color upload-bg-color
+    color $upload-bg-color
 
     &:hover
       color #000
 
     &[target=wizard23]
       margin 0 0 0 .3em
+
+section.gallery
+  ul
+    li
+      height 120px
+      width 120px
+
+      span
+        background-size cover
+        bg-image('magic-icons/icons.jpg')
+        border-radius 100%
+        height 100%
+        width 100%
+        margin 0 auto
+        display block
+
+        &.invader
+          background-position 0 0
+        &.smiley
+          background-position -120px 0
+        &.shadows
+          background-position -240px 0
+        &.cursor
+          background-position -360px 0
+        &.nyan
+          background-position -480px 0
+        &.mario
+          background-position -600px 0
+        &.heart
+          background-position -720px 0
+        &.girafe
+          background-position -840px 0
+        &.bubblebobble
+          background-position -960px 0
+        &.circles
+          background-position -1080px 0
+        &.ccc29
+          background-position -1200px 0
+        &.oneup
+          background-position -1320px 0
+        &.goggles
+          background-position -1440px 0
+        &.shadows-2
+          background-position -1560px 0
+        &.bike
+          background-position -1680px 0
