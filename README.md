@@ -34,3 +34,20 @@ make clean
 make uninstall
 
 ```
+
+
+If make does not make:
+```
+# install needed dependencies
+sudo npm install -g grunt
+npm install
+
+# build for local preview
+# rootPath is set to "file:///" + process.cwd()  by default
+# this allows you to just open the build/index.html file locally
+grunt
+
+# build for server deployment
+grunt --root='/'
+
+```
