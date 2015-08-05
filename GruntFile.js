@@ -28,6 +28,13 @@ module.exports = function(grunt) {
         , visible: true
       },
       {
+          link: 'https://github.com/magicshifter'
+        , img: social_dir + 'github.png'
+        , alt: 'Our Github Organisation'
+        , title: 'We <3 the Octocat'
+        , visible: true
+      },
+      {
           link: 'https://twitter.com/magicshifter'
         , img: social_dir + '/twitter.png'
         , alt: 'twitter'
@@ -47,7 +54,7 @@ module.exports = function(grunt) {
         , alt: 'Flattr this'
         , title: 'Flattr this'
         , visible: true
-      }
+      },
     ]
     , menu_items = [
       {href: '#video', text: 'video'},
