@@ -18,9 +18,6 @@ uninstall:
 	rm -rf ./build
 
 deploy:
-	#install needed packages for grunt
-	npm install
-
 	#remove build dir
 	rm -rf ./build
 
