@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     , root_dir = rootPathUrl
     , static_dir = root_dir + 'static/'
     , img_dir = static_dir + 'img/'
-    , social_dir = img_dir + 'social_icons/'
+    , social_dir = img_dir + 'social-icons/'
     , social_accounts = [
       {
           link: 'http://blog.magicshifter.net/'
@@ -54,8 +54,8 @@ module.exports = function(grunt) {
       {href: '#video', text: 'video'},
       {href: '#upload', text: 'upload'},
       {href: '#program', text: 'program'},
-      {href: '#features', text: 'features'},
-      {href: '#questions', text: 'contact'},
+      {href: '#technical', text: 'features'},
+      {href: '#contact-gallery', text: 'contact'},
 
     ];
 
