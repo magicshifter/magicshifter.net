@@ -50,7 +50,6 @@ module.exports = function(grunt) {
       }
     ]
     , menu_items = [
-      {href: '#about', text: 'about'},
       {href: '#video', text: 'video'},
       {href: '#upload', text: 'upload'},
       {href: '#program', text: 'program'},
