@@ -54,8 +54,7 @@ module.exports = function(grunt) {
       {href: '#upload', text: 'upload'},
       {href: '#program', text: 'program'},
       {href: '#technical', text: 'features'},
-      {href: '#contact-gallery', text: 'contact'},
-
+      {href: '#contact', text: 'contact'},
     ];
 
   console.log('Grunt starting, server root = ' + rootPathUrl);
