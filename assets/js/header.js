@@ -6,16 +6,6 @@
     resizeHeader();
   });
 
-  function resizeHeader(cb) {
-    if (scrollY > 40 ) {
-      if (header.className.indexOf('small') < 0) {
-        header.classList.add('small');
-      }
-    } else if (header.className.indexOf('small') > -1) {
-      header.classList.remove('small');
-    }
-  }
-
   resizeHeader();
 
   setTimeout(function() {
@@ -33,8 +23,19 @@
     document.body.addEventListener('click', menuToggleClickHandler);
 
     e.target.removeEventListener('click');
+
     e.stopPropagation();
     return false;
+  }
+
+  function resizeHeader(cb) {
+    if (scrollY > 40 ) {
+      if (header.className.indexOf('small') < 0) {
+        header.classList.add('small');
+      }
+    } else if (header.className.indexOf('small') > -1) {
+      header.classList.remove('small');
+    }
   }
 
 })();
