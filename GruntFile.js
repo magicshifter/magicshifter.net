@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
   var defaultRoot = grunt.option('deploy') ? '/' : 'file://' + process.cwd() + '/build/'
-    , rootPathUrl = grunt.option( 'rootPathUrl' ) || defaultRoot
-    , root_dir = rootPathUrl
+    , root = grunt.option( 'root' ) || defaultRoot
+    , root_dir = root
     , static_dir = root_dir + 'static/'
     , img_dir = static_dir + 'img/'
     , social_dir = img_dir + 'social-icons/'
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
       {href: '#contact', text: 'contact'},
     ];
 
-  console.log('Grunt starting, server root = ' + rootPathUrl);
+  console.log('Grunt starting, server root = ' + root);
 
   // Project configuration.
   grunt.initConfig({

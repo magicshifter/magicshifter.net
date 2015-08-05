@@ -5,7 +5,7 @@ all:
 	rm -rf ./build
 
 	#grunt all that needs to be grunted
-	grunt --rootPathUrl=${p}
+	grunt --root=${p}
 
 install:
 	sudo npm install -g grunt-cli
@@ -22,7 +22,7 @@ deploy:
 	rm -rf ./build
 
 	#compile css, grunt all that needs to be grunted
-	grunt --rootPathUrl=${p} --deploy="true"
+	grunt --root=${p} --deploy="true"
 
 	#add your details here, this will prompt for your password or keyphrase
 	#dont actually do it yet.
