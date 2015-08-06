@@ -15,7 +15,7 @@
     Thanks to the various others,
     who will appear here soon.
 
-    If you should ( and want to ) be on this List please send one of us a message,
+    If you should ( and want to ) be on this list please send one of us a message,
     or simply create a pull request :)
 
   Keep spreading the <3
