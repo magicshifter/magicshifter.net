@@ -15,4 +15,6 @@ html(lang="en")
       block content
         div no content
 
-    script(src=static_dir + "js/ms.js")
+    script(src=js_dir + js_files.ms)
+    if livereload_script
+      script(src=livereload_script)
