@@ -14,17 +14,12 @@ make install
 
 # build for local preview
 # rootPath is set to "file:///" + process.cwd()  by default
-# this allows you to just open the build/index.html file locally
+# this allows you to open the build/index.html file from the local filesystem
+# it will also start grunt-contrib-watch and livereload.
 make
 
 # build for server deployment
 # (rootPath is set to "/" by default)
-make deploy
-
-# make deploy's last line is commented, if you want to be able to
-# just run make deploy and upload to the server automagically,
-# uncomment the line and insert your server authentication credentials
-# then run
 make deploy
 
 #delete the build directory
