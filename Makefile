@@ -24,8 +24,10 @@ deploy:
 	#compile css, grunt all that needs to be grunted
 	grunt --root=${p} --deploy="true"
 
-	#add your details here, this will prompt for your password or keyphrase
-	#dont actually do it yet.
+	# This is the last part of the deploy task in the Makefile.
+	# You add your name, hostname and serverside rootpath here,
+	# this will prompt for your password or keyphrase everytime.
+	# DO NOT ADD YOUR KEYPHRASE OR PASSWORD HERE!
 	#scp -r name@hostname:/var/www/html/ ./build/*
 
 clean:
