@@ -105,7 +105,7 @@ export default function(grunt) {
     'assets/js/libs/jquery-1.9.1.min.js',
     'assets/js/libs/FileSaver.js',
     'assets/js/libs/libgif-js/libgif.js',
-    'assets/js/magicbitmap.js'
+    'assets/js/magicbitmap.js',
   ];
 
   const stylusSources = [
