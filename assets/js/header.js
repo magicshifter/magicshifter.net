@@ -1,45 +1,62 @@
-(function() {
-  'use strict';
-  var header = document.querySelector('header.main');
+var header = document.querySelector('header.main');
 
-  window.addEventListener('scroll', function(e) {
-    resizeHeader();
-  });
-
+window.addEventListener('scroll', function(e) {
   resizeHeader();
+});
 
-  setTimeout(function() {
-    document.body.classList.add('js');
-  }, 100);
+resizeHeader();
 
-  var menuToggle = header.querySelector('.menu-toggle');
-  var nav = header.querySelector('nav.main');
+setTimeout(() => {
+  document.body.classList.add('js');
+}, 100);
 
-  menuToggle.addEventListener('click', menuToggleClickHandler);
+var menuToggle = header.querySelector('.menu-toggle');
+var nav = header.querySelector('nav.main');
 
-  function menuToggleClickHandler(e) {
-    nav.classList.toggle('show');
+menuToggle.addEventListener('click', menuToggleClickHandler);
 
-    if (e.currentTarget.className.indexOf('menu-toggle') > -1) {
-      document.body.addEventListener('click', menuToggleClickHandler);
-    } else {
-      menuToggle.addEventListener('click', menuToggleClickHandler);
-    }
+var tableHeaders = document.querySelectorAll('th');
+var wantedTableHeader = null;
+Object.keys(tableHeaders).forEach(function(key) {
+  var header = tableHeaders[key];
+  if (header.innerHTML === 'Datasheet') {
+    wantedTableHeader = header;
+  }
+});
 
-    e.currentTarget.removeEventListener('click', menuToggleClickHandler);
+window.addEventListener('resize', changeTableHeader);
 
-    e.stopPropagation();
-    return false;
+changeTableHeader();
+
+function menuToggleClickHandler(e) {
+  nav.classList.toggle('show');
+
+  if (e.currentTarget.className.indexOf('menu-toggle') > -1) {
+    document.body.addEventListener('click', menuToggleClickHandler);
+  } else {
+    menuToggle.addEventListener('click', menuToggleClickHandler);
   }
 
-  function resizeHeader(cb) {
-    if (scrollY > 40 ) {
-      if (header.className.indexOf('small') < 0) {
-        header.classList.add('small');
-      }
-    } else if (header.className.indexOf('small') > -1) {
-      header.classList.remove('small');
-    }
-  }
+  e.currentTarget.removeEventListener('click', menuToggleClickHandler);
 
-})();
+  e.stopPropagation();
+  return false;
+}
+
+function resizeHeader(cb) {
+  if (scrollY > 40 ) {
+    if (header.className.indexOf('small') < 0) {
+      header.classList.add('small');
+    }
+  } else if (header.className.indexOf('small') > -1) {
+    header.classList.remove('small');
+  }
+}
+
+function changeTableHeader() {
+  if (window.innerWidth < 400) {
+    wantedTableHeader.innerHTML = 'PDF';
+  } else {
+    wantedTableHeader.innerHTML = 'Datasheet';
+  }
+}
