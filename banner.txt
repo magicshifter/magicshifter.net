@@ -6,10 +6,11 @@
                 /___/
 
 
-  Contributors:          - github:  - homepage:
-    Philipp Tiefenbacher - wizard23 - http://wizards23.net
-    Jascha Ehrenreich    - jaeh     - https://jaeh.at
-    Tom Peak             - TomPeak  - http://www.tompeak.com/
+  Contributors:          - github:   - homepage:
+    Philipp Tiefenbacher - wizard23  - http://wizards23.net
+    Florian Bittner      - overflo23 - http://hackerspaceshop.com/
+    Jascha Ehrenreich    - jaeh      - https://jaeh.at
+    Tom Peak             - TomPeak   - http://www.tompeak.com/
 
     Thanks to the various others,
     who will appear here soon.
