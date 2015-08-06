@@ -1,0 +1,19 @@
+/*
+     __  ___             _       ____ __    _  ___ __
+    /  |/  /___ _ ___ _ (_)____ / __// /   (_)/ _// /_ ___  ____
+   / /|_/ // _ `// _ `// // __/_\ \ / _ \ / // _// __// -_)/ __/
+  /_/  /_/ \_,_/ \_, //_/ \__//___//_//_//_//_/  \__/ \__//_/
+                /___/
+  Contributors:          - github:  - homepage:
+    Philipp Tiefenbacher - wizard23 - http://wizards23.net
+    Jascha Ehrenreich    - jaeh     - https://jaeh.at
+    Tom Peak             - TomPeak  - http://www.tompeak.com/
+
+    Various others whom will appear after we asked them.
+    If you should be on this List please send us a message
+    to team@magicshifter.net
+    you can each of the team individually using
+   firstname@magicshifter.net
+
+  Keep spreading the love <3
+*/
