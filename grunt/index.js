@@ -1,3 +1,7 @@
+import {join} from 'path';
+
+import colorCycle from '../../color-cycle';
+
 import fs from 'fs';
 
 import loadTasks from 'load-grunt-tasks';
@@ -217,7 +221,7 @@ export default function(grunt) {
 
       },
       jade: {
-        files: ['assets/jade/**'],
+        files: ['assets/jade/**/*'],
         tasks: ['jade'],
       },
       stylus: {
@@ -234,8 +238,27 @@ export default function(grunt) {
         files: ['build/**/*'],
       },
     },
+    colors: {
+      cycle: {},
+    },
   });
 
+  grunt.registerMultiTask('colors', 'creates color cycle', function() {
+    const numberOfSectionFiles = fs.readdirSync(join(process.cwd(), 'assets', 'jade'));
+
+    // get the huesteps, first 2 sections have no gallery, hence -2
+    const numberOfSlices = (numberOfSectionFiles.length * 2) - 2;
+
+    const sliceColors = colorCycle(numberOfSlices);
+
+    let styleString = `body\n  article\n`;
+
+    sliceColors.forEach((col, key) => {
+      styleString += `    section:nth-child(${key + 1})\n      background-color ${col}\n`;
+    });
+
+    fs.writeFileSync(join(process.cwd(), 'assets', 'css', 'colorcycle.styl'), styleString);
+  });
 
   loadTasks(grunt);
 
@@ -245,5 +268,7 @@ export default function(grunt) {
   grunt.loadNpmTasks('grunt-transfo');
 
   // Default tasks.
-  grunt.registerTask('default', ['stylus', 'jade', 'browserify', 'uglify', 'transfo', 'watch']);
+  grunt.registerTask('default', ['colors', 'stylus', 'jade', 'browserify', 'uglify', 'transfo', 'watch']);
+
+
 };
