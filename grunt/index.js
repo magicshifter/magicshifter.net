@@ -97,8 +97,7 @@ export default function(grunt) {
   console.log('Grunt starting, server root = ' + root);
 
   const msSources =  [
-    'assets/js/ga.js',
-    'assets/js/header.js',
+    'assets/js/index.js',
   ];
 
   const magicSources = [

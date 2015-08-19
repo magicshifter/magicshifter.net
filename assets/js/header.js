@@ -15,19 +15,6 @@ var nav = header.querySelector('nav.main');
 
 menuToggle.addEventListener('click', menuToggleClickHandler);
 
-var tableHeaders = document.querySelectorAll('th');
-var wantedTableHeader = null;
-Object.keys(tableHeaders).forEach(function(key) {
-  var header = tableHeaders[key];
-  if (header.innerHTML === 'Datasheet') {
-    wantedTableHeader = header;
-  }
-});
-
-window.addEventListener('resize', changeTableHeader);
-
-changeTableHeader();
-
 function menuToggleClickHandler(e) {
   nav.classList.toggle('show');
 
@@ -50,13 +37,5 @@ function resizeHeader(cb) {
     }
   } else if (header.className.indexOf('small') > -1) {
     header.classList.remove('small');
-  }
-}
-
-function changeTableHeader() {
-  if (window.innerWidth < 400) {
-    wantedTableHeader.innerHTML = 'PDF';
-  } else {
-    wantedTableHeader.innerHTML = 'Datasheet';
   }
 }
