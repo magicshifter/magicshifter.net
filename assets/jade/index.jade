@@ -1,227 +1,36 @@
 extends layout.jade
 
+mixin gallery(pics)
+  section.gallery
+    ul
+      each pic in pics
+        li
+          span(class=pic)
+
 block content
 
-  section#about
-    div.container
-      img(src=img_dir + 'logo-about.png')
-      h1
-        span MagicShifter
-        span  -
-        span  the Open Source Magic Lamp!
+  include sections/about
 
-      p It's an open source hardware gadget for lighting, gaming, and POV applications.
-      p Charge and reprogram it over USB!
+  include sections/social
 
-      p The MagicShifter 3000 is an open source hardware gadget for RGB lighting, gaming, and POV persistence of vision) applications. Control it via WiFi from your mobile phone or computer or use it as a standalone digital magic lamp.
+  include sections/video
 
-      ul
-        li ESP8266 32-Bit/80MHz Mikrocontroller with integrated WiFi
-        li 16 bright RGB LEDs for awesome shadow effects
-        li 3-Axis Accelerometer to stabilize the POV image
-        li 3-Axis Magnetometer/Compas
-        li 4MB Flash Memory
-        li programmable via WiFi or USB
-        li 3D printed case
-        li AGPL licensed firmware & web frontend
-        li CC BY-NC licensed hardware design
+  +gallery(['girafe', 'oneup', 'heart'])
 
-      p “Any sufficiently advanced
-        technology is indistinguishable
-        from a MagicShifter!”
-        Arthur C. Clarke, proud owner
+  include sections/features
 
-      p
-        | Get one of the limited first batch:
+  +gallery(['invader', 'mario', 'nyan'])
 
-      div.shop
-        a(
-          href="http://www.hackerspaceshop.com/magicshifter.html"
-          target="hackerspaceshop"
-        )
-          img(src=img_dir + "hackerspaceshop.png" alt="hackerspaceshop.com")
+  include sections/upload
 
-  section#social
-    div.container
-      if social_accounts
-        ul
-          for social in social_accounts
-            if social.visible === true
-              li
-                a(href=social.link target="utopia" title=social.title)
-                  img(src=social.img alt=social.alt height="30px" width="30px")
+  +gallery(['ccc29', 'pointer', 'bubblebobble'])
 
+  include sections/technical
 
-  section#video
-    div.container
-      h2 The MagicShifter Video!
+  +gallery(['shadows-2', 'goggles', 'shadows-2'])
 
-      div#player: iframe(src="https://www.youtube.com/embed/0MjIy2lzaDo" frameborder="0" allowfullscreen="allowfullscreen")
+  include sections/contact
 
-      p Watch this video to learn more about the features and sensors and how to use the MagicShifter.
+  +gallery(['circles', 'smiley', 'shadows'])
 
-  section.gallery.first
-    div.container
-      ul
-        li
-          span.girafe
-        li
-          span.oneup
-        li
-          span.heart
-
-  section#upload
-    div.container#images
-      h2 Upload your own images!
-      p There is a webapp (runs offline too) to convert your own images to display them on the MagicShifter. You even can create animations if you like.
-      p
-        | There are more examples in the
-        a.textflow(
-          href="http://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/"
-        ) picture blog
-        | on flickr.
-
-      p.btns
-        a.btn(href=root_dir +"bitmap.html") Bitmap Converter
-        a.btn(href=root_dir + "font.html") Font Converter
-
-      p We <3 manuals, so of course there is one:
-
-      p.btns
-        a.btn(href=static_dir + "/UserManualMagicShifter.pdf") MagicShifter Manual (pdf)
-        a.btn(href="https://docs.google.com/document/d/1_cqh2J4C_Npqz5KXsosdRo691K8Sucw97ZeopUi3K8k/", target="gdocs") MagicShifter Manual (google docs)
-
-  section.gallery.second
-    div.container
-      ul
-        li
-          span.invader
-        li
-          span.mario
-        li
-          span.nyan
-
-  section#program
-    div.container
-      h2 Reprogram the Source Code!
-      p The code is a little rough at the edges and atm only the make file based tool chain is available.
-      p We're working on integrating the MagicShifter into the Arduino IDE.
-      p.btns
-        a.btn(href="https://bitbucket.org/wizard23/magicshifteros" target="utopia") Download it!
-      p
-        a(href="http://www.gnu.org/licenses/quick-guide-gplv3.html" target="gnutopia")
-          img(src=img_dir + "gnugpl.png" alt="Gnu GPL")
-
-  section.gallery.third
-    div.container
-      ul
-        li
-          span.ccc29
-        li
-          span.cursor
-        li
-          span.bubblebobble
-
-  section#technical
-    div.container
-      h2 Technical Features
-      table(cellspacing="0" cellpadding="0")
-        thead
-          tr
-            th Description
-            th Id
-            th Datasheet
-        tbody
-          tr
-            td 8 bit Microcontroller with integrated USB
-            td: Atmega32U4-MU
-            td: a(href=static_dir + "datasheets/atmega32u4.pdf") PDF
-          tr
-            td 3 Axis Accelerometer
-            td MMA8452QT
-            td: a(href=static_dir + "datasheets/MMA8451Q.pdf") PDF
-          tr
-            td 16 / RGB LEDS
-            td CLV6A-FKB
-            td: a(href=static_dir + "datasheets/CLV6AFKB.pdf") PDF
-          tr
-            td Color Sensor with Proximity Sensing
-            td TCS3771
-            td: a(href=static_dir + "datasheets/TCS3771-A.pdf") PDF
-          tr
-            td UV LED, 395 nm
-            td SM1206UV-395-IL
-            td: a(href=static_dir + "datasheets/SM1206UV-395-IL.pdf") PDF
-          tr
-            td High Power White LED
-            td LUW CN5M-GAHA-5P7R-1
-            td: a(href=static_dir + "datasheets/LUW_CN5M_OSLON_SX.pdf") PDF
-          tr
-            td High Power Infrafred LED (for proximity sensing & IR remote control)
-            td HIR11-21C/L11/TR8
-            td: a(href=static_dir + "datasheets/SFH464X.pdf") PDF
-          tr
-            td SPI EEPROM, 8 MBit
-            td SST25VF080B-80-4I-SAE
-            td: a(href=static_dir + "datasheets/EEPROM8Mbit.pdf") PDF
-          tr
-            td I2C Real-Time Clock
-            td MCP79410-I/MS
-            td: a(href=static_dir + "datasheets/MCP7941X.pdf") PDF
-          tr
-            td 2x 24 Channel, 12 bit PWM LED Driver (for RGB LEDs)
-            td TLC5947
-            td: a(href=static_dir + "datasheets/tlc5947.pdf") PDF
-          tr
-            td 2x 32-Step LED Driver (for UV & white LEDs)
-            td AHK3292
-            td: a(href=static_dir + "datasheets/ahk3292.pdf") PDF
-
-
-  section.gallery.fourth
-    div.container
-      ul
-        li
-          span.shadows-2
-        li
-          span.goggles
-        li
-          span.shadows
-
-  section#contact
-    div.container
-      h2 Questions? Just contact us!
-      p
-        | If you have questions or suggestions just contact us via
-        a.textflow(href="mailto:wizards23+magicshifter@gmail.com") email.
-
-      p
-        | Found a bug on this homepage?
-        a.textflow(href="https://github.com/magicshifter/magicshifter.net" target="utopia") file an issue on github.
-
-  section.gallery.fifth
-    div.container
-      ul
-        li
-          span.circles
-        li
-          span.smiley
-        li
-          span.bike
-
-
-  footer.main
-    div.container#imprint
-      | created by
-      a.textflow(
-        href="https://metalab.at/wiki/Benutzer:Wizard23"
-        target="wizard23"
-      ) wizard23
-      |  @
-      a(href="http://www.metalab.at" target="metalab")
-        img(src=img_dir + "metalab.png" alt="Metalab")
-
-    div#aws
-      span supported by
-      a(href="http://www.awsg.at/kreativwirtschaft" target="aws")
-        img(src=img_dir + "aws-logo.jpg")
+  include footer.jade

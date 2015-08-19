@@ -1,0 +1,9 @@
+section#social
+  div.container
+    if social_accounts
+      ul
+        for social in social_accounts
+          if social.visible === true
+            li
+              a(href=social.link target="utopia" title=social.title)
+                img(src=social.img alt=social.alt height="30px" width="30px")
