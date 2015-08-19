@@ -1,6 +1,30 @@
 {
   "name": "magicshifter.net",
   "version": "0.23.5",
+  "author": "Jascha Ehrenreich <jascha@jaeh.at>",
+  "scripts": {
+    "start": "make"
+  },
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "email": "jascha@magicshifter.net",
+      "github": "jaeh"
+    },
+    {
+      "name": "phileas lebada",
+      "github": "norpol"
+    },
+    {
+      "name": "philipp tiefenbacher",
+      "email": "wizard23@magicshifter.net",
+      "github": "wizard23"
+    },
+    {
+      "name": "tom peak",
+      "github": "tompeak"
+    }
+  ],
   "devDependencies": {
     "babel": "^5.8.21",
     "babelify": "^6.1.3",
