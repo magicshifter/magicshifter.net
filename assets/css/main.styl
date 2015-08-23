@@ -1,4 +1,10 @@
+@import mixins
+
 @import variables
+
+@import reset
+
+global-reset()
 
 *
   box-sizing border-box
@@ -7,11 +13,28 @@ body
   font-size 16px
   font-family Segoe Ui, Lucida Grande, Ubuntu, Arial, sans-serif
   color #333
+  line-height 1.1em
 
 section
   clear both
   padding 3.5em 10%
   margin -5px 0 0
+  text-align center
+
+  ul.hardware
+    margin 0 auto
+    text-align left
+
+    li
+      .image
+        bg-image('list-style-image.png')
+        background-size contain
+        display inline-block
+        margin 0 .2em 0 0
+        height .5em
+        width .5em
+        top -.1em
+        position relative
 
   &.gallery
     padding 2em 0
@@ -33,17 +56,6 @@ section
         max-width 100%
         width 100%
 
-    &.first
-      background-color $gallery-bg-color-first
-    &.second
-      background-color $gallery-bg-color-second
-    &.third
-      background-color $gallery-bg-color-third
-    &.fourth
-      background-color $gallery-bg-color-fourth
-    &.fifth
-      background-color $gallery-bg-color-fifth
-
   &#social
     padding .5em 5%
 
@@ -58,38 +70,15 @@ a
   max-height 100%
 
 a, a:visited
-  text-decoration none
+  text-decoration underline
   color $link-color
 
   &:hover
-    color #000
+    color $link-hover-color
+    text-shadow 3px 3px 3px rgba(0, 0, 0, .4)
 
   &.textflow
     margin 0 .3em 0
-
-a.btn
-  font-weight bold
-  padding 6px 12px
-  font-size 0.9em
-  color $link-color
-  margin 0 1.5em .5em 0
-  color $white
-  text-shadow 0 -1px 0 rgba(0,0,0,0.25)
-  background-color $btn-bg-color
-  background-gradient( $btn-bg-color darken( $btn-bg-color, $btn-bg-color-darken ) )
-  background-repeat repeat-x
-  border-radius 4px
-  display inline-block
-  text-align center
-  vertical-align middle
-  cursor pointer
-  border 1px solid #bbb
-  border-color rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25)
-  box-shadow inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05)
-
-  &:hover
-    background-position
-
 p
   margin 0 0 .5em
 
@@ -97,12 +86,6 @@ p
     padding 1em 0 0
 
 body
-  > article
-    section
-      .container
-        max-width $max-page-width
-        margin 0 auto
-
   &.js
     header.main
       transition padding .2s
@@ -121,7 +104,6 @@ body
 
       nav
         transition margin .2s, top .2s, right .2s
-
 
 header.main
   background-size cover
@@ -163,7 +145,6 @@ header.main
         height 3px
         margin 3px 0
 
-
   .wrapper
     width 100%
     z-index 1
@@ -199,7 +180,9 @@ header.main
       li
         float none
         margin 1.2em
+
   a
+    text-decoration none
     &:hover
       color $white
       text-decoration underline
@@ -211,7 +194,6 @@ header.main
       height 60px
 
 #social
-  background-color $social-bg-color
   text-align center
 
   ul
@@ -227,17 +209,32 @@ header.main
       &:hover
         opacity .8
 
+article
+  section
+    .container
+      max-width $max-page-width
+      margin 0 auto
+      display inline-block
+
+
 #about
-  background-color $about-bg-color
   color $about-text-color
   text-align center
 
+  .logo
+    max-width 50%
+
   h1
     font-size 1.5em
-    margin 0 0 1em
+    margin 1em 0 .5em
+    line-height 1.3em
+
+  .this-fall
+    font-size 1.3em
+    margin 0 0 .5em
+
 
 #video
-  background-color $video-bg-color
   color $video-text-color
   text-align center
 
@@ -259,7 +256,6 @@ header.main
     margin 1em 0 0
 
 #upload
-  background-color $upload-bg-color
   color $upload-text-color
 
   #images
@@ -267,59 +263,39 @@ header.main
     text-align center
     width 80%
 
-  .btn
-    background-color darken($upload-bg-color, 40%)
-
   a
     color $yellow
 
-    &.btn
-      color $white
-
 #program
-  background-color $program-bg-color
   color $program-text-color
   text-align center
 
-  .btn
-    background-color $program-bg-color
-    background-gradient( $program-bg-color, darken( $program-bg-color, $btn-bg-color-darken ) )
-
 #technical
-  background-color $technical-bg-color
   color $technical-text-color
 
   table
-    border 1px solid darken($technical-bg-color, 35%)
+    border 1px solid rgba(0, 0, 0, .4)
     text-align left
     width 100%
     font-size .7em
 
     thead tr
-      background-color darken($technical-bg-color, 25%)
+      background-color rgba(0, 0, 0, .4)
 
     tr
       line-height 1.5
 
     td, th
-      border 1px solid darken($technical-bg-color, 35%)
+      border 1px solid rgba(0, 0, 0, .4)
       padding .2em
 
-    a
-      color $yellow
-
-      &:hover
-        color darken($technical-bg-color, 80%)
-
 #contact
-  background-color $contact-bg-color
   color $contact-text-color
   text-align center
 
 footer.main
-  background-color $footer-bg-color
   color $footer-text-color
-  padding 1.5em 0 .5em
+  padding 1.5em 0 0
   text-align center
 
   div
@@ -332,12 +308,28 @@ footer.main
 
     img
       padding 0 .5em
-  #aws img
-    display block
-    margin 0 auto
 
+  > div
+    margin 0 0 2em
 
-#contact,
+    &:last-child
+      margin-bottom 0
+
+    img
+      display block
+      margin 0 auto
+
+  #proudowner
+    background-color $black
+    color $white
+    padding 1em 0
+    display inline-block
+    width 100%
+
+    p
+      line-height 1.5em
+      margin .5em 0
+
 footer.main
   a
     color $upload-bg-color
