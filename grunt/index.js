@@ -266,8 +266,13 @@ export default function(grunt) {
     for (var i = 0; i < numberOfColors; i++) {
       let currentHue = i * (360 / numberOfColors);
 
-      let currentColor = startColor.hue(`+${currentHue}`).hex6();
-      colors.push(currentColor);
+      let currentColor = startColor.hue(`+${currentHue}`);
+      if (i > 1) {
+        currentColor = currentColor.saturation(75);
+      } else if (i === 1) {
+        currentColor = currentColor.saturation(90);
+      }
+      colors.push(currentColor.hex6());
     }
 
     return colors;
@@ -284,7 +289,8 @@ export default function(grunt) {
     let styleString = `body\n  article\n`;
 
     sliceColors.forEach((col, key) => {
-      styleString += `    section:nth-child(${key + 1})\n      background-color ${col}\n`;
+      styleString += `    section:nth-child(${key + 1})\n`;
+      styleString += `      background-color ${col}\n`;
     });
 
     fs.writeFileSync(join(process.cwd(), 'assets', 'css', 'colorcycle.styl'), styleString);
