@@ -1,11 +1,10 @@
 import {join} from 'path';
 
-import colorCycle from '../../color-cycle';
+import color from 'sc-color';
 
 import fs from 'fs';
 
 import loadTasks from 'load-grunt-tasks';
-
 
 export default function(grunt) {
   const bannerText = grunt.file.read('./banner.txt');
@@ -20,6 +19,16 @@ export default function(grunt) {
   const img_dir = static_dir + 'img/';
   const social_dir = img_dir + 'social-icons/';
   const js_dir = static_dir + 'js/';
+
+  const defaultTasks = [
+    'colors',
+    'stylus',
+    'jade',
+    'browserify',
+    'uglify',
+    'transfo',
+    'watch',
+  ];
 
   const isDev = !grunt.option('deploy');
 
@@ -92,9 +101,8 @@ export default function(grunt) {
 
   const menu_items = [
     {href: '#video', text: 'video'},
-    {href: '#upload', text: 'upload'},
     {href: '#program', text: 'program'},
-    {href: '#technical', text: 'features'},
+    {href: '#hardware', text: 'features'},
     {href: '#contact', text: 'contact'},
   ];
 
@@ -113,6 +121,8 @@ export default function(grunt) {
 
   const stylusSources = [
     'assets/css/reset.styl',
+    'assets/css/variables.styl',
+    'assets/css/colorcycle.styl',
     'assets/css/main.styl',
     'assets/css/custom-widths.styl'
   ];
@@ -211,6 +221,10 @@ export default function(grunt) {
         spawn: false,
         livereload: true,
       },
+      grunt: {
+        files: [join(process.cwd(), 'grunt', 'index.js')],
+        tasks: defaultTasks,
+      },
       ms: {
         files: msSources,
         tasks: ['browserify:ms', 'uglify:ms'],
@@ -243,6 +257,22 @@ export default function(grunt) {
     },
   });
 
+  function colorCycle(numberOfColors) {
+
+    const startColor = color('#ff9d1c');
+
+    let colors = [];
+
+    for (var i = 0; i < numberOfColors; i++) {
+      let currentHue = i * (360 / numberOfColors);
+
+      let currentColor = startColor.hue(`+${currentHue}`).hex6();
+      colors.push(currentColor);
+    }
+
+    return colors;
+  }
+
   grunt.registerMultiTask('colors', 'creates color cycle', function() {
     const numberOfSectionFiles = fs.readdirSync(join(process.cwd(), 'assets', 'jade'));
 
@@ -268,7 +298,6 @@ export default function(grunt) {
   grunt.loadNpmTasks('grunt-transfo');
 
   // Default tasks.
-  grunt.registerTask('default', ['colors', 'stylus', 'jade', 'browserify', 'uglify', 'transfo', 'watch']);
-
+  grunt.registerTask('default', defaultTasks);
 
 };
