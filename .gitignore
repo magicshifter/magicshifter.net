@@ -5,4 +5,4 @@ node_modules
 build
 .DS_Store
 assets/css/colorcycle.styl
-
+npm-debug.log
