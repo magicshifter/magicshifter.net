@@ -1,0 +1,7 @@
+CACHE MANIFEST
+# |date|
+CACHE:
+|pages|
+
+FALLBACK:
+/ /index.html
