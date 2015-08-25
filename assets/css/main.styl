@@ -1,3 +1,5 @@
+@import nib
+
 @import mixins
 
 @import variables
@@ -17,7 +19,7 @@ body
 
 section
   clear both
-  padding 3.5em 10%
+  padding 3.5em 10% 2em 10%
   margin -5px 0 0
   text-align center
 
@@ -106,7 +108,7 @@ body
         transition margin .2s, top .2s, right .2s
 
 header.main
-  background-size cover
+
   bg-image('header-background.png')
   color $white
   font-size .9em
@@ -219,19 +221,44 @@ article
 
 #about
   color $about-text-color
-  text-align center
+  background-image url(img_dir + 'ms3000-ships.png'), linear-gradient(left,rgba(0,0,0,1),rgba(0,0,0,0))
+  background-repeat no-repeat
+  
+    
+
+  .font
+    //float left
+
+  .logo-container
+    float left
+    height 400px
+    width 300px
+    text-align center
+
+  .about-text
+    bg-image('ms3000-info-background.png')
+    background-repeat no-repeat
+    padding 20px 100px 20px 20px
+    height 400px
+    width 500px
+    float right
+    font-size 0.8em
 
   .logo
-    max-width 50%
+    max-width 220px
+    //float left
+    margin-bottom 0.6em
 
   h1
     font-size 1.5em
-    margin 1em 0 .5em
+    margin 0em 0 .5em 0
     line-height 1.3em
 
   .this-fall
-    font-size 1.3em
+    font-size .7em
     margin 0 0 .5em
+    line-height 1.1em
+
 
 
 #video

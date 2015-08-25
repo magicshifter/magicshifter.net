@@ -259,7 +259,7 @@ export default function(grunt) {
 
   function colorCycle(numberOfColors) {
 
-    const startColor = color('#ff9d1c');
+    const startColor = color('#1b5369');
 
     let colors = [];
 
@@ -267,11 +267,14 @@ export default function(grunt) {
       let currentHue = i * (360 / numberOfColors);
 
       let currentColor = startColor.hue(`+${currentHue}`);
+      /*
       if (i > 1) {
         currentColor = currentColor.saturation(75);
       } else if (i === 1) {
         currentColor = currentColor.saturation(90);
       }
+      */ 
+      currentColor = currentColor.saturation(60);
       colors.push(currentColor.hex6());
     }
 
