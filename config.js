@@ -27,8 +27,9 @@ module.exports = {
   files: {
     css: 'main.styl',
     js: 'index.js',
-    copy: '!(*.xcf|*.psd)',
+    copy: '!(*.xcf|*.psd|*.ai)',
     server: 'server.js',
+    compress: '@(*.js|*.txt|*.js|*.css)',
   },
   config: {
     babelrc: 'babelrc',
@@ -79,7 +80,7 @@ module.exports = {
     },
     {
         link: 'https://twitter.com/magicshifter'
-      , img: '/img/social-icons//twitter.png'
+      , img: '/img/social-icons/twitter.png'
       , alt: 'twitter'
       , title: 'follow Magicshifter on twitter'
       , visible: true
@@ -98,5 +99,10 @@ module.exports = {
       , title: 'Flattr this'
       , visible: true
     },
-  ]
+  ],
+  server: {
+    // Files to exclude from static serving,
+    // relative to out directory
+    files: '!(server.js|config.js)',
+  }
 };
