@@ -1,4 +1,3 @@
-
 *
   box-sizing border-box
 
@@ -6,6 +5,7 @@ body
   font-family Segoe UI, Lucida Grande, Ubuntu, Arial, sans-serif
   font-size 16px
   line-height 1.1em
+  background-color $black
 
 section
   clear both
@@ -97,18 +97,25 @@ p
   &.btns
     padding 1em 0 0
 
+body.js
+  header.main
+    height $headerUnscrolledHeight
+    overflow visible
+
 header.main
+  background-color $black
   background-size contain
   bg-image('header-background.png')
   color $white
   display block
   font-size .9em
-  height $headerUnscrolledHeight
+  height 0
   line-height 1.1em
   position fixed
   top 0
   width 100%
   z-index 1
+  overflow hidden
 
   .menu-toggle
     display block
@@ -293,6 +300,7 @@ section
     text-align center
 
 footer.main
+  background-color $white
   color $footer-text-color
   padding 1.5em 0 0
   position relative
