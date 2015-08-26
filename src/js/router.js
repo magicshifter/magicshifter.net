@@ -10,7 +10,6 @@ function isNumber(val) {
 
 function show(ctx, next) {
   const header = document.querySelector('header.main');
-  console.log(ctx);
 
   let selector = (ctx.pathname === '/')
                  ? ctx.pathname = '#♥'
@@ -20,10 +19,10 @@ function show(ctx, next) {
   let {offsetTop} = target;
 
   if (isNumber(offsetTop)) {
+    // fix offset error if header is 90px high
     if (header.clientHeight === 90) {
       offsetTop -= 40;
     }
-    console.log('scroll to', offsetTop);
     window.scrollTo(0, offsetTop);
   } else {
     next();
@@ -31,6 +30,6 @@ function show(ctx, next) {
 
 }
 
-function show404(ctx, next) {
+function show404() {
   console.log('404');
 }
