@@ -65,6 +65,6 @@ function resizeHeader() {
   } else {
     if (body.className.indexOf(scrolledClass) > -1) {
       body.classList.remove(scrolledClass);
-   }
- }
+    }
+  }
 }
