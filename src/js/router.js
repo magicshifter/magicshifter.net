@@ -19,7 +19,7 @@ function show(ctx, next) {
   let {offsetTop} = target;
 
   if (isNumber(offsetTop)) {
-    // fix offset error if header is 90px high
+    // Fix offset error if header is 90px high
     if (header.clientHeight === 90) {
       offsetTop -= 40;
     }
@@ -27,7 +27,6 @@ function show(ctx, next) {
   } else {
     next();
   }
-
 }
 
 function show404() {
