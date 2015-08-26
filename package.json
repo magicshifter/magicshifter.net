@@ -29,7 +29,8 @@
   ],
   "dependencies": {
     "gulp": "^3.9.0",
-    "magicbuilder": "magicshifter/magicbuilder"
+    "magicbuilder": "magicshifter/magicbuilder",
+    "page": "^1.6.3"
   },
   "repository": {
     "type": "git",
