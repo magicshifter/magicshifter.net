@@ -6,7 +6,7 @@ var config = 'config';
 var appcache = 'manifest.appcache';
 
 module.exports = {
-  CNAME: 'exaple.org',
+  CNAME: 'magicshifter.net',
   port: 1337,
   pages: '/ /index.html',
   env: process.env.NODE_ENV || 'development',
@@ -27,6 +27,7 @@ module.exports = {
   files: {
     css: 'main.styl',
     js: 'index.js',
+    copy: '!(*.xcf|*.psd)',
   },
   config: {
     babelrc: 'babelrc',
