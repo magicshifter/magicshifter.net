@@ -3,7 +3,7 @@ const header = document.querySelector('header.main');
 const menuToggle = header.querySelector('.menu-toggle');
 const nav = header.querySelector('nav.main');
 
-setTimeout(() => body.classList.add('js'), 100);
+setTimeout(() => body.classList.add('js'), 1);
 
 
 menuToggle.addEventListener('click', menuToggleClickHandler);
