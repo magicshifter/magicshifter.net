@@ -1,3 +1,3 @@
-import './ga.js';
+import './ga';
 
-import './header.js';
+import './header';
