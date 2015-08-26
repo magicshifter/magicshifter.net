@@ -1,3 +1,4 @@
+
 *
   box-sizing border-box
 
@@ -5,20 +6,6 @@ body
   font-family Segoe UI, Lucida Grande, Ubuntu, Arial, sans-serif
   font-size 16px
   line-height 1.1em
-
-  &.js
-    header.main
-      transition padding .2s, height .4s
-
-      #logo
-        img
-          transition height .2s
-
-      .wrapper
-        transition background-color .2s, height .4s
-
-    nav
-      transition margin .2s, top .2s, right .2s
 
 section
   clear both
@@ -111,17 +98,16 @@ p
     padding 1em 0 0
 
 header.main
-  height 90px
-
-header.main
+  background-size contain
   bg-image('header-background.png')
   color $white
   display block
   font-size .9em
+  height $headerUnscrolledHeight
   line-height 1.1em
-  position relative
-  width 100%
   position fixed
+  top 0
+  width 100%
   z-index 1
 
   .menu-toggle
@@ -139,43 +125,19 @@ header.main
       margin 5px 0
       width 100%
 
-  &.small
-    height 60px
-
-    .wrapper
-      height 60px
-      padding 5px
-
-    #about
-      top 60px
-
-    .menu-toggle
-      top 27px
-      width 40px
-      span
-        height 3px
-        margin 3px 0
-
-    nav
-      top 60px
-
-    #logo
-      img
-        height 45px
-        padding 5px 0 0
-
   .wrapper
     background-color $header-bg-color
+    display inline-block
     padding 10px
     width 100%
     z-index 1
 
     .container
       display block
-      margin 0 auto
       max-width $max-page-width
       width 100%
       z-index 1
+      margin 0 auto
 
   nav
     background-color $header-bg-color
@@ -185,7 +147,7 @@ header.main
     padding .5em 0
     position absolute
     right -50%
-    top 90px
+    top $headerUnscrolledHeight
     width 50%
 
     &.show
@@ -227,136 +189,115 @@ header.main
       &:hover
         opacity .8
 
-article
-  section
-    .container
-      max-width $max-page-width
-      margin 0 auto
-      display inline-block
-
-
-#about
-  background-image url('/img/ms3000-ships.png'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
-  background-repeat no-repeat
-  background-size cover
-  color $about-text-color
-  overflow hidden
-  padding 1em 10%
+section
+  top $headerUnscrolledHeight
   position relative
-  top 90px
 
-  .logo-container
-    margin 0 0 1em
-    text-align center
+  .container
+    max-width $max-page-width
+    margin 0 auto
+    display inline-block
 
-  .about-text
-    background-color rgba(0, 0, 0, .666)
+  &#about
+    background-image url('/img/ms3000-ships.png'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
     background-repeat no-repeat
-    border 3px solid rgba(255, 255, 255, .7)
-    border-radius 3px
-    display block
-    font-size 0.8em
-    margin 20px 0
-    min-height 200px
-    padding 1em
-    position relative
-
-    &:after
-      background-repeat no-repeat
-      background-size contain
-      bg-image('ms3000-info-background.png')
-      content ' '
-      height 100%
-      margin 0 -3px
-      max-height: 100%
-      position absolute
-      right -66px
-      top 0
-      width 66px
-
-  h1
-    font-size 1.5em
-    line-height 1.3em
-    margin 0em 0 .5em 0
-
-  .logo
-    float left
-    width 40%
-
-  .font
-    float right
-    width 50%
-
-  .this-fall
-    clear both
-    font-size 1em
-    line-height 1.1em
-    padding .5em 0
-    width 100%
-
-#video
-  color $video-text-color
-  text-align center
-
-  #player
-    height 0px
+    background-size cover
+    color $about-text-color
     overflow hidden
-    padding-bottom 56.25%
-    padding-top 30px
+    padding 1em 10%
     position relative
 
-    iframe
-      height 100%
-      left 0px
-      position absolute
-      top 0px
+    .container
+      margin 30px auto 0
+
+    .logo-container
+      margin 0 0 1em
+      text-align center
+
+    .about-text
+      background-color rgba(0, 0, 0, .666)
+      background-repeat no-repeat
+      border 3px solid rgba(255, 255, 255, .7)
+      border-radius 3px
+      display block
+      font-size 0.8em
+      margin 20px 0
+      min-height 200px
+      padding 1em
+      position relative
+
+      &:after
+        background-repeat no-repeat
+        background-size contain
+        bg-image('ms3000-info-background.png')
+        content ' '
+        height 100%
+        margin 0 -3px
+        max-height: 100%
+        position absolute
+        right -66px
+        top 0
+        width 66px
+
+    h1
+      font-size 1.5em
+      line-height 1.3em
+      margin 0em 0 .5em 0
+
+    .logo
+      float left
+      width 40%
+
+    .font
+      float right
+      width 50%
+
+    .this-fall
+      clear both
+      font-size 1em
+      line-height 1.1em
+      padding .5em 0
       width 100%
 
-  p
-    margin 1em 0 0
+  &#social
+    .container
+      margin 10px auto
 
-#upload
-  color $upload-text-color
-
-  #images
-    margin 0 auto
+  &#video
+    color $video-text-color
     text-align center
-    width 80%
 
-  a
-    color $yellow
+    #player
+      height 0px
+      overflow hidden
+      padding-bottom 56.25%
+      padding-top 30px
+      position relative
 
-#program
-  color $program-text-color
-  text-align center
+      iframe
+        height 100%
+        left 0px
+        position absolute
+        top 0px
+        width 100%
 
-#technical
-  color $technical-text-color
+    p
+      margin 1em 0 0
 
-  table
-    border 1px solid rgba(0, 0, 0, .4)
-    text-align left
-    width 100%
-    font-size .7em
+  &#program
+    color $program-text-color
+    text-align center
 
-    thead tr
-      background-color rgba(0, 0, 0, .4)
-
-    tr
-      line-height 1.5
-
-    td, th
-      border 1px solid rgba(0, 0, 0, .4)
-      padding .2em
-
-#contact
-  color $contact-text-color
-  text-align center
+  &#contact
+    color $contact-text-color
+    text-align center
 
 footer.main
   color $footer-text-color
   padding 1.5em 0 0
+  position relative
   text-align center
+  top $headerUnscrolledHeight
 
   div
     height 100%
@@ -389,3 +330,33 @@ footer.main
     p
       line-height 1.5em
       margin .5em 0
+
+body.scrolled
+  header.main
+    height $headerScrolledHeight
+
+    .wrapper
+      height $headerScrolledHeight
+      padding 5px
+
+    .menu-toggle
+      top 20px
+      width 40px
+      span
+        height 3px
+        margin 3px 0
+
+    nav
+      top $headerScrolledHeight
+
+    #logo
+      img
+        height 40px
+        padding 5px 0 0
+
+  article
+    section
+      top $headerScrolledHeight
+
+  footer.main
+    top $headerScrolledHeight

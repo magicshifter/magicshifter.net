@@ -1,8 +1,10 @@
-setTimeout(() => document.body.classList.add('js'), 100);
-
+const body = document.body;
 const header = document.querySelector('header.main');
 const menuToggle = header.querySelector('.menu-toggle');
 const nav = header.querySelector('nav.main');
+
+setTimeout(() => body.classList.add('js'), 100);
+
 
 menuToggle.addEventListener('click', menuToggleClickHandler);
 
@@ -10,7 +12,7 @@ function menuToggleClickHandler(e) {
   nav.classList.toggle('show');
 
   if (e.currentTarget.className.indexOf('menu-toggle') > -1) {
-    document.body.addEventListener('click', menuToggleClickHandler);
+    body.addEventListener('click', menuToggleClickHandler);
   } else {
     menuToggle.addEventListener('click', menuToggleClickHandler);
   }
@@ -52,12 +54,10 @@ window.addEventListener('scroll', resizeHeader);
 
 resizeHeader();
 
+const scrolledClass = 'scrolled';
+
 function resizeHeader(cb) {
   if (scrollY > 40) {
-    if (header.className.indexOf('small') < 0) {
-      header.classList.add('small');
-    }
-  } else if (header.className.indexOf('small') > -1) {
-    header.classList.remove('small');
+    body.classList.toggle(scrolledClass);
   }
 }
