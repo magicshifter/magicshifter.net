@@ -54,10 +54,17 @@ window.addEventListener('scroll', resizeHeader);
 
 resizeHeader();
 
-const scrolledClass = 'scrolled';
 
-function resizeHeader(cb) {
-  if (scrollY > 40) {
-    body.classList.toggle(scrolledClass);
-  }
+function resizeHeader() {
+  const scrolledClass = 'scrolled';
+
+  if (window.scrollY > 40) {
+    if (body.className.indexOf(scrolledClass) < 0) {
+      body.classList.add(scrolledClass);
+    }
+  } else {
+    if (body.className.indexOf(scrolledClass) > -1) {
+      body.classList.remove(scrolledClass);
+   }
+ }
 }
