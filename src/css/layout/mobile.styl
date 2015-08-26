@@ -1,0 +1,390 @@
+*
+  box-sizing border-box
+
+body
+  font-family Segoe UI, Lucida Grande, Ubuntu, Arial, sans-serif
+  font-size 16px
+  line-height 1.1em
+
+  &.js
+    header.main
+      transition padding .2s, height .4s
+
+      #logo
+        img
+          transition height .2s
+
+      .wrapper
+        transition background-color .2s, height .4s
+
+    nav
+      transition margin .2s, top .2s, right .2s
+
+section
+  clear both
+  margin -5px 0 0
+  padding 5.5em 10%
+  text-align center
+
+  ul.list
+    display block
+    margin 0 auto 1em
+    max-width 450px
+    text-align left
+
+    &.software
+      margin 3em auto 1em
+
+    lh
+      display block
+      margin 1em 0 .5em
+
+    li
+      .image
+        background-size contain
+        bg-image('list-style-image.png')
+        display inline-block
+        height .5em
+        margin 0 .2em 0 0
+        position relative
+        top -.1em
+        width .5em
+
+  &.gallery
+    padding 2em 0
+
+    ul
+      display inline-block
+      margin 0 auto
+      text-align center
+      width 100%
+
+      li
+        display inline-block
+        margin 0 1%
+        width 25%
+
+      img
+        border-radius 100%
+        height 100%
+        max-height 100%
+        max-width 100%
+        width 100%
+
+  &#social
+    padding .5em 5%
+
+  h2
+    font-size 1.5em
+    padding 0 0 .7em
+    text-align center
+
+  h3
+    font-size 1.3em
+    padding 0 0 .5em
+    text-align center
+
+img,
+a
+  max-height 100%
+  max-width 100%
+
+  &.split
+    margin 0 1%
+    max-width 47%
+
+a, a:visited
+  color $link-color
+  text-decoration underline
+
+  &:hover
+    color $link-hover-color
+    text-shadow 3px 3px 3px rgba(0, 0, 0, .4)
+
+  &.textflow
+    margin 0 .3em 0
+p
+  margin 0 0 .5em
+
+  &.btns
+    padding 1em 0 0
+
+header.main
+  height 90px
+
+header.main
+  bg-image('header-background.png')
+  color $white
+  display block
+  font-size .9em
+  line-height 1.1em
+  position relative
+  width 100%
+  position fixed
+  z-index 1
+
+  .menu-toggle
+    display block
+    float right
+    position relative
+    top 2.5em
+    width 50px
+
+    span
+      background-color $white
+      border-radius 5px
+      display block
+      height 5px
+      margin 5px 0
+      width 100%
+
+  &.small
+    height 60px
+
+    .wrapper
+      height 60px
+      padding 5px
+
+    #about
+      top 60px
+
+    .menu-toggle
+      top 27px
+      width 40px
+      span
+        height 3px
+        margin 3px 0
+
+    nav
+      top 60px
+
+    #logo
+      img
+        height 45px
+        padding 5px 0 0
+
+  .wrapper
+    background-color $header-bg-color
+    padding 10px
+    width 100%
+    z-index 1
+
+    .container
+      display block
+      margin 0 auto
+      max-width $max-page-width
+      width 100%
+      z-index 1
+
+  nav
+    background-color $header-bg-color
+    border-bottom-left-radius 25px
+    clear both
+    font-size 1.5em
+    padding .5em 0
+    position absolute
+    right -50%
+    top 90px
+    width 50%
+
+    &.show
+      right 0
+
+    ul
+      display inline-block
+      padding 0 .5em
+      text-align center
+
+      li
+        float none
+        margin 1.2em
+
+  a
+    text-decoration none
+    &:hover
+      color $white
+      text-decoration underline
+
+  a#logo
+    display inline-block
+    float left
+
+
+#social
+  text-align center
+
+  ul
+    li
+      display inline-block
+      height 30px
+      margin 0 .1em
+      width 30px
+
+      a
+        display inline
+        float none
+      &:hover
+        opacity .8
+
+article
+  section
+    .container
+      max-width $max-page-width
+      margin 0 auto
+      display inline-block
+
+
+#about
+  background-image url('/img/ms3000-ships.png'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
+  background-repeat no-repeat
+  background-size cover
+  color $about-text-color
+  overflow hidden
+  padding 1em 10%
+  position relative
+  top 90px
+
+  .logo-container
+    margin 0 0 1em
+    text-align center
+
+  .about-text
+    background-color rgba(0, 0, 0, .666)
+    background-repeat no-repeat
+    border 3px solid rgba(255, 255, 255, .7)
+    border-radius 3px
+    display block
+    font-size 0.8em
+    margin 20px 0
+    min-height 200px
+    padding 1em
+    position relative
+
+    &:after
+      background-repeat no-repeat
+      background-size contain
+      bg-image('ms3000-info-background.png')
+      content ' '
+      height 100%
+      margin 0 -3px
+      max-height: 100%
+      position absolute
+      right -66px
+      top 0
+      width 66px
+
+  h1
+    font-size 1.5em
+    line-height 1.3em
+    margin 0em 0 .5em 0
+
+  .logo
+    float left
+    width 40%
+
+  .font
+    float right
+    width 50%
+
+  .this-fall
+    clear both
+    font-size 1em
+    line-height 1.1em
+    padding .5em 0
+    width 100%
+
+#video
+  color $video-text-color
+  text-align center
+
+  #player
+    height 0px
+    overflow hidden
+    padding-bottom 56.25%
+    padding-top 30px
+    position relative
+
+    iframe
+      height 100%
+      left 0px
+      position absolute
+      top 0px
+      width 100%
+
+  p
+    margin 1em 0 0
+
+#upload
+  color $upload-text-color
+
+  #images
+    margin 0 auto
+    text-align center
+    width 80%
+
+  a
+    color $yellow
+
+#program
+  color $program-text-color
+  text-align center
+
+#technical
+  color $technical-text-color
+
+  table
+    border 1px solid rgba(0, 0, 0, .4)
+    text-align left
+    width 100%
+    font-size .7em
+
+    thead tr
+      background-color rgba(0, 0, 0, .4)
+
+    tr
+      line-height 1.5
+
+    td, th
+      border 1px solid rgba(0, 0, 0, .4)
+      padding .2em
+
+#contact
+  color $contact-text-color
+  text-align center
+
+footer.main
+  color $footer-text-color
+  padding 1.5em 0 0
+  text-align center
+
+  div
+    height 100%
+    line-height 3em
+    vertical-align top
+
+    a, span
+      vertical-align top
+
+    img
+      padding 0 .5em
+
+  > div
+    margin 0 0 2em
+
+    &:last-child
+      margin-bottom 0
+
+    img
+      display block
+      margin 0 auto
+
+  #proudowner
+    background-color $black
+    color $white
+    padding 1em 0
+    display inline-block
+    width 100%
+
+    p
+      line-height 1.5em
+      margin .5em 0
