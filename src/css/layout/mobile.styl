@@ -206,16 +206,25 @@ section
     display inline-block
 
   &#about
-    background-image url('/img/ms3000-ships.png'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
-    background-repeat no-repeat
-    background-size cover
+    background-repeat repeat
+    background-blend-mode overlay
+    background-image url('/img/ms3000-galaxy.jpg'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
     color $about-text-color
     overflow hidden
-    padding 1em 10%
     position relative
+    margin 0
+    padding 0
 
     .container
-      margin 30px auto 0
+      bg-image('ms3000-ships.png')
+      background-size contain
+      margin 0
+      padding 30px 10% 1em
+      width 100%
+
+    .logo-container,
+    .about-text
+      max-width $max-page-width
 
     .logo-container
       margin 0 0 1em
