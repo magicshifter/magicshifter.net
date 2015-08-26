@@ -3,46 +3,15 @@ magicshifter.net
 
 the page at magicshifter.net
 
-
-developing
+development
 ===
-
-comes with a makescript
-```bash
-# install needed dependencies
-make install
-
-# build for local preview
-# rootPath is set to "file:///" + process.cwd()  by default
-# this allows you to open the build/index.html file from the local filesystem
-# it will also start grunt-contrib-watch and livereload.
-make
-
-# build for server deployment
-# (rootPath is set to "/" by default)
-make deploy
-
-#delete the build directory
-make clean
-
-#delete node_modules and build directory
-make uninstall
-
 ```
+  git clone https://github.com/magicshifter/magicshifter.net
 
+  # we need the gulp branch for now:
+  git checkout -b gulp
+  git pull origin gulp
 
-If make does not make:
-```
-# install needed dependencies
-sudo npm install -g grunt
-npm install
-
-# build for local preview
-# rootPath is set to "file:///" + process.cwd()  by default
-# this allows you to just open the build/index.html file locally
-grunt
-
-# build for server deployment
-grunt --root='/'
-
+  npm install
+  gulp
 ```
