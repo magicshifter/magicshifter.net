@@ -28,6 +28,7 @@ module.exports = {
     css: 'main.styl',
     js: 'index.js',
     copy: '!(*.xcf|*.psd)',
+    server: 'server.js',
   },
   config: {
     babelrc: 'babelrc',
