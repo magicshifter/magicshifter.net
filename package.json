@@ -15,17 +15,17 @@
       "github": "jaeh"
     },
     {
-      "name": "phileas lebada",
-      "github": "norpol"
-    },
-    {
       "name": "philipp tiefenbacher",
       "email": "wizard23@magicshifter.net",
       "github": "wizard23"
     },
     {
       "name": "tom peak",
-      "github": "tompeak"
+      "github": "tompeak",
+    },
+    {
+      "name": "phileas lebada",
+      "github": "norpol"
     }
   ],
   "dependencies": {
