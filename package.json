@@ -5,7 +5,8 @@
   "license": "AGPL-3.0",
   "scripts": {
     "start": "gulp",
-    "production": "export NODE_ENV='production'; gulp"
+    "production": "export NODE_ENV='production'; gulp",
+    "server": "magicserver"
   },
   "contributors": [
     {
