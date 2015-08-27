@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp",
     "production": "export NODE_ENV='production'; gulp",
-    "server": "magicserver"
+    "server": "export NODE_ENV='production'; gulp server"
   },
   "contributors": [
     {
@@ -21,7 +21,7 @@
     },
     {
       "name": "tom peak",
-      "github": "tompeak",
+      "github": "tompeak"
     },
     {
       "name": "phileas lebada",
