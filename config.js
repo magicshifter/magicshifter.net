@@ -5,31 +5,43 @@ var build = 'build';
 var config = 'config';
 var appcache = 'manifest.appcache';
 
+var dirs = {
+  cwd: __dirname,
+  src: join(__dirname, src),
+  out: join(__dirname, build),
+  js: 'js',
+  css: 'css',
+  html: 'html',
+  assets: 'assets',
+  config: join(__dirname, config),
+  img: 'img',
+  pages: 'pages',
+  gulp: 'gulp',
+  favicon: 'favicon.ico',
+  v1: 'v1',
+};
+
 module.exports = {
   CNAME: 'magicshifter.net',
   port: 1337,
   pages: '/ /index.html',
-  env: process.env.NODE_ENV || 'development',
-  dirs: {
-    cwd: __dirname,
-    src: join(__dirname, src),
-    out: join(__dirname, build),
-    js: 'js',
-    css: 'css',
-    html: 'html',
-    assets: 'assets',
-    config: join(__dirname, config),
-    img: 'img',
-    pages: 'pages',
-    gulp: 'gulp',
-    favicon: 'favicon.ico',
+  pageItems: {
+    '/': '/index.html',
+    '/v1': '/v1/index.html',
+    '/%E2%99%A5': '/index.html',
   },
+  env: process.env.NODE_ENV || 'development',
+  dirs: dirs,
   files: {
-    css: 'main.styl',
-    js: 'index.js',
+    css: join(dirs.src, '**', dirs.css, '@(main.styl|*.main.styl)'),
+    js: {
+      index:  dirs.js,
+      v1: join(dirs.v1, dirs.js),
+      magic: join(dirs.v1, dirs.js),
+    },
     copy: '!(*.xcf|*.psd|*.ai)',
     server: 'server.js',
-    compress: '@(*.js|*.txt|*.js|*.css)',
+    compress: '!(*.ico|*.gz)',
   },
   config: {
     babelrc: 'babelrc',
@@ -104,5 +116,25 @@ module.exports = {
     // Files to exclude from static serving,
     // relative to out directory
     files: '!(server.js|config.js)',
-  }
+    dirs: {
+      img: '/' + dirs.img + '/',
+      js: '/' + dirs.js + '/',
+      css: '/' + dirs.css + '/',
+      v1: {
+        img: '/' + dirs.v1 + '/' + dirs.img + '/',
+        js: '/' + dirs.v1 + '/' + dirs.js + '/',
+        css: '/' + dirs.v1 + '/' + dirs.css + '/',
+      },
+    },
+  },
+  copy: [
+    {
+      src: join(dirs.src, dirs.assets, '**'),
+      out: join(dirs.out),
+    },
+    {
+      src: join(dirs.src, dirs.v1, dirs.assets, '**'),
+      out: join(dirs.out, dirs.v1),
+    },
+  ],
 };
