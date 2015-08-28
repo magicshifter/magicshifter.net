@@ -21,6 +21,85 @@ var dirs = {
   v1: 'v1',
 };
 
+
+var socialAccounts = [
+  {
+      link: 'http://blog.magicshifter.net/'
+    , img: '/img/social-icons/soupng'
+    , alt: 'soup'
+    , title: 'repost Magicshifter on soup'
+    , visible: true
+  },
+  {
+      link: 'https://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/'
+    , img: '/img/social-icons/flickr.png'
+    , alt: 'MagicShifter picture blog on Flickr'
+    , title: 'MagicShifter picture blog on Flickr'
+    , visible: true
+  },
+  {
+      link: 'http://www.reddit.com/r/MagicShifter/'
+    , img: '/img/social-icons/reddit.png'
+    , alt: 'MagicShifter Forum on Reddit'
+    , title: 'MagicShifter Forum on Reddit'
+    , visible: true
+  },
+  {
+      link: 'https://github.com/magicshifter'
+    , img: '/img/social-icons/github.png'
+    , alt: 'Our Github Organisation'
+    , title: 'We <3 the Octocat'
+    , visible: true
+  },
+  {
+      link: 'https://twitter.com/magicshifter'
+    , img: '/img/social-icons/twitter.png'
+    , alt: 'twitter'
+    , title: 'follow Magicshifter on twitter'
+    , visible: true
+  },
+  {
+      link: 'https://www.facebook.com/magicshifter/'
+    , img: '/img/social-icons/facebook.png'
+    , alt: 'facebook'
+    , title: 'like magicshifter on facebook'
+    , visible: true
+  },
+  {
+      link: 'https://flattr.com/submit/auto?user_id=wizard23&url=http%3A%2F%2Fmagicshifter.net'
+    , img: '/img/social-icons/flattr.png'
+    , alt: 'Flattr this'
+    , title: 'Flattr this'
+    , visible: true
+  },
+];
+
+var env = process.env.NODE_ENV || 'development';
+
+var menuItems = [
+  {href: '/♥', text: 'about'},
+  {href: '/video', text: 'video'},
+  {href: '/features', text: 'features'},
+  {href: '/program', text: 'program'},
+  {href: '/contact', text: 'contact'},
+];
+
+var server = {
+  // Files to exclude from static serving,
+  // relative to out directory
+  files: '!(server.js|config.js)',
+  dirs: {
+    img: '/' + dirs.img + '/',
+    js: '/' + dirs.js + '/',
+    css: '/' + dirs.css + '/',
+    v1: {
+      img: '/' + dirs.v1 + '/' + dirs.img + '/',
+      js: '/' + dirs.v1 + '/' + dirs.js + '/',
+      css: '/' + dirs.v1 + '/' + dirs.css + '/',
+    },
+  },
+};
+
 module.exports = {
   CNAME: 'magicshifter.net',
   port: 1337,
@@ -30,7 +109,8 @@ module.exports = {
     '/v1': '/v1/index.html',
     '/%E2%99%A5': '/index.html',
   },
-  env: process.env.NODE_ENV || 'development',
+  menuItems: menuItems,
+  env: env,
   dirs: dirs,
   files: {
     css: join(dirs.src, '**', dirs.css, '@(main.styl|*.main.styl)'),
@@ -39,6 +119,16 @@ module.exports = {
       v1: join(dirs.v1, dirs.js),
       magic: join(dirs.v1, dirs.js),
     },
+    html: [
+      {
+        src: join(dirs.src, dirs.html, dirs.pages, '*.jade'),
+        out: dirs.out,
+      },
+      {
+        src: join(dirs.src, dirs.v1, dirs.html, dirs.pages, '*.jade'),
+        out: join(dirs.out, dirs.v1),
+      },
+    ],
     copy: '!(*.xcf|*.psd|*.ai)',
     server: 'server.js',
     compress: '!(*.ico|*.gz)',
@@ -54,79 +144,8 @@ module.exports = {
     appcache: appcache,
     config: config,
   },
-  menuItems: [
-    {href: '/♥', text: 'about'},
-    {href: '/video', text: 'video'},
-    {href: '/features', text: 'features'},
-    {href: '/program', text: 'program'},
-    {href: '/contact', text: 'contact'},
-  ],
-  socialAccounts: [
-    {
-        link: 'http://blog.magicshifter.net/'
-      , img: '/img/social-icons/soup.png'
-      , alt: 'soup'
-      , title: 'repost Magicshifter on soup'
-      , visible: true
-    },
-    {
-        link: 'https://www.flickr.com/photos/wizard23/sets/72157632220498947/detail/'
-      , img: '/img/social-icons/flickr.png'
-      , alt: 'MagicShifter picture blog on Flickr'
-      , title: 'MagicShifter picture blog on Flickr'
-      , visible: true
-    },
-    {
-        link: 'http://www.reddit.com/r/MagicShifter/'
-      , img: '/img/social-icons/reddit.png'
-      , alt: 'MagicShifter Forum on Reddit'
-      , title: 'MagicShifter Forum on Reddit'
-      , visible: true
-    },
-    {
-        link: 'https://github.com/magicshifter'
-      , img: '/img/social-icons/github.png'
-      , alt: 'Our Github Organisation'
-      , title: 'We <3 the Octocat'
-      , visible: true
-    },
-    {
-        link: 'https://twitter.com/magicshifter'
-      , img: '/img/social-icons/twitter.png'
-      , alt: 'twitter'
-      , title: 'follow Magicshifter on twitter'
-      , visible: true
-    },
-    {
-        link: 'https://www.facebook.com/magicshifter/'
-      , img: '/img/social-icons/facebook.png'
-      , alt: 'facebook'
-      , title: 'like magicshifter on facebook'
-      , visible: true
-    },
-    {
-        link: 'https://flattr.com/submit/auto?user_id=wizard23&url=http%3A%2F%2Fmagicshifter.net'
-      , img: '/img/social-icons/flattr.png'
-      , alt: 'Flattr this'
-      , title: 'Flattr this'
-      , visible: true
-    },
-  ],
-  server: {
-    // Files to exclude from static serving,
-    // relative to out directory
-    files: '!(server.js|config.js)',
-    dirs: {
-      img: '/' + dirs.img + '/',
-      js: '/' + dirs.js + '/',
-      css: '/' + dirs.css + '/',
-      v1: {
-        img: '/' + dirs.v1 + '/' + dirs.img + '/',
-        js: '/' + dirs.v1 + '/' + dirs.js + '/',
-        css: '/' + dirs.v1 + '/' + dirs.css + '/',
-      },
-    },
-  },
+  socialAccounts: socialAccounts,
+  server: server,
   copy: [
     {
       src: join(dirs.src, dirs.assets, '**'),
@@ -137,4 +156,10 @@ module.exports = {
       out: join(dirs.out, dirs.v1),
     },
   ],
+  locals: {
+    env: env,
+    socialAccounts: socialAccounts,
+    menuItems: menuItems,
+    dirs: server.dirs,
+  },
 };
