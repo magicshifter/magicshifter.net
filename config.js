@@ -1,3 +1,4 @@
+
 var join = require('path').join;
 
 var src = 'src';
@@ -143,6 +144,52 @@ module.exports = {
     src: src,
     appcache: appcache,
     config: config,
+    tasks: [
+      {
+        src: join(dirs.src, dirs.js, '**', '*.js'),
+        tasks: ['build:js', 'server'],
+      },
+      {
+        src: join(dirs.src, dirs.v1, dirs.js, '**', '*.js'),
+        tasks: ['build:js', 'server'],
+      },
+      {
+        src: join(dirs.src, dirs.css, '**', '*.styl'),
+        tasks: ['build:css', 'server'],
+      },
+      {
+        src: join(dirs.src, dirs.v1, dirs.css, '**', '*.styl'),
+        tasks: ['build:css', 'server'],
+      },
+      {
+        src: join(dirs.src, dirs.html, '**', '*.jade'),
+        tasks: ['build:html', 'server'],
+      },
+      {
+        src: join(dirs.src, dirs.v1, dirs.html, '**', '*.jade'),
+        tasks: ['build:html', 'server'],
+      },
+      {
+        src: join(dirs.config, '*'),
+        tasks: ['build', 'server'],
+      },
+      {
+        src: 'config.js',
+        tasks: ['build', 'server'],
+      },
+      {
+        src: join(dirs.src, dirs.assets, '**', '*'),
+        tasks: ['build:copy', 'server'],
+      },
+      {
+        src: join(dirs.src, dirs.v1, dirs.assets, '**', '*'),
+        tasks: ['build:copy', 'server'],
+      },
+      {
+        src: join(dirs.src, appcache),
+        tasks: ['build:appcache', 'server'],
+      }
+    ],
   },
   socialAccounts: socialAccounts,
   server: server,
