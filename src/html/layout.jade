@@ -49,7 +49,14 @@ html(lang='en')
 
     include footer
 
-    script(src='/js/load.js')
+    script.
+      var d = document;
+      var b = d.body;
+      var s = d.createElement('script');
+      b.className = b.className.replace('nojs', 'js');
+      s.src = '/js/index.js';
+      b.appendChild(s);
+
 
     if env === 'development'
       script(src='http://localhost:35729/livereload.js')
