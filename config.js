@@ -26,7 +26,7 @@ var dirs = {
 var socialAccounts = [
   {
       link: 'http://blog.magicshifter.net/'
-    , img: '/img/social-icons/soupng'
+    , img: '/img/social-icons/soup.png'
     , alt: 'soup'
     , title: 'repost Magicshifter on soup'
     , visible: true
