@@ -28,9 +28,10 @@
     }
   ],
   "dependencies": {
-    "gulp": "^3.9.0",
     "builder": "magic/builder",
-    "page": "^1.6.3"
+    "gulp": "^3.9.0",
+    "page": "^1.6.3",
+    "utils": "magic/utils"
   },
   "repository": {
     "type": "git",
