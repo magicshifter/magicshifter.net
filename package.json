@@ -1,7 +1,7 @@
 {
   "name": "magicshifter.net",
   "version": "0.23.5",
-  "author": "Jascha Ehrenreich <jascha@jaeh.at>",
+  "author": "Wizards@Work",
   "license": "AGPL-3.0",
   "scripts": {
     "start": "gulp",
