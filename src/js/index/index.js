@@ -1,6 +1,8 @@
 setTimeout(() => document.body.classList.add('js'), 1);
 
-import 'utils/router';
+import route from 'utils/router';
 import './ga';
 import './header';
 import './menutoggle';
+
+route();
