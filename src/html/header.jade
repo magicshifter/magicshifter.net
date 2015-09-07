@@ -1,18 +1,17 @@
 header.main
   div.wrapper
-    div.container
-      a#logo(href='#about')
-        img(src='/img/logo.png' alt='magicshifter')
+    a#logo(href='#about')
+      img(src='/img/logo.png' alt='magicshifter')
 
-      a.menu-toggle
-        span
-        span
-        span
+    a.menu-toggle
+      span
+      span
+      span
 
-      if menuItems
-        nav.main
-          ul
-            for item in menuItems
-              if item.href && item.text
-                li
-                  a(href=item.href)= item.text
+    if menuItems
+      nav.main
+        ul
+          for item in menuItems
+            if item.href && item.text
+              li
+                a(href=item.href)= item.text
