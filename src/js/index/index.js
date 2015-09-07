@@ -1,4 +1,4 @@
-setTimeout(() => document.body.classList.add('js'), 1);
+document.body.classList.add('js');
 
 import route from 'utils/router';
 import './ga';
