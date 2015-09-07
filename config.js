@@ -77,11 +77,11 @@ var socialAccounts = [
 var env = process.env.NODE_ENV || 'development';
 
 var menuItems = [
-  {href: '/♥', text: 'about'},
-  {href: '/video', text: 'video'},
-  {href: '/features', text: 'features'},
-  {href: '/program', text: 'program'},
-  {href: '/contact', text: 'contact'},
+  {href: '#♥', text: 'about'},
+  {href: '#video', text: 'video'},
+  {href: '#features', text: 'features'},
+  {href: '#program', text: 'program'},
+  {href: '#contact', text: 'contact'},
 ];
 
 var server = {
