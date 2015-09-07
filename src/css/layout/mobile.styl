@@ -2,10 +2,131 @@
   box-sizing border-box
 
 body
-  font-family Segoe UI, Lucida Grande, Ubuntu, Arial, sans-serif
+  font-family 'Segoe UI', 'Lucida Grande', Ubuntu, Arial, sans-serif
   font-size 16px
   line-height 1.1em
   background-color $black
+
+img,
+a
+  max-height 100%
+  max-width 100%
+
+  &.split
+    margin 0 1%
+    max-width 47%
+
+a, a:visited
+  color $link-color
+  text-decoration underline
+
+  &:hover
+    color $link-hover-color
+    text-shadow 3px 3px 3px rgba(0, 0, 0, .4)
+
+  &.textflow
+    margin 0 .3em 0
+p
+  margin 0 0 .5em
+
+  &.btns
+    padding 1em 0 0
+
+header.main
+  background-color $black
+  background-size contain
+  color $white
+  display block
+  font-size .9em
+  height $headerUnscrolledHeight
+  line-height 1.1em
+  position relative
+  top 0
+  width 100%
+  z-index 1
+
+  .menu-toggle
+    display block
+    float right
+    position relative
+    top 2.5em
+    width 50px
+
+    span
+      background-color $white
+      border-radius 5px
+      display block
+      height 5px
+      margin 5px 0
+      width 100%
+
+  .wrapper
+    background-size contain
+    bg-image('header-background.png')
+    display inline-block
+    height $headerUnscrolledHeight
+    padding 10px
+    width 100%
+    z-index 1
+    position fixed
+
+    .container
+      display block
+      max-width $max-page-width
+      width 100%
+      z-index 1
+      margin 0 auto
+
+  nav
+    background-color $header-bg-color
+    border-bottom-left-radius 25px
+    clear both
+    font-size 1.5em
+    padding .5em 0
+    position absolute
+    right -50%
+    top $headerUnscrolledHeight
+    width 50%
+
+    &.show
+      right 0
+
+    ul
+      display inline-block
+      padding 0 .5em
+      text-align center
+
+      li
+        float none
+        margin 1.2em
+
+  a
+    text-decoration none
+    &:hover
+      color $white
+      text-decoration underline
+
+  a#logo
+    display inline-block
+    float left
+
+
+#social
+  text-align center
+
+  ul
+    li
+      display inline-block
+      height 30px
+      margin 0 .1em
+      width 30px
+
+      a
+        display inline
+        float none
+      &:hover
+        opacity .8
+
 
 section
   clear both
@@ -71,134 +192,6 @@ section
     font-size 1.3em
     padding 0 0 .5em
     text-align center
-
-img,
-a
-  max-height 100%
-  max-width 100%
-
-  &.split
-    margin 0 1%
-    max-width 47%
-
-a, a:visited
-  color $link-color
-  text-decoration underline
-
-  &:hover
-    color $link-hover-color
-    text-shadow 3px 3px 3px rgba(0, 0, 0, .4)
-
-  &.textflow
-    margin 0 .3em 0
-p
-  margin 0 0 .5em
-
-  &.btns
-    padding 1em 0 0
-
-body.js
-  header.main
-    height $headerUnscrolledHeight
-    overflow visible
-
-header.main
-  background-color $black
-  background-size contain
-  bg-image('header-background.jpg')
-  color $white
-  display block
-  font-size .9em
-  height 0
-  line-height 1.1em
-  position fixed
-  top 0
-  width 100%
-  z-index 1
-  overflow hidden
-
-  .menu-toggle
-    display block
-    float right
-    position relative
-    top 2.5em
-    width 50px
-
-    span
-      background-color $white
-      border-radius 5px
-      display block
-      height 5px
-      margin 5px 0
-      width 100%
-
-  .wrapper
-    background-color $header-bg-color
-    display inline-block
-    padding 10px
-    width 100%
-    z-index 1
-
-    .container
-      display block
-      max-width $max-page-width
-      width 100%
-      z-index 1
-      margin 0 auto
-
-  nav
-    background-color $header-bg-color
-    border-bottom-left-radius 25px
-    clear both
-    font-size 1.5em
-    padding .5em 0
-    position absolute
-    right -50%
-    top $headerUnscrolledHeight
-    width 50%
-
-    &.show
-      right 0
-
-    ul
-      display inline-block
-      padding 0 .5em
-      text-align center
-
-      li
-        float none
-        margin 1.2em
-
-  a
-    text-decoration none
-    &:hover
-      color $white
-      text-decoration underline
-
-  a#logo
-    display inline-block
-    float left
-
-
-#social
-  text-align center
-
-  ul
-    li
-      display inline-block
-      height 30px
-      margin 0 .1em
-      width 30px
-
-      a
-        display inline
-        float none
-      &:hover
-        opacity .8
-
-section
-  top $headerUnscrolledHeight
-  position relative
 
   .container
     max-width $max-page-width
@@ -319,7 +312,6 @@ footer.main
   padding 1.5em 0 0
   position relative
   text-align center
-  top $headerUnscrolledHeight
 
   div
     height 100%
@@ -355,8 +347,6 @@ footer.main
 
 body.scrolled
   header.main
-    height $headerScrolledHeight
-
     .wrapper
       height $headerScrolledHeight
       padding 5px
@@ -375,10 +365,3 @@ body.scrolled
       img
         height 40px
         padding 5px 0 0
-
-  article
-    section
-      top $headerScrolledHeight
-
-  footer.main
-    top $headerScrolledHeight
