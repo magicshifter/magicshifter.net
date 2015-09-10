@@ -4,8 +4,8 @@
   "author": "Wizards@Work",
   "license": "AGPL-3.0",
   "scripts": {
-    "start": "gulp",
-    "production": "export NODE_ENV='production'; gulp server"
+    "dev": "gulp",
+    "start": "export NODE_ENV='production'; gulp server"
   },
   "contributors": [
     {
