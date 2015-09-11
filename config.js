@@ -14,7 +14,7 @@ var dirs = {
   css: 'css',
   html: 'html',
   assets: 'assets',
-  config: join(__dirname, config),
+  config: __dirname,
   img: 'img',
   pages: 'pages',
   gulp: 'gulp',
@@ -134,10 +134,10 @@ module.exports = {
     compress: '!(*.ico|*.gz)',
   },
   config: {
-    babelrc: 'babelrc',
-    jaderc: 'jadelintrc',
-    jscsrc: 'jscsrc',
-    stylintrc: 'stylintrc',
+    babelrc: '.babelrc',
+    jaderc: '.jadelintrc',
+    jscsrc: '.jscsrc',
+    stylintrc: '.stylintrc',
   },
   watch: {
     src: src,
