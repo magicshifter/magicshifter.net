@@ -7,11 +7,13 @@ mixin gallery(index, pics)
         li
           span(class=pic)
 
+- var sectionLink = '../../sections/v1/'
+
 block content
 
-  include ../sections/about
+  include #{sectionLink}about
 
-  include ../sections/social
+  include ../../sections/v1/social
 
   include ../sections/video
 

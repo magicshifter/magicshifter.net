@@ -1,0 +1,27 @@
+- var menuItems = [
+    {href: '#♥', text: 'about'},
+    {href: '#video', text: 'video'},
+    {href: '#features', text: 'features'},
+    {href: '#program', text: 'program'},
+    {href: '#contact', text: 'contact'},
+  ];
+
+header.main
+  div.wrapper
+    div.container
+      a#logo(href="/")
+        img(src="/img/v1/logo.png" alt="magicshifter")
+
+      a.menu-toggle
+        span
+        span
+        span
+
+      if menu_items
+        nav.main
+
+          ul
+            for item in menuItems
+              if item.href && item.text
+                li
+                  a(href=item.href)= item.text

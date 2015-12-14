@@ -1,0 +1,36 @@
+extends ../../v1/layout.jade
+
+mixin gallery(index, pics)
+  section(class='gallery ' + index)
+    ul
+      each pic in pics
+        li
+          span(class=pic)
+
+block content
+
+  include ../../v1/sections/about
+
+  include ../../v1/sections/social
+
+  include ../../v1/sections/video
+
+  gallery('first', ['girafe', 'oneup', 'heart'])
+
+  include ../../v1/sections/upload
+
+  gallery('second', ['invader', 'mario', 'nyan'])
+
+  include ../../v1/sections/program
+
+  gallery('third', ['ccc29', 'cursor', 'bubblebobble'])
+
+  include ../../v1/sections/technical
+
+  gallery('fourth', ['shadows-2', 'goggles', 'shadows'])
+
+  include ../../v1/sections/contact
+
+  gallery('fifth', ['circles', 'smiley', 'bike'], 'contact-gallery')
+
+  include ../../v1/footer
