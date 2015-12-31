@@ -31,10 +31,6 @@
     "page": "^1.6.3",
     "utils": "magic/utils"
   },
-  "devDependencies": {
-    "builder": "magic/builder",
-    "gulp": "^3.9.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/magicshifter/magicshifter.net.git"
