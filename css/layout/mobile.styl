@@ -71,11 +71,11 @@ header.main
     background-size contain
     bg-image('header-background.png')
     display inline-block
-    height $headerUnscrolledHeight
     padding 10px
+    position fixed
+    transition height .2s
     width 100%
     z-index 1
-    position fixed
 
     .container
       display block
@@ -117,6 +117,9 @@ header.main
     display inline-block
     float left
 
+    img
+      transition height .2s
+      height 70px
 
 #social
   text-align center
@@ -232,6 +235,7 @@ section
       margin 20px auto
       min-height 200px
       position relative
+      text-align center
       width 80%
 
       &:after
@@ -354,7 +358,6 @@ footer.main
 body.scrolled
   header.main
     .wrapper
-      height $headerScrolledHeight
       padding 5px
 
     .menu-toggle
