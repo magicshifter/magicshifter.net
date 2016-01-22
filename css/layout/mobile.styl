@@ -13,7 +13,7 @@ a
   max-width 100%
 
   &.split
-    margin 0 1%
+    margin 2% 1%
     max-width 47%
 
 a, a:visited
@@ -133,6 +133,9 @@ section
   padding 5.5em 10%
   text-align center
 
+  .area
+    margin 2em 0 0
+
   ul.list
     display block
     margin 0 auto 1em
@@ -188,7 +191,7 @@ section
     line-height 1.1em
 
   h3
-    font-size 1.3em
+    font-size 1.2em
     padding 0 0 .5em
     text-align center
 
@@ -197,11 +200,11 @@ section
     margin 0 auto
     display inline-block
 
-  &#about
+  &#home
     background-repeat repeat
     background-blend-mode overlay
     background-image url('../img/ms3000-galaxy.jpg'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
-    color $about-text-color
+    color $home-text-color
     overflow hidden
     position relative
     margin 0
@@ -209,30 +212,17 @@ section
 
     .container
       bg-image('ms3000-ships.png')
-      background-size 100% auto
-      margin 0
-      padding 30px 10% 1em
-      width 100%
-
-    .logo-container,
-    .about-text
-      max-width $max-page-width
-
-    .logo-container
-      margin 0 0 1em
-      text-align center
-
-    .about-text
       background-color rgba(0, 0, 0, .666)
       background-repeat no-repeat
+      background-size 100% auto
       border 3px solid rgba(255, 255, 255, .7)
       border-radius 3px
       display block
       font-size 0.8em
-      margin 20px 0
+      margin 20px auto
       min-height 200px
-      padding 1em
       position relative
+      width 80%
 
       &:after
         background-repeat no-repeat
@@ -247,18 +237,27 @@ section
         top 0
         width 66px
 
+    .logo-container,
+    .home-text
+      max-width $max-page-width
+
+    .logo-container
+      margin 50px auto 1em
+      display inline-block
+      width 70%
+
     h1
       font-size 1.5em
       line-height 1.3em
-      margin 0em 0 .5em 0
+      margin 0 0 .5em 0
 
     .logo
       float left
-      width 40%
+      width 35%
 
     .font
       float right
-      width 50%
+      width 60%
 
     .this-fall
       clear both
@@ -276,9 +275,9 @@ section
     .container
       margin 10px auto
 
-  &#video
-    color $video-text-color
-    text-align center
+  &#about
+    color $about-text-color
+    text-align left
 
     #player
       height 0px
