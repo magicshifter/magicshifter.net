@@ -16,6 +16,11 @@ a
     margin 2% 1%
     max-width 47%
 
+    &.block
+      display block
+      margin 4% auto
+      max-width 75%
+
 a, a:visited
   color $link-color
   text-decoration underline
@@ -28,6 +33,9 @@ a, a:visited
     margin 0 .3em 0
 p
   margin 0 0 .5em
+
+  &.centered
+    text-align center
 
   &.btns
     padding 1em 0 0
@@ -93,7 +101,7 @@ header.main
     ul
       display inline-block
       padding 0 .5em
-      text-align center
+      text-align left
 
       li
         float none
@@ -111,7 +119,7 @@ header.main
 
 
 #social
-  text-align center
+  text-align left
 
   ul
     li
@@ -150,6 +158,8 @@ section
       margin 1em 0 .5em
 
     li
+      margin .5em 0
+
       .image
         background-size contain
         bg-image('list-style-image.png')
@@ -298,7 +308,7 @@ section
 
   &#program
     color $program-text-color
-    text-align center
+    text-align left
 
   &#contact
     color $contact-text-color
