@@ -263,6 +263,9 @@ section
       line-height 1.3em
       margin 0 0 .5em 0
 
+    h2
+      padding 0 .7em .7em
+
     .logo
       float left
       width 35%
@@ -313,6 +316,10 @@ section
   &#contact
     color $contact-text-color
     text-align center
+
+  p
+    img
+      margin 1em 0
 
 footer.main
   background-color $white
@@ -374,14 +381,18 @@ body.scrolled
         padding 5px 0 0
 
 .shop
+  margin 1em auto 0
+  max-width 90%
+
   a
     text-decoration none
 
     &:hover
       text-shadow 0 .1em .2em #ff0
+      text-decoration underline
 
     img
-      max-width 90%
+      margin 0
 
 a.shopMenu
   color #ffff00
