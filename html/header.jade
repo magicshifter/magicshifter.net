@@ -1,7 +1,8 @@
 -
   menuItems = [
     {href: '/', text: 'home'},
-    {href: '#about', text: 'about'},
+    {href: '#description', text: 'description'},
+    {href: '#new', text: 'new'},
     {href: '#features', text: 'features'},
     {href: '#program', text: 'program'},
     {href: '#contact', text: 'contact'},
@@ -20,6 +21,8 @@ header.main
     if menuItems
       nav.main
         ul
+          li
+            a.shopMenu(href='http://www.hackerspaceshop.com/magicshifter-3/magicshifter3000.html') SHOP
           for item in menuItems
             if item.href && item.text
               li
