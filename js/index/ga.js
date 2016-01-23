@@ -2,7 +2,7 @@ const _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-35739153-1']);
 _gaq.push(['_trackPageview', '/']);
 
-function clickLink(e, isHome) {
+function clickLink(e, isHome = false) {
   const eventName = isHome ? 'home' : e.target.innerHTML;
   _gaq.push('_trackEvent', 'navigation', eventName);
 }
@@ -18,7 +18,7 @@ Object.keys(links).forEach(key => {
 });
 
 const logo = document.querySelector('a#logo');
-logo.addEventListener('click', (e) => {clickLink(e, false));
+logo.addEventListener('click', (e) => { clickLink(e, true); });
 
 const ga = document.createElement('script');
 ga.type = 'text/javascript';
