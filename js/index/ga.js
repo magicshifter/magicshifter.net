@@ -2,8 +2,9 @@ const _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-35739153-1']);
 _gaq.push(['_trackPageview', '/']);
 
-function clickLink(e) {
-  _gaq.push('_trackEvent', 'navigation', e.target.innerHTML);
+function clickLink(e, isHome) {
+  const eventName = isHome ? 'home' : e.target.innerHTML;
+  _gaq.push('_trackEvent', 'navigation', eventName);
 }
 
 const nav = document.querySelector('header.main nav');
@@ -17,7 +18,7 @@ Object.keys(links).forEach(key => {
 });
 
 const logo = document.querySelector('a#logo');
-logo.addEventListener('click', clickLink);
+logo.addEventListener('click', (e) => {clickLink(e, false));
 
 const ga = document.createElement('script');
 ga.type = 'text/javascript';
