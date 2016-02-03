@@ -13,7 +13,7 @@ dev:
 	@echo "starting development environment"
 	@${GULP}
 
-build:
+build: clean
 	@echo "starting production build"
 
 	@NODE_ENV='production'; \
