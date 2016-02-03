@@ -69,7 +69,7 @@ header.main
 
   .wrapper
     background-size contain
-    bg-image('header-background.png')
+    bg-image('header/header-background.png')
     display inline-block
     padding 10px
     position fixed
@@ -214,7 +214,7 @@ section
   &#hero
     background-repeat repeat
     background-blend-mode overlay
-    background-image url('../img/ms3000-galaxy.jpg'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
+    background-image url('../img/hero/galaxy.jpg'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
     color $hero-text-color
     overflow hidden
     position relative
@@ -222,7 +222,7 @@ section
     padding 0
 
     .container
-      bg-image('ms3000-ships.png')
+      bg-image('hero/ships.png')
       background-color rgba(0, 0, 0, .666)
       background-repeat no-repeat
       background-size 100% auto
@@ -240,7 +240,7 @@ section
       &:after
         background-repeat no-repeat
         background-size contain
-        bg-image('ms3000-info-background.png')
+        bg-image('hero/hero-padder.png')
         content ' '
         height 100%
         margin 0 -3px
