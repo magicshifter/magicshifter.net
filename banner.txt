@@ -6,13 +6,13 @@
                 /___/
 
 
-  Contributors:          - github:   - homepage:
-    Philipp Tiefenbacher - wizard23  - http://wizards23.net
-    Florian Bittner      - overflo23 - http://hackerspaceshop.com/
-    Jascha Ehrenreich    - jaeh      - https://jaeh.at
-    Tom Peak             - TomPeak   - http://www.tompeak.com/
-    Jay Vaughan          - seclorum  - http://primitur.at
-    Phileas Lebada       - norpol    - http://exaple.org/
+  Contributors:          - github:    - homepage:
+    Philipp Tiefenbacher - wizard23   - http://wizards23.net
+    Florian Bittner      - overflo23  - http://hackerspaceshop.com/
+    Jascha Ehrenreich    - jaeh       - https://jaeh.at
+    Tom Peak             - TomPeak    - http://www.tompeak.com/
+    Jay Vaughan          - seclorum   - http://primitur.at
+    Phileas Lebada       - norpol     - http://exaple.org/
 
     Thanks to the various others,
     who will appear here soon.
