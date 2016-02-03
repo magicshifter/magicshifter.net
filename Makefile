@@ -21,9 +21,17 @@ build:
 
 	@echo "build finished"
 
+clean:
+	@echo "cleaning up dist dir"
+
+	@rm -rf ./dist
+
+	@echo "cleanup finished"
+
 help:
 	@echo "\n\
 	make tasks: \n\
 	make       - starts development mode \n\
 	make build - builds production files \n\
+	make clean - delete ./dist directory \n\
 	"
