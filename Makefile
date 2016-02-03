@@ -1,4 +1,4 @@
-NODE_MODULES=node_modules/.bin
+NODE_MODULES=./node_modules/.bin
 GULP=${NODE_MODULES}/gulp
 
 .PHONY: \
@@ -17,7 +17,7 @@ build:
 	@echo "starting production build"
 
 	@NODE_ENV='production'; \
-	@${GULP} server
+	${GULP} server
 
 	@echo "build finished"
 
