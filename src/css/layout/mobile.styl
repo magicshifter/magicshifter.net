@@ -1,0 +1,399 @@
+*
+  box-sizing border-box
+
+body
+  font-family 'Segoe UI', 'Lucida Grande', Ubuntu, Arial, sans-serif
+  font-size 16px
+  line-height 1.1em
+  background-color $black
+
+img,
+a
+  max-height 100%
+  max-width 100%
+
+  &.split
+    margin 2% 1%
+    max-width 47%
+
+    &.block
+      display block
+      margin 4% auto
+      max-width 75%
+
+a, a:visited
+  color $link-color
+  text-decoration underline
+
+  &:hover
+    color $link-hover-color
+    text-shadow 3px 3px 3px rgba(0, 0, 0, .4)
+
+  &.textflow
+    margin 0 .3em 0
+p
+  margin 0 0 .5em
+
+  &.centered
+    text-align center
+
+  &.btns
+    padding 1em 0 0
+
+header.main
+  background-color $black
+  color $white
+  display block
+  font-size .9em
+  height $headerUnscrolledHeight
+  line-height 1.1em
+  position relative
+  top 0
+  width 100%
+  z-index 1
+
+  .menu-toggle
+    display block
+    float right
+    position relative
+    top 2.5em
+    width 50px
+
+    span
+      background-color $white
+      border-radius 5px
+      display block
+      height 5px
+      margin 5px 0
+      width 100%
+
+  .wrapper
+    background-size contain
+    bg-image('header-background.png')
+    display inline-block
+    padding 10px
+    position fixed
+    width 100%
+    z-index 1
+
+    .container
+      display block
+      max-width $max-page-width
+      width 100%
+      z-index 1
+      margin 0 auto
+
+  nav
+    background-color $header-bg-color
+    border-bottom-left-radius 25px
+    clear both
+    font-size 1.5em
+    padding .5em 0
+    position absolute
+    right -50%
+    top $headerUnscrolledHeight
+    width 50%
+
+    &.show
+      right 0
+
+    ul
+      display inline-block
+      padding 0 .5em
+      text-align left
+
+      li
+        float none
+        margin 1.2em
+
+  a
+    text-decoration none
+    &:hover
+      color $white
+      text-decoration underline
+
+  a#logo
+    display inline-block
+    float left
+
+    img
+      height 70px
+
+#social
+  text-align center
+
+  ul
+    li
+      display inline-block
+      height 30px
+      margin 0 .1em
+      width 30px
+
+      a
+        display inline
+        float none
+      &:hover
+        opacity .8
+
+section
+  clear both
+  margin -5px 0 0
+  padding 5.5em 10%
+  text-align center
+
+  .area
+    margin 2em 0 0
+
+  ul.list
+    display block
+    margin 0 auto 1em
+    max-width 450px
+    text-align left
+
+    &.software
+      margin 3em auto 1em
+
+    lh
+      display block
+      margin 1em 0 .5em
+
+    li
+      margin .5em 0
+
+      .image
+        background-size contain
+        bg-image('list-style-image.png')
+        display inline-block
+        height .5em
+        margin 0 .2em 0 0
+        position relative
+        top -.1em
+        width .5em
+
+  &.gallery
+    padding 2em 0
+
+    ul
+      display inline-block
+      margin 0 auto
+      text-align center
+      width 100%
+
+      li
+        display inline-block
+        margin 0 1%
+        width 25%
+
+      img
+        border-radius 100%
+        height 100%
+        max-height 100%
+        max-width 100%
+        width 100%
+
+  &#social
+    padding .5em 5%
+
+  h2
+    font-size 1.5em
+    padding 0 0 .7em
+    text-align center
+    line-height 1.1em
+
+  h3
+    font-size 1.2em
+    padding 0 0 .5em
+    text-align center
+
+  .container
+    max-width $max-page-width
+    margin 0 auto
+    display inline-block
+    text-align left
+
+  &#hero
+    background-repeat repeat
+    background-blend-mode overlay
+    background-image url('../img/ms3000-galaxy.jpg'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
+    color $hero-text-color
+    overflow hidden
+    position relative
+    margin 0
+    padding 0
+
+    .container
+      bg-image('ms3000-ships.png')
+      background-color rgba(0, 0, 0, .666)
+      background-repeat no-repeat
+      background-size 100% auto
+      border 3px solid rgba(255, 255, 255, .7)
+      border-radius 3px
+      display block
+      font-size 0.8em
+      margin 20px auto
+      min-height 200px
+      padding 0 10%
+      position relative
+      text-align center
+      width 80%
+
+      &:after
+        background-repeat no-repeat
+        background-size contain
+        bg-image('ms3000-info-background.png')
+        content ' '
+        height 100%
+        margin 0 -3px
+        max-height: 100%
+        position absolute
+        right -66px
+        top 0
+        width 66px
+
+    .logo-container,
+    .hero-text
+      max-width $max-page-width
+
+    .logo-container
+      margin 50px auto 1em
+      display inline-block
+
+    h1
+      font-size 1.5em
+      line-height 1.3em
+      margin 0 0 .5em 0
+
+    .logo
+      float left
+      width 35%
+
+    .font
+      float right
+      width 60%
+
+    .this-fall
+      clear both
+      font-size 1em
+      line-height 1.1em
+      padding .5em 0
+      width 100%
+
+    .available
+      float right
+      font-size .7em
+      font-style italic
+
+  &#social
+    .container
+      margin 10px auto
+
+  &#about
+    color $about-text-color
+
+    #player
+      height 0px
+      overflow hidden
+      padding-bottom 56.25%
+      padding-top 30px
+      position relative
+
+      iframe
+        height 100%
+        left 0px
+        position absolute
+        top 0px
+        width 100%
+
+    p
+      margin 1em 0 0
+
+  &#program
+    color $program-text-color
+
+  &#contact
+    color $contact-text-color
+    text-align center
+
+    a
+      color #00F
+
+      &:hover
+        color #77F
+  p
+    img
+      margin 1em 0
+
+footer.main
+  background-color $white
+  color $footer-text-color
+  padding 1.5em 0 0
+  position relative
+  text-align center
+
+  div
+    height 100%
+    line-height 3em
+    vertical-align top
+
+    a, span
+      vertical-align top
+
+    img
+      padding 0 .5em
+
+  > div
+    margin 0 0 2em
+
+    &:last-child
+      margin-bottom 0
+
+    img
+      display block
+      margin 0 auto
+
+  #proudowner
+    background-color $black
+    color $white
+    padding 1em 0
+    display inline-block
+    width 100%
+
+    p
+      line-height 1.5em
+      margin .5em 0
+
+body.scrolled
+  header.main
+    .wrapper
+      padding 5px
+
+    .menu-toggle
+      top 20px
+      width 40px
+      span
+        height 3px
+        margin 3px 0
+
+    nav
+      top $headerScrolledHeight
+
+    #logo
+      img
+        height 40px
+        padding 5px 0 0
+
+.shop
+  margin 1em auto 0
+
+  a
+    text-decoration none
+
+    &:hover
+      text-shadow 0 .1em .2em #ff0
+      text-decoration underline
+
+    img
+      margin 0
+
+a.shopMenu
+  color #ffff00

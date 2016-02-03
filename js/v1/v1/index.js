@@ -1,2 +1,0 @@
-import './ga';
-import './header';

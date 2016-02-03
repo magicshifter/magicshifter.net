@@ -4,8 +4,8 @@
   "author": "Wizards@Work",
   "license": "AGPL-3.0",
   "scripts": {
-    "dev": "gulp",
-    "start": "export NODE_ENV='production'; gulp server"
+    "start": "gulp",
+    "build": "export NODE_ENV='production'; gulp server"
   },
   "contributors": [
     {
@@ -28,11 +28,15 @@
     }
   ],
   "dependencies": {
-    "page": "^1.6.3",
-    "utils": "magic/utils"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/magicshifter/magicshifter.net.git"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "builder": "magic/builder",
+    "page": "^1.6.3",
+    "utils": "magic/utils"
   }
 }

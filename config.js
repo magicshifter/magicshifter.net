@@ -1,15 +1,16 @@
+'use strict';
 
 var join = require('path').join;
 
 var src = 'src';
-var build = 'build';
+var out = 'dist';
 var config = 'config';
 var appcache = 'manifest.appcache';
 
 var dirs = {
   cwd: __dirname,
   src: join(__dirname, src),
-  out: join(__dirname, build),
+  out: join(__dirname, out),
   js: 'js',
   css: 'css',
   html: 'html',
@@ -19,7 +20,6 @@ var dirs = {
   pages: 'pages',
   gulp: 'gulp',
   favicon: 'favicon.ico',
-  v1: 'v1',
 };
 
 var socialAccounts = [
@@ -92,11 +92,6 @@ var server = {
     img: '/' + dirs.img + '/',
     js: '/' + dirs.js + '/',
     css: '/' + dirs.css + '/',
-    v1: {
-      img: '/' + dirs.v1 + '/' + dirs.img + '/',
-      js: '/' + dirs.v1 + '/' + dirs.js + '/',
-      css: '/' + dirs.v1 + '/' + dirs.css + '/',
-    },
   },
 };
 
@@ -106,7 +101,6 @@ module.exports = {
   pages: '/ /index.html',
   pageItems: {
     '/': '/index.html',
-    '/v1': '/v1/index.html',
     '/%E2%99%A5': '/index.html',
   },
   menuItems: menuItems,
@@ -116,17 +110,11 @@ module.exports = {
     css: join(dirs.src, '**', dirs.css, '@(main.styl|*.main.styl)'),
     js: {
       index:  dirs.js,
-      v1: join(dirs.v1, dirs.js),
-      magic: join(dirs.v1, dirs.js),
     },
     html: [
       {
         src: join(dirs.src, dirs.html, dirs.pages, '*.jade'),
         out: dirs.out,
-      },
-      {
-        src: join(dirs.src, dirs.v1, dirs.html, dirs.pages, '*.jade'),
-        out: join(dirs.out, dirs.v1),
       },
     ],
     copy: '!(*.xcf|*.psd|*.ai)',
@@ -149,23 +137,11 @@ module.exports = {
         tasks: ['build:js'],
       },
       {
-        src: join(dirs.src, dirs.v1, dirs.js, '**', '*.js'),
-        tasks: ['build:js'],
-      },
-      {
         src: join(dirs.src, dirs.css, '**', '*.styl'),
         tasks: ['build:css'],
       },
       {
-        src: join(dirs.src, dirs.v1, dirs.css, '**', '*.styl'),
-        tasks: ['build:css'],
-      },
-      {
         src: join(dirs.src, dirs.html, '**', '*.jade'),
-        tasks: ['build:html'],
-      },
-      {
-        src: join(dirs.src, dirs.v1, dirs.html, '**', '*.jade'),
         tasks: ['build:html'],
       },
       {
@@ -181,10 +157,6 @@ module.exports = {
         tasks: ['build:copy'],
       },
       {
-        src: join(dirs.src, dirs.v1, dirs.assets, '**', '*'),
-        tasks: ['build:copy'],
-      },
-      {
         src: join(dirs.src, appcache),
         tasks: ['build:appcache'],
       }
@@ -196,10 +168,6 @@ module.exports = {
     {
       src: join(dirs.src, dirs.assets, '**'),
       out: join(dirs.out),
-    },
-    {
-      src: join(dirs.src, dirs.v1, dirs.assets, '**'),
-      out: join(dirs.out, dirs.v1),
     },
   ],
   locals: {
