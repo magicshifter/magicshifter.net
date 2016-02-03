@@ -1,0 +1,24 @@
+/*
+     __  ___             _       ____ __    _  ___ __
+    /  |/  /___ _ ___ _ (_)____ / __// /   (_)/ _// /_ ___  ____
+   / /|_/ // _ `// _ `// // __/_\ \ / _ \ / // _// __// -_)/ __/
+  /_/  /_/ \_,_/ \_, //_/ \__//___//_//_//_//_/  \__/ \__//_/
+                /___/
+
+
+  Contributors:          - github:   - homepage:
+    Philipp Tiefenbacher - wizard23  - http://wizards23.net
+    Florian Bittner      - overflo23 - http://hackerspaceshop.com/
+    Jascha Ehrenreich    - jaeh      - https://jaeh.at
+    Tom Peak             - TomPeak   - http://www.tompeak.com/
+    Jay Vaughan          - seclorum  - http://primitur.at
+    Phileas Lebada       - norpol    - http://exaple.org/
+
+    Thanks to the various others,
+    who will appear here soon.
+
+    If you should ( and want to ) be on this list please send one of us a message,
+    or simply create a pull request :)
+
+  Keep spreading the <3
+*/

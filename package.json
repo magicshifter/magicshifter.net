@@ -1,15 +1,42 @@
 {
-	"name": "magicshifter.net",
-	"version": "0.23.5",
-	"devDependencies": {
-		"grunt": "~0.4.5",
-		"grunt-contrib-stylus": "~0.16.0",
-		"grunt-contrib-jade": "~0.12.0",
-		"grunt-contrib-concat": "~0.4.0",
-		"grunt-contrib-copy": "~0.5.0"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/magicshifter/magicshifter.net.git"
-	}
+  "name": "magicshifter.net",
+  "version": "0.23.5",
+  "author": "Wizards@Work",
+  "license": "AGPL-3.0",
+  "scripts": {
+    "start": "gulp",
+    "build": "export NODE_ENV='production'; gulp server"
+  },
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "email": "jascha@magicshifter.net",
+      "github": "jaeh"
+    },
+    {
+      "name": "philipp tiefenbacher",
+      "email": "wizard23@magicshifter.net",
+      "github": "wizard23"
+    },
+    {
+      "name": "tom peak",
+      "github": "tompeak"
+    },
+    {
+      "name": "phileas lebada",
+      "github": "norpol"
+    }
+  ],
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magicshifter/magicshifter.net.git"
+  },
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "builder": "magic/builder",
+    "page": "^1.6.3",
+    "utils": "magic/utils"
+  }
 }

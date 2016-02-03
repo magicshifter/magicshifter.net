@@ -1,36 +1,29 @@
-#!/bin/bash
+NODE_MODULES=node_modules/.bin
+GULP=${NODE_MODULES}/gulp
 
-all:
-	#remove build dir
-	rm -rf ./build
+.PHONY: \
+	all \
+	build \
+	help \
+	dev
 
-	#grunt all that needs to be grunted
-	grunt --rootPathUrl=${p}
+all: dev
 
-install:
-	sudo npm install -g grunt-cli
-	#install needed packages for grunt
-	npm install
+dev:
+	@echo "starting development environment"
+	@${GULP}
 
-uninstall:
-	sudo npm remove -g grunt-cli
-	#install needed packages for grunt
-	rm -rf ./node_modules
-	rm -rf ./build
+build:
+	@echo "starting production build"
 
-deploy:
-	#install needed packages for grunt
-	npm install
+	@NODE_ENV='production'; \
+	@${GULP} server
 
-	#remove build dir
-	rm -rf ./build
+	@echo "build finished"
 
-	#compile css, grunt all that needs to be grunted
-	grunt --rootPathUrl=${p} --deploy="true"
-
-	#add your details here, this will prompt for your password or keyphrase
-	#dont actually do it yet.
-	#scp -r name@hostname:/var/www/html/ ./build/*
-
-clean:
-	rm -rf ./build
+help:
+	@echo "\n\
+	make tasks: \n\
+	make       - starts development mode \n\
+	make build - builds production files \n\
+	"
