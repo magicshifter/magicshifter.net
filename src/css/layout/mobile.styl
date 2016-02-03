@@ -68,13 +68,23 @@ header.main
       width 100%
 
   .wrapper
-    background-size contain
-    bg-image('header/header-background.png')
     display inline-block
     padding 10px
     position fixed
     width 100%
     z-index 1
+
+    &:after
+      background-size contain
+      bg-image('header/header-background.jpg')
+      content ""
+      opacity .8
+      top 0
+      left 0
+      bottom 0
+      right 0
+      position absolute
+      z-index -1
 
     .container
       display block
@@ -222,7 +232,7 @@ section
     padding 0
 
     .container
-      bg-image('hero/ships.png')
+      bg-image('hero/ships.gif')
       background-color rgba(0, 0, 0, .666)
       background-repeat no-repeat
       background-size 100% auto
@@ -240,7 +250,7 @@ section
       &:after
         background-repeat no-repeat
         background-size contain
-        bg-image('hero/hero-padder.png')
+        bg-image('hero/text-border.gif')
         content ' '
         height 100%
         margin 0 -3px
