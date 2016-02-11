@@ -17,3 +17,26 @@ global-reset()
 @import 'layout/desktop-galleries'
 
 @import 'transitions'
+
+
+/* added video styles here !w! */
+#video
+  background-color $video-bg-color
+  text-align center
+
+  #player
+    height 0px
+    overflow hidden
+    padding-bottom 56.25%
+    padding-top 30px
+    position relative
+
+    iframe
+      height 100%
+      left 0px
+      position absolute
+      top 0px
+      width 100%
+
+  p
+    margin 1em 0 0
