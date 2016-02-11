@@ -52,9 +52,10 @@ a
 
 a, a:visited
   color $link-color
-  text-decoration underline
+  text-decoration none
 
   &:hover
+    text-decoration underline
     color $link-hover-color
     text-shadow 3px 3px 3px rgba(0, 0, 0, .4)
 
@@ -355,7 +356,7 @@ section
   &#program
     color $program-text-color
 
-  &#contact
+  &#timeline
     color $contact-text-color
     text-align center
 
@@ -363,7 +364,7 @@ section
       color #00F
 
       &:hover
-        color #77F
+        color #00F
   p
     img
       margin 1em 0
