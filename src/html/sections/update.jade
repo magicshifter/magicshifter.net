@@ -1,48 +1,49 @@
 section#program
   div.container
-    h2 Update the Firmware of your MagicShifter 3000
+    h1 HOWTO update the Firmware of your MagicShifter 3000
 
     p
-      It's easy to update update the firmware of your MagicShifter 3000 to the latest version. read the Instructions below on how to update the firmware. If you want to build the firmware yourself have a look at our 
+      | It's easy to update update the firmware of your MagicShifter 3000 to the latest version. read the Instructions below on how to update the firmware. If you want to build the firmware yourself have a look at our 
       a(href='https://github.com/magicshifter/MS3000-Firmware') MS3000-Firmware project page hosted on github.
 
+    h2 Step 1 - Get esptool (used to upload the firmware via USB)
     p
-      h3 Step 1 - Get esptool (used to upload the firmware via USB)
-        | To upload the firmware you need the esptool-ck that does all the communication with the ESP8266 bootloader. Get the
-        a(href='https://github.com/igrr/esptool-ck/releases') precompiled binaries (available for Linux, OSX and Windows)
-        | for your system. Extract the esptool (on windows it's called 'esptool.exe' and on linux and osx it's called 'esptool') and put it into a new folder called 'MS3000' in your home directory.
+      | To upload the firmware you need the esptool-ck that does all the communication with the ESP8266 bootloader. Get the
+      a(href='https://github.com/igrr/esptool-ck/releases') precompiled binaries (available for Linux, OSX and Windows)
+      | for your system. Extract the esptool (on windows it's called 'esptool.exe' and on linux and osx it's called 'esptool') and put it into a new folder called 'MS3000' in your home directory.
 
-      h3 Step 2 - Get the MagicShifter firmware
-        | Get the newest precompiled MagicShifter Firmware from 
-        a(href='http://releases.magicshifter.net') http://releases.magicshifter.net
-        and also put it into the 'MS3000' folder you created in Step 1.
+    h2 Step 2 - Get the MagicShifter firmware
+    p
+      | Get the newest precompiled MagicShifter Firmware from 
+      a(href='http://releases.magicshifter.net') http://releases.magicshifter.net
+      and also put it into the 'MS3000' folder you created in Step 1.
 
-      h3 Step 3 - Reflash the MS3000
+    h2 Step 3 - Reflash the MS3000
+    p
+      | The last step differs a bit depending on which operating system you use
+      h3 Linux & OSX
+      p
+        | Open a shell and go to the 'MS3000' directory where you put the esptool and the firmware. To update the firmware you have to know the device name of the USB serial port the MS3000 is connected to. On most Linux systems the serial port will be called /dev/ttyUSB0 but the name might be different if you allready have other USB to serial devices connected to your PC. Adapt the command below to your system by replacing SERIAL_PORT with the name ot the serial portand FIRMWARE_FILE with the name of the firmware you just downloaded. 
+        code
+          | esptool -vv -cd ck -cb 115200 -cp SERIAL_PORT -cf FIRMWARE_FILE
 
-        The last step differs a bit depending on which operating system you use
-        h4 Linux & OSX
-        p
-          | Open a shell and go to the 'MS3000' directory where you put the esptool and the firmware. To update the firmware you have to know the device name of the USB serial port the MS3000 is connected to. On most Linux systems the serial port will be called /dev/ttyUSB0 but the name might be different if you allready have other USB to serial devices connected to your PC. Adapt the command below to your system by replacing SERIAL_PORT with the name ot the serial portand FIRMWARE_FILE with the name of the firmware you just downloaded. 
-          code
-            | esptool -vv -cd ck -cb 115200 -cp SERIAL_PORT -cf FIRMWARE_FILE
+        | on most systems the following command should work:
+        code
+          | esptool -vv -cd ck -cb 115200 -cp /dev/ttyUSB0 -cf MS3000_Firmware_V0.1.bin
 
-          | on most systems the following command should work:
-          code
-            | esptool -vv -cd ck -cb 115200 -cp /dev/ttyUSB0 -cf MS3000_Firmware_V0.1.bin
+        The command takes about 7 minutes to execute so please be patient.
 
-          The command takes about 7 minutes to execute so please be patient.
+        p4 Troubleshooting known issues: If your user dows not have the necessary rights to acces the serial port you will get an error message saying that the port could not be opened. In this case you can prefix the whole command with the 'sudo' command to execute the command with more privileges. As an alternative you can find out how to give your user the needed rights on your operating system.
 
-          p4 Troubleshooting known issues: If your user dows not have the necessary rights to acces the serial port you will get an error message saying that the port could not be opened. In this case you can prefix the whole command with the 'sudo' command to execute the command with more privileges. As an alternative you can find out how to give your user the needed rights on your operating system.
+      h3 Windows
+        | Open a command line window and go to the directory you created in Step 1. You can open a command line window in the directory you created in Step 1 by holding down the Shift key and right-clicking the folder. The context menu should contain an entry, ‘Open command window here.'
+        | To update the firmware you have to know the device name of the USB serial port the MS3000 is connected to. On most Windows systems it will be called COM0 (or COM1, COM2, COM3 etc.) but the name might be different if you allready have other USB to serial devices connected to your PC. Adapt the command below to your system by replacing SERIAL_PORT with the name ot the serial port and FIRMWARE_FILE with the name of the firmware you just downloaded. 
+        code
+          | esptool.exe -vv -cd ck -cb 115200 -cp SERIAL_PORT -cf FIRMWARE_FILE
 
-        h4 Windows
-          | Open a command line window and go to the directory you created in Step 1. You can open a command line window in the directory you created in Step 1 by holding down the Shift key and right-clicking the folder. The context menu should contain an entry, ‘Open command window here.'
-          | To update the firmware you have to know the device name of the USB serial port the MS3000 is connected to. On most Windows systems it will be called COM0 (or COM1, COM2, COM3 etc.) but the name might be different if you allready have other USB to serial devices connected to your PC. Adapt the command below to your system by replacing SERIAL_PORT with the name ot the serial port and FIRMWARE_FILE with the name of the firmware you just downloaded. 
-          code
-            | esptool.exe -vv -cd ck -cb 115200 -cp SERIAL_PORT -cf FIRMWARE_FILE
+        | For example if the MS3000 is connected to COM0 the following command should work:
+        code
+          | esptool.exe -vv -cd ck -cb 115200 -cp COM0 -cf MS3000_Firmware_V0.1.bin
 
-          | For example if the MS3000 is connected to COM0 the following command should work:
-          code
-            | esptool.exe -vv -cd ck -cb 115200 -cp COM0 -cf MS3000_Firmware_V0.1.bin
-
-          The command takes about 7 minutes to execute so please be patient.
-          
+        The command takes about 7 minutes to execute so please be patient.
+        

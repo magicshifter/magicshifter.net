@@ -1,0 +1,18 @@
+extends ../../../layout.jade
+
+mixin gallery(pics)
+  section.gallery
+    ul
+      each pic in pics
+        li
+          span(class=pic)
+
+block content
+
+  include ../../../sections/hero
+
+  include ../../../sections/social
+
+  include ../../../sections/update
+
+  +gallery(['shadows', 'goggles', 'shadows-2'])
