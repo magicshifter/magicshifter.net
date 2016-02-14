@@ -1,18 +1,21 @@
 extends ../../../layout.jade
 
-mixin gallery(pics)
-  section.gallery
-    ul
-      each pic in pics
-        li
-          span(class=pic)
+block header
+  header.main
+    div.wrapper
+      a#logo(href='/')
+        img(src='/img/logo.png' alt='magicshifter')
+
+      nav.main
+        ul
+          li
+            a.shopMenu(href='http://hackerspaceshop.com/products/magicshifter3000') SHOP
 
 block content
-
-  include ../../../sections/hero
+  +gallery(['shadows', 'goggles', 'shadows-2'])
 
   include ../../../sections/social
 
   include ../../../sections/update
 
-  +gallery(['shadows', 'goggles', 'shadows-2'])
+  +gallery(['invader', 'mario', 'nyan'])

@@ -1,11 +1,7 @@
 extends ../layout.jade
 
-mixin gallery(pics)
-  section.gallery
-    ul
-      each pic in pics
-        li
-          span(class=pic)
+block header
+  include ../header.jade
 
 block content
 
