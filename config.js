@@ -116,6 +116,10 @@ module.exports = {
         src: join(dirs.src, dirs.html, dirs.pages, '*.jade'),
         out: dirs.out,
       },
+      {
+        src: join(dirs.src, dirs.html, dirs.pages, 'ms3000', 'update', '*.jade'),
+        out: join(dirs.out, 'ms3000', 'update'),
+      },
     ],
     copy: '!(*.xcf|*.psd|*.ai)',
     server: 'server.js',
