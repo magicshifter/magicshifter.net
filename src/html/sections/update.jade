@@ -1,36 +1,44 @@
-section#program
+section#update
   div.container
-    h1 HOWTO update the Firmware of your MagicShifter 3000
+    h2 HOWTO update the Firmware of your MagicShifter 3000
 
     p
       | It's easy to update the firmware of your MagicShifter 3000 to the latest version. Read the Instructions below to learn how to update the firmware.
       | If you want to build the firmware yourself have a look at our
+      | &nbsp;
       a(href='https://github.com/magicshifter/MS3000-Firmware')
         | MS3000-Firmware project page hosted on github.
 
-    h2 Step 1 - Get esptool (used to upload the firmware via USB)
+    h3 Step 1 - Get esptool (used to upload the firmware via USB)
     p
       | To upload the firmware you need the esptool-ck
       | which handles all the communication with the ESP8266 bootloader.
       | Get the
+
+      | &nbsp;
       a(href='https://github.com/igrr/esptool-ck/releases')
         | precompiled binaries (available for Linux, OSX and Windows)
+      | &nbsp;
 
       | for your system.
       | Extract the esptool
       | (on windows it's called 'esptool.exe' and on linux and osx it's called 'esptool')
       | and put it into a new folder called 'MS3000' in your home directory.
 
-    h2 Step 2 - Get the MagicShifter firmware
+    h3 Step 2 - Get the MagicShifter firmware
     p
       | Get the newest precompiled MagicShifter Firmware from
+
+      | &nbsp;
       a(href='http://releases.magicshifter.net') http://releases.magicshifter.net
+      | &nbsp;
+
       | and also put it into the 'MS3000' folder you created in Step 1.
 
-    h2 Step 3 - Reflash the MS3000
+    h3 Step 3 - Reflash the MS3000
     p
       | The last step differs a bit depending on which operating system you use
-      h3 Linux & OSX
+      h4 Linux & OSX
       p
         | Open a shell and go to the 'MS3000' directory where you put the esptool and the firmware.
         | To update the firmware you have to know the device name of the
@@ -61,7 +69,7 @@ section#program
           | As an alternative you can find out how to give your user
           | the needed rights on your operating system.
 
-      h3 Windows
+      h4 Windows
       p
         | Open a command line window and go to the directory you created in Step 1.
         | You can open a command line window in the directory you created in Step 1 by holding down
