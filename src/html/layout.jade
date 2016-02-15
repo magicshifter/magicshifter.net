@@ -1,3 +1,10 @@
+mixin gallery(pics)
+  section.gallery
+    ul
+      each pic in pics
+        li
+          span(class=pic)
+
 doctype html
 html(lang='en')
   head
@@ -22,7 +29,8 @@ html(lang='en')
     )
 
   body(id='♥')
-    include header
+    block header
+
     article
       block content
         div no content
