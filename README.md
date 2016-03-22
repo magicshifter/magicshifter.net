@@ -8,10 +8,9 @@ development
 ```
   git clone https://github.com/magicshifter/magicshifter.net
 
-  # we need the gulp branch for now:
-  git checkout -b gulp
-  git pull origin gulp
-
   npm install
-  gulp
+  make
+
+  #deploy:
+  make build
 ```
