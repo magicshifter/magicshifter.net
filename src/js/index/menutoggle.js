@@ -1,4 +1,4 @@
-import { hasClass } from 'utils';
+import { hasClass } from './hasClass';
 
 const body = document.body;
 const header = document.querySelector('header.main');
@@ -10,19 +10,21 @@ if (menuToggle && typeof menuToggle.addEventListener === 'function') {
   menuToggle.addEventListener('click', menuToggleClickHandler);
 }
 
-function menuToggleClickHandler(e) {
-  nav.classList.toggle(className);
-  body.addEventListener('click', bodyToggleClickHandler);
+const menuToggleClickHandler =
+  e => {
+    nav.classList.toggle(className);
+    body.addEventListener('click', bodyToggleClickHandler);
 
-  e.stopPropagation();
-  e.preventDefault();
-  return false;
-}
+    e.stopPropagation();
+    e.preventDefault();
+    return false;
+  };
 
-function bodyToggleClickHandler(e) {
-  if (hasClass(nav, className)) {
-    nav.classList.remove(className);
-  }
+const bodyToggleClickHandler =
+  () => {
+    if (hasClass(nav, className)) {
+      nav.classList.remove(className);
+    }
 
-  body.removeEventListener('click');
-}
+    body.removeEventListener('click');
+  };
