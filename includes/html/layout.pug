@@ -13,7 +13,7 @@ html(lang='en')
     //Spread the ♥
     link(
       rel='icon'
-      href='/favicon.ico'
+      href=`${WEB_ROOT}favicon.ico`
     )
     meta(
       name='description'
@@ -25,7 +25,7 @@ html(lang='en')
     )
     link(
       rel='stylesheet'
-      href='/main.css'
+      href=`${WEB_ROOT}main.css`
     )
 
   body(id='♥')
@@ -37,4 +37,4 @@ html(lang='en')
 
     include footer
 
-    script(src='/js/index.js')
+    script(src=`${WEB_ROOT}js/index.js`)

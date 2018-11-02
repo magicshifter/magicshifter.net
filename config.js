@@ -21,4 +21,5 @@ module.exports = {
   ],
   year,
   IGNORE_EXTENSIONS: ['ai', 'psd', 'xcf'],
+  WEB_ROOT: 'https://magicshifter.github.io/magicshifter.net/',
 }
