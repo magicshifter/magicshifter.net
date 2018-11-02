@@ -5,21 +5,21 @@ table { border-collapse: separate; border-spacing: 0; vertical-align: middle;}
 caption, th, td { text-align: left; font-weight: normal; vertical-align: middle;}
 a img { border: none;}
 body article section:nth-child(1) { background-color: #3f51b5;}
-body article section:nth-child(2) { background-color: #ff9d1c;}
-body article section:nth-child(3) { background-color: #fefe09;}
-body article section:nth-child(4) { background-color: #099afe;}
-body article section:nth-child(5) { background-color: #0ab20a;}
-body article section:nth-child(6) { background-color: #cd5fdb;}
-body article section:nth-child(7) { background-color: #ff9d1c;}
-body article section:nth-child(8) { background-color: #fefe09;}
-body article section:nth-child(9) { background-color: #099afe;}
-body article section:nth-child(10) { background-color: #0ab20a;}
-body article section:nth-child(11) { background-color: #cd5fdb;}
-body article section:nth-child(12) { background-color: #ff9d1c;}
-body article section:nth-child(13) { background-color: #fefe09;}
-body article section:nth-child(14) { background-color: #099afe;}
-body article section:nth-child(15) { background-color: #0ab20a;}
-body article section:nth-child(16) { background-color: #cd5fdb;}
+body article section:nth-child(2) { background-color: #ff9800;}
+body article section:nth-child(3) { background-color: #ffeb3b;}
+body article section:nth-child(4) { background-color: #2196f3;}
+body article section:nth-child(5) { background-color: #4caf50;}
+body article section:nth-child(6) { background-color: #ab47bc;}
+body article section:nth-child(7) { background-color: #ff9800;}
+body article section:nth-child(8) { background-color: #ffeb3b;}
+body article section:nth-child(9) { background-color: #2196f3;}
+body article section:nth-child(10) { background-color: #4caf50;}
+body article section:nth-child(11) { background-color: #ab47bc;}
+body article section:nth-child(12) { background-color: #ff9800;}
+body article section:nth-child(13) { background-color: #ffeb3b;}
+body article section:nth-child(14) { background-color: #2196f3;}
+body article section:nth-child(15) { background-color: #4caf50;}
+body article section:nth-child(16) { background-color: #ab47bc;}
 * { -webkit-box-sizing: border-box; box-sizing: border-box;}
 body { font-family: 'Segoe UI', 'Lucida Grande', Ubuntu, Arial, sans-serif; font-size: 16px; line-height: 1.1em; background-color: #000;}
 img, a { max-height: 100%; max-width: 100%;}
@@ -41,7 +41,7 @@ header.main { background-color: #000; color: #fff; display: block; font-size: 0.
 header.main .menu-toggle { display: block; float: right; position: relative; top: 2.5em; width: 50px;}
 header.main .menu-toggle span { background-color: #fff; border-radius: 5px; display: block; height: 5px; margin: 5px 0; width: 100%;}
 header.main .wrapper { display: inline-block; padding: 10px; position: fixed; width: 100%; z-index: 1;}
-header.main .wrapper:after { background-size: contain; background-image: url("/img/header/header-background.jpg"); content: ""; opacity: 0.8; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; filter: alpha(opacity=80); top: 0; left: 0; bottom: 0; right: 0; position: absolute; z-index: -1;}
+header.main .wrapper:after { background-size: contain; background-image: url("https://magicshifter.github.io/magicshifter.net/img/header/header-background.jpg"); content: ""; opacity: 0.8; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; filter: alpha(opacity=80); top: 0; left: 0; bottom: 0; right: 0; position: absolute; z-index: -1;}
 header.main .wrapper .container { display: block; max-width: 900px; width: 100%; z-index: 1; margin: 0 auto;}
 header.main nav { background-color: rgba(0,0,0,0.8); border-bottom-left-radius: 25px; clear: both; font-size: 1.5em; padding: 0.5em 0; position: absolute; right: -50%; top: 90px; width: 50%;}
 header.main nav.show { right: 0;}
@@ -61,7 +61,7 @@ section ul.list { display: block; margin: 0 auto 1em; max-width: 450px; text-ali
 section ul.list.software { margin: 3em auto 1em;}
 section ul.list lh { display: block; margin: 1em 0 0.5em;}
 section ul.list li { margin: 0.5em 0;}
-section ul.list li .image { background-size: contain; background-image: url("/img/list-style-image.png"); display: inline-block; height: 0.5em; margin: 0 0.2em 0 0; position: relative; top: -0.1em; width: 0.5em;}
+section ul.list li .image { background-size: contain; background-image: url("https://magicshifter.github.io/magicshifter.net/img/list-style-image.png"); display: inline-block; height: 0.5em; margin: 0 0.2em 0 0; position: relative; top: -0.1em; width: 0.5em;}
 section.gallery { padding: 2em 0;}
 section.gallery ul { display: inline-block; margin: 0 auto; text-align: center; width: 100%;}
 section.gallery ul li { display: inline-block; margin: 0 1%; width: 25%;}
@@ -71,8 +71,8 @@ section h2 { font-size: 1.5em; padding: 0 0 0.7em; text-align: center; line-heig
 section h3 { font-size: 1.2em; padding: 0 0 0.5em; text-align: center;}
 section .container { max-width: 900px; margin: 0 auto; display: inline-block; text-align: left;}
 section#hero { background-repeat: repeat; background-blend-mode: overlay; background-image: url("../img/hero/galaxy.jpg"), -webkit-gradient(linear, left top, right top, from(#000), to(rgba(0,0,0,0))); background-image: url("../img/hero/galaxy.jpg"), linear-gradient(to right, #000, rgba(0,0,0,0)); color: #fefefe; overflow: hidden; position: relative; margin: 0; padding: 0;}
-section#hero .container { background-image: url("/img/hero/ships.gif"); background-color: rgba(0,0,0,0.666); background-repeat: no-repeat; background-size: 100% auto; border: 3px solid rgba(255,255,255,0.7); border-radius: 3px; display: block; font-size: 0.8em; margin: 20px auto; min-height: 200px; padding: 0 10%; position: relative; text-align: center; width: 80%;}
-section#hero .container:after { background-repeat: no-repeat; background-size: contain; background-image: url("/img/hero/text-border.gif"); content: ' '; height: 100%; margin: 0 -3px; max-height: 100%; position: absolute; right: -66px; top: 0; width: 66px;}
+section#hero .container { background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/ships.gif"); background-color: rgba(0,0,0,0.666); background-repeat: no-repeat; background-size: 100% auto; border: 3px solid rgba(255,255,255,0.7); border-radius: 3px; display: block; font-size: 0.8em; margin: 20px auto; min-height: 200px; padding: 0 10%; position: relative; text-align: center; width: 80%;}
+section#hero .container:after { background-repeat: no-repeat; background-size: contain; background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/text-border.gif"); content: ' '; height: 100%; margin: 0 -3px; max-height: 100%; position: absolute; right: -66px; top: 0; width: 66px;}
 section#hero .logo-container, section#hero .hero-text { max-width: 900px;}
 section#hero .logo-container { margin: 50px auto 1em; display: inline-block;}
 section#hero h1 { font-size: 1.5em; line-height: 1.3em; margin: 0 0 0.5em 0;}
@@ -87,7 +87,7 @@ section#description #player { height: 0px; overflow: hidden; padding-bottom: 56.
 section#description #player iframe { height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;}
 section#description p { margin: 1em 0 0;}
 section#program { color: #010101;}
-section#update a { color: #0800f7;}
+section#update a { color: #2196f3;}
 section#timeline { color: #010101; text-align: center;}
 section#timeline a { color: #00f;}
 section#timeline a:hover { color: #00f;}
@@ -112,7 +112,7 @@ body.scrolled header.main #logo img { height: 40px; padding: 5px 0 0;}
 .shop a img { margin: 0;}
 a.shopMenu { color: #ff0;}
 section.gallery ul li { height: 80px; width: 80px;}
-section.gallery ul li span { background-size: cover; background-image: url("/img/magic-icons.jpg"); border-radius: 100%; height: 100%; width: 100%; margin: 0 auto; display: block;}
+section.gallery ul li span { background-size: cover; background-image: url("https://magicshifter.github.io/magicshifter.net/img/magic-icons.jpg"); border-radius: 100%; height: 100%; width: 100%; margin: 0 auto; display: block;}
 section.gallery ul li span.invader { background-position: 0 0;}
 section.gallery ul li span.smiley { background-position: -80px 0;}
 section.gallery ul li span.shadows { background-position: -160px 0;}
