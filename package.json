@@ -2,7 +2,7 @@
   "name": "magicshifter.net",
   "main": "index.js",
   "version": "0.23.5",
-  "author": "Wizards&Witches",
+  "author": "Wizards & Witches",
   "license": "AGPL-3.0",
   "contributors": [
     {
@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "npm run clean && magic-stasis build",
-    "build": "NODE_ENV=production magic-stasis build noWatch noServe zip",
+    "build": "npm run clean && NODE_ENV=production magic-stasis build noWatch noServe zip",
     "build:serve": "NODE_ENV=production magic-stasis build noWatch zip",
     "clean": "rm -rf public",
     "lint:css": "magic-stasis lint css",
@@ -38,8 +38,6 @@
     "publish": "NODE_ENV=production magic-stasis build zip publish noWatch noServe"
   },
   "keywords": [],
-  "author": "",
-  "license": "AGPL-3.0",
   "devDependencies": {
     "@magic/stasis": "github:magic/stasis"
   }
