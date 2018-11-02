@@ -20,4 +20,5 @@ module.exports = {
     'i enjoy all of it.',
   ],
   year,
+  IGNORE_EXTENSIONS: ['ai', 'psd', 'xcf'],
 }
