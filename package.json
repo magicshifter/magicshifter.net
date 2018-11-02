@@ -1,12 +1,9 @@
 {
   "name": "magicshifter.net",
+  "main": "index.js",
   "version": "0.23.5",
   "author": "Wizards&Witches",
   "license": "AGPL-3.0",
-  "scripts": {
-    "start": "gulp",
-    "build": "export NODE_ENV='production'; gulp server"
-  },
   "contributors": [
     {
       "name": "jascha ehrenreich",
@@ -27,16 +24,23 @@
       "github": "norpol"
     }
   ],
-  "dependencies": {
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/magicshifter/magicshifter.net.git"
   },
-  "dependencies": {
-    "gulp": "^3.9.0",
-    "builder": "magic/builder",
-    "page": "^1.6.3",
-    "utils": "magic/utils"
+  "scripts": {
+    "start": "npm run clean && magic-stasis build",
+    "build": "NODE_ENV=production magic-stasis build noWatch noServe zip",
+    "build:serve": "NODE_ENV=production magic-stasis build noWatch zip",
+    "clean": "rm -rf public",
+    "lint:css": "magic-stasis lint css",
+    "lint:html": "magic-stasis lint html",
+    "publish": "NODE_ENV=production magic-stasis build zip publish noWatch noServe"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "@magic/stasis": "github:magic/stasis"
   }
 }

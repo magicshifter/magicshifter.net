@@ -1,0 +1,53 @@
+@import 'nib'
+global-reset()
+
+@import '/mixins'
+
+@import 'variables'
+@import 'materialcolors'
+
+@import 'colorcycle'
+
+@import 'layout/mobile'
+@import 'layout/mobile-galleries'
+
+@import 'layout/tablet'
+
+@import 'layout/desktop'
+@import 'layout/desktop-galleries'
+
+@import 'transitions'
+
+/* added video styles here !w! */
+#video
+  background-color $video-bg-color
+  text-align center
+
+  .container
+    max-width 1050px
+    width 100%
+    text-align center
+
+  #player
+    height 0px
+    overflow hidden
+    padding-bottom 56.25%
+    position relative
+
+    iframe
+      height 100%
+      left 0px
+      position absolute
+      top 0px
+      width 100%
+
+  p
+    margin 1em 0 0
+
+code
+  background #F8F8FF
+  border black dashed 1px
+  display block
+  margin 10px 5%
+  width 90%;
+  padding 6px

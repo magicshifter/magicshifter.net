@@ -1,0 +1,21 @@
+extends /layout
+
+block header
+  header.main
+    div.wrapper
+      a#logo(href='/')
+        img(src='/img/logo.png' alt='magicshifter')
+
+      nav.main
+        ul
+          li
+            a.shopMenu(href='http://hackerspaceshop.com/products/magicshifter3000') SHOP
+
+block content
+  +gallery(['shadows', 'goggles', 'shadows-2'])
+
+  include /sections/social
+
+  include /sections/update
+
+  +gallery(['invader', 'mario', 'nyan'])

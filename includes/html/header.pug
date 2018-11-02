@@ -1,0 +1,29 @@
+-
+  menuItems = [
+    {href: '/', text: 'home'},
+    {href: '#description', text: 'description'},
+    {href: '#new', text: 'new'},
+    {href: '#features', text: 'features'},
+    {href: '#program', text: 'program'},
+    {href: '#contact', text: 'contact'},
+  ];
+
+header.main
+  div.wrapper
+    a#logo(href='/')
+      img(src='/img/logo.png' alt='magicshifter')
+
+    a.menu-toggle
+      span
+      span
+      span
+
+    if menuItems
+      nav.main
+        ul
+          li
+            a.shopMenu(href='http://hackerspaceshop.com/products/magicshifter3000') SHOP
+          for item in menuItems
+            if item.href && item.text
+              li
+                a(href=item.href)= item.text
