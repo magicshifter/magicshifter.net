@@ -21,19 +21,19 @@ body article section:nth-child(14) { background-color: #2196f3;}
 body article section:nth-child(15) { background-color: #4caf50;}
 body article section:nth-child(16) { background-color: #ab47bc;}
 * { -webkit-box-sizing: border-box; box-sizing: border-box;}
-body { font-family: 'Segoe UI', 'Lucida Grande', Ubuntu, Arial, sans-serif; font-size: 16px; line-height: 1.1em; background-color: #000;}
+body { background-color: #000; font-family: 'Segoe UI', 'Lucida Grande', Ubuntu, Arial, sans-serif; font-size: 16px; line-height: 1.1em;}
 img, a { max-height: 100%; max-width: 100%;}
 img.split, a.split { margin: 2% 1%; max-width: 47%;}
-img.split.block, a.split.block { width: auto; max-width: 75%; margin: 4% auto;}
-img.block, a.block { width: 80%; max-width: 800px; margin: 1em auto 0; display: block;}
-.annotated-image { margin: 0 auto; width: 80%; display: block;}
+img.split.block, a.split.block { margin: 4% auto; max-width: 75%; width: auto;}
+img.block, a.block { display: block; margin: 1em auto 0; max-width: 800px; width: 80%;}
+.annotated-image { display: block; margin: 0 auto; width: 80%;}
 .annotated-image.full-width { width: 100%;}
 .annotated-image.split { float: left; margin: 2% 1%; max-width: 47%;}
-.annotated-image img { width: 100%; max-width: 100%; margin: 0;}
-.annotated-image span { font-style: italic; font-size: 0.9em;}
+.annotated-image img { margin: 0; max-width: 100%; width: 100%;}
+.annotated-image span { font-size: 0.9em; font-style: italic;}
 a, a:visited { color: #fefefe; text-decoration: none;}
-a:hover, a:visited:hover { text-decoration: underline; color: $link-hover-color; text-shadow: 3px 3px 3px rgba(0,0,0,0.4);}
-a.textflow, a:visited.textflow { margin: 0 0.3em 0;}
+a:hover, a:visited:hover { color: $link-hover-color; text-decoration: underline; text-shadow: 3px 3px 3px rgba(0,0,0,0.4);}
+a.textflow, a:visited.textflow { margin: 0 0.3em;}
 p { margin: 0 0 0.5em;}
 p.centered { text-align: center;}
 p.btns { padding: 1em 0 0;}
@@ -41,8 +41,8 @@ header.main { background-color: #000; color: #fff; display: block; font-size: 0.
 header.main .menu-toggle { display: block; float: right; position: relative; top: 2.5em; width: 50px;}
 header.main .menu-toggle span { background-color: #fff; border-radius: 5px; display: block; height: 5px; margin: 5px 0; width: 100%;}
 header.main .wrapper { display: inline-block; padding: 10px; position: fixed; width: 100%; z-index: 1;}
-header.main .wrapper:after { background-size: contain; background-image: url("https://magicshifter.github.io/magicshifter.net/img/header/header-background.jpg"); content: ""; opacity: 0.8; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; filter: alpha(opacity=80); top: 0; left: 0; bottom: 0; right: 0; position: absolute; z-index: -1;}
-header.main .wrapper .container { display: block; max-width: 900px; width: 100%; z-index: 1; margin: 0 auto;}
+header.main .wrapper:after { background-size: contain; background-image: url("https://magicshifter.github.io/magicshifter.net/img/header/header-background.jpg"); bottom: 0; content: ""; left: 0; opacity: 0.8; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; filter: alpha(opacity=80); position: absolute; right: 0; top: 0; z-index: -1;}
+header.main .wrapper .container { display: block; margin: 0 auto; max-width: 900px; width: 100%; z-index: 1;}
 header.main nav { background-color: rgba(0,0,0,0.8); border-bottom-left-radius: 25px; clear: both; font-size: 1.5em; padding: 0.5em 0; position: absolute; right: -50%; top: 90px; width: 50%;}
 header.main nav.show { right: 0;}
 header.main nav ul { display: inline-block; padding: 0 0.5em; text-align: left;}
@@ -83,8 +83,8 @@ section#hero .available { float: right; font-size: 0.7em; font-style: italic;}
 section#social .container { margin: 10px auto;}
 section#description { color: #010101;}
 section#description img { width: 80%; max-width: 900px; margin: 1em auto; display: block;}
-section#description #player { height: 0px; overflow: hidden; padding-bottom: 56.25%; padding-top: 30px; position: relative;}
-section#description #player iframe { height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;}
+section#description #player { height: 0; overflow: hidden; padding-bottom: 56.25%; padding-top: 30px; position: relative;}
+section#description #player iframe { height: 100%; left: 0; position: absolute; top: 0; width: 100%;}
 section#description p { margin: 1em 0 0;}
 section#program { color: #010101;}
 section#update a { color: #2196f3;}
@@ -128,7 +128,7 @@ section.gallery ul li span.oneup { background-position: -880px 0;}
 section.gallery ul li span.goggles { background-position: -960px 0;}
 section.gallery ul li span.shadows-2 { background-position: -1040px 0;}
 section.gallery ul li span.bike { background-position: -1680px 0;}
-@media (min-width: 700px) { header.main .menu-toggle { display: none; } header.main nav { background-color: transparent; clear: none; float: right; font-size: 1em; position: relative; right: auto; width: auto; padding: 0; margin: 0; top: 45px; } header.main nav.show { right: 0; } header.main nav ul { display: inline-block; padding: 0 0.5em; text-align: center; } header.main nav ul li { float: left; margin: 0 0.2em; } table { font-size: 1em; } footer.main > div a img { display: inline; } body.scrolled header.main nav { top: 20px; margin: 0; }}
+@media (min-width: 700px) { header.main .menu-toggle { display: none; } header.main nav { background-color: transparent; clear: none; float: right; font-size: 1em; margin: 0; padding: 0; position: relative; right: auto; top: 45px; width: auto; } header.main nav.show { right: 0; } header.main nav ul { display: inline-block; padding: 0 0.5em; text-align: center; } header.main nav ul li { float: left; margin: 0 0.2em; } table { font-size: 1em; } footer.main > div a img { display: inline; } body.scrolled header.main nav { margin: 0; top: 20px; }}
 @media (min-width: 600px) { header.main { font-size: 1em; } #hero .hero-text { margin: 100px 0 50px; display: inline-block; clear: both; } #social ul li { margin: 0 0.5em; width: auto; height: auto; }}
 @media (min-width: 560px) { header.main { font-size: 1.1em; }}
 @media (min-width: 500px) { section.gallery ul li { height: 120px; width: 120px; } section.gallery ul li span.invader { background-position: 0 0; } section.gallery ul li span.smiley { background-position: -120px 0; } section.gallery ul li span.shadows { background-position: -240px 0; } section.gallery ul li span.cursor { background-position: -360px 0; } section.gallery ul li span.nyan { background-position: -480px 0; } section.gallery ul li span.mario { background-position: -600px 0; } section.gallery ul li span.heart { background-position: -720px 0; } section.gallery ul li span.girafe { background-position: -840px 0; } section.gallery ul li span.bubblebobble { background-position: -960px 0; } section.gallery ul li span.circles { background-position: -1080px 0; } section.gallery ul li span.ccc29 { background-position: -1200px 0; } section.gallery ul li span.oneup { background-position: -1320px 0; } section.gallery ul li span.goggles { background-position: -1440px 0; } section.gallery ul li span.shadows-2 { background-position: -1560px 0; } section.gallery ul li span.bike { background-position: -1680px 0; }}
@@ -137,9 +137,9 @@ body.js header.main .wrapper { -webkit-transition: height 0.2s; transition: heig
 body.js header.main a#logo img { -webkit-transition: height 0.2s; transition: height 0.2s;}
 /* added video styles here !w! */
 #video { background-color: $video-bg-color; text-align: center;}
-#video .container { max-width: 1050px; width: 100%; text-align: center;}
+#video .container { max-width: 1050px; text-align: center; width: 100%;}
 #video #player { height: 0px; overflow: hidden; padding-bottom: 56.25%; position: relative;}
 #video #player iframe { height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;}
 #video p { margin: 1em 0 0;}
-code { background: #f8f8ff; border: 1px solid #000 dashed 1px; display: block; margin: 10px 5%; width: 90%; padding: 6px;}
+code { background: #f8f8ff; border: 1px solid #000 dashed 1px; display: block; margin: 10px 5%; padding: 6px; width: 90%;}
 /*# sourceMappingURL=stylus.css.map */
