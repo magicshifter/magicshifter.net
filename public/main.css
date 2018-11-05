@@ -59,7 +59,7 @@ section { clear: both; margin: -5px 0 0; padding: 5.5em 10%; text-align: center;
 section .area { margin: 2em 0 0;}
 section ul.list { display: block; margin: 0 auto 1em; max-width: 450px; text-align: left;}
 section ul.list.software { margin: 3em auto 1em;}
-section ul.list lh { display: block; margin: 1em 0 0.5em;}
+section ul.list li.header { display: block; margin: 1em 0 0.5em;}
 section ul.list li { margin: 0.5em 0;}
 section ul.list li .image { background-size: contain; background-image: url("https://magicshifter.github.io/magicshifter.net/img/list-style-image.png"); display: inline-block; height: 0.5em; margin: 0 0.2em 0 0; position: relative; top: -0.1em; width: 0.5em;}
 section.gallery { padding: 2em 0;}
@@ -67,22 +67,22 @@ section.gallery ul { display: inline-block; margin: 0 auto; text-align: center; 
 section.gallery ul li { display: inline-block; margin: 0 1%; width: 25%;}
 section.gallery ul img { border-radius: 100%; height: 100%; max-height: 100%; max-width: 100%; width: 100%;}
 section#social { padding: 0.5em 5%;}
-section h2 { font-size: 1.5em; padding: 0 0 0.7em; text-align: center; line-height: 1.1em;}
+section h2 { font-size: 1.5em; line-height: 1.1em; padding: 0 0 0.7em; text-align: center;}
 section h3 { font-size: 1.2em; padding: 0 0 0.5em; text-align: center;}
-section .container { max-width: 900px; margin: 0 auto; display: inline-block; text-align: left;}
-section#hero { background-repeat: repeat; background-blend-mode: overlay; background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/galaxy.jpg"), -webkit-gradient(linear, left top, right top, from(#000), to(rgba(0,0,0,0))); background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/galaxy.jpg"), linear-gradient(to right, #000, rgba(0,0,0,0)); color: #fefefe; overflow: hidden; position: relative; margin: 0; padding: 0;}
-section#hero .container { background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/ships.gif"); background-color: rgba(0,0,0,0.666); background-repeat: no-repeat; background-size: 100% auto; border: 3px solid rgba(255,255,255,0.7); border-radius: 3px; display: block; font-size: 0.8em; margin: 20px auto; min-height: 200px; padding: 0 10%; position: relative; text-align: center; width: 80%;}
+section .container { display: inline-block; margin: 0 auto; max-width: 900px; text-align: left;}
+section#hero { background-blend-mode: overlay; background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/galaxy.jpg"), -webkit-gradient(linear, left top, right top, from(#000), to(rgba(0,0,0,0))); background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/galaxy.jpg"), linear-gradient(to right, #000, rgba(0,0,0,0)); background-repeat: repeat; color: #fefefe; margin: 0; overflow: hidden; padding: 0; position: relative;}
+section#hero .container { background-color: rgba(0,0,0,0.666); background-repeat: no-repeat; background-size: 100% auto; background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/ships.gif"); border: 3px solid rgba(255,255,255,0.7); border-radius: 3px; display: block; font-size: 0.8em; margin: 20px auto; min-height: 200px; padding: 0 10%; position: relative; text-align: center; width: 80%;}
 section#hero .container:after { background-repeat: no-repeat; background-size: contain; background-image: url("https://magicshifter.github.io/magicshifter.net/img/hero/text-border.gif"); content: ' '; height: 100%; margin: 0 -3px; max-height: 100%; position: absolute; right: -66px; top: 0; width: 66px;}
 section#hero .logo-container, section#hero .hero-text { max-width: 900px;}
-section#hero .logo-container { margin: 50px auto 1em; display: inline-block;}
-section#hero h1 { font-size: 1.5em; line-height: 1.3em; margin: 0 0 0.5em 0;}
+section#hero .logo-container { display: inline-block; margin: 50px auto 1em;}
+section#hero h1 { font-size: 1.5em; line-height: 1.3em; margin: 0 0 0.5em;}
 section#hero .logo { float: left; width: 35%;}
 section#hero .font { float: right; width: 60%;}
 section#hero .this-fall { clear: both; font-size: 1em; line-height: 1.1em; padding: 0.5em 0; width: 100%;}
 section#hero .available { float: right; font-size: 0.7em; font-style: italic;}
 section#social .container { margin: 10px auto;}
 section#description { color: #010101;}
-section#description img { width: 80%; max-width: 900px; margin: 1em auto; display: block;}
+section#description img { display: block; margin: 1em auto; max-width: 900px; width: 80%;}
 section#description #player { height: 0; overflow: hidden; padding-bottom: 56.25%; padding-top: 30px; position: relative;}
 section#description #player iframe { height: 100%; left: 0; position: absolute; top: 0; width: 100%;}
 section#description p { margin: 1em 0 0;}
@@ -99,7 +99,7 @@ footer.main div img { padding: 0 0.5em;}
 footer.main > div { margin: 0 0 2em;}
 footer.main > div:last-child { margin-bottom: 0;}
 footer.main > div img { display: block; margin: 0 auto;}
-footer.main #proudowner { background-color: #000; color: #fff; padding: 1em 0; display: inline-block; width: 100%;}
+footer.main #proudowner { background-color: #000; color: #fff; display: inline-block; padding: 1em 0; width: 100%;}
 footer.main #proudowner p { line-height: 1.5em; margin: 0.5em 0;}
 body.scrolled header.main .wrapper { padding: 5px;}
 body.scrolled header.main .menu-toggle { top: 20px; width: 40px;}
@@ -108,11 +108,11 @@ body.scrolled header.main nav { top: 50px;}
 body.scrolled header.main #logo img { height: 40px; padding: 5px 0 0;}
 .shop { margin: 1em auto 0;}
 .shop a { text-decoration: none;}
-.shop a:hover { text-shadow: 0 0.1em 0.2em #ff0; text-decoration: underline;}
+.shop a:hover { text-decoration: underline; text-shadow: 0 0.1em 0.2em #ff0;}
 .shop a img { margin: 0;}
 a.shopMenu { color: #ff0;}
 section.gallery ul li { height: 80px; width: 80px;}
-section.gallery ul li span { background-size: cover; background-image: url("https://magicshifter.github.io/magicshifter.net/img/magic-icons.jpg"); border-radius: 100%; height: 100%; width: 100%; margin: 0 auto; display: block;}
+section.gallery ul li span { background-size: cover; background-image: url("https://magicshifter.github.io/magicshifter.net/img/magic-icons.jpg"); border-radius: 100%; display: block; height: 100%; margin: 0 auto; width: 100%;}
 section.gallery ul li span.invader { background-position: 0 0;}
 section.gallery ul li span.smiley { background-position: -80px 0;}
 section.gallery ul li span.shadows { background-position: -160px 0;}
@@ -129,7 +129,7 @@ section.gallery ul li span.goggles { background-position: -960px 0;}
 section.gallery ul li span.shadows-2 { background-position: -1040px 0;}
 section.gallery ul li span.bike { background-position: -1680px 0;}
 @media (min-width: 700px) { header.main .menu-toggle { display: none; } header.main nav { background-color: transparent; clear: none; float: right; font-size: 1em; margin: 0; padding: 0; position: relative; right: auto; top: 45px; width: auto; } header.main nav.show { right: 0; } header.main nav ul { display: inline-block; padding: 0 0.5em; text-align: center; } header.main nav ul li { float: left; margin: 0 0.2em; } table { font-size: 1em; } footer.main > div a img { display: inline; } body.scrolled header.main nav { margin: 0; top: 20px; }}
-@media (min-width: 600px) { header.main { font-size: 1em; } #hero .hero-text { margin: 100px 0 50px; display: inline-block; clear: both; } #social ul li { margin: 0 0.5em; width: auto; height: auto; }}
+@media (min-width: 600px) { header.main { font-size: 1em; } #hero .hero-text { clear: both; display: inline-block; margin: 100px 0 50px; } #social ul li { height: auto; margin: 0 0.5em; width: auto; }}
 @media (min-width: 560px) { header.main { font-size: 1.1em; }}
 @media (min-width: 500px) { section.gallery ul li { height: 120px; width: 120px; } section.gallery ul li span.invader { background-position: 0 0; } section.gallery ul li span.smiley { background-position: -120px 0; } section.gallery ul li span.shadows { background-position: -240px 0; } section.gallery ul li span.cursor { background-position: -360px 0; } section.gallery ul li span.nyan { background-position: -480px 0; } section.gallery ul li span.mario { background-position: -600px 0; } section.gallery ul li span.heart { background-position: -720px 0; } section.gallery ul li span.girafe { background-position: -840px 0; } section.gallery ul li span.bubblebobble { background-position: -960px 0; } section.gallery ul li span.circles { background-position: -1080px 0; } section.gallery ul li span.ccc29 { background-position: -1200px 0; } section.gallery ul li span.oneup { background-position: -1320px 0; } section.gallery ul li span.goggles { background-position: -1440px 0; } section.gallery ul li span.shadows-2 { background-position: -1560px 0; } section.gallery ul li span.bike { background-position: -1680px 0; }}
 body.js nav { -webkit-transition: right 0.2s; transition: right 0.2s;}
@@ -137,9 +137,8 @@ body.js header.main .wrapper { -webkit-transition: height 0.2s; transition: heig
 body.js header.main a#logo img { -webkit-transition: height 0.2s; transition: height 0.2s;}
 /* added video styles here !w! */
 #video { background-color: $video-bg-color; text-align: center;}
-#video .container { max-width: 1050px; text-align: center; width: 100%;}
-#video #player { height: 0px; overflow: hidden; padding-bottom: 56.25%; position: relative;}
-#video #player iframe { height: 100%; left: 0px; position: absolute; top: 0px; width: 100%;}
+#video .container { max-width: 1050; text-align: center; width: 100%;}
+#video #player { height: 0; overflow: hidden; padding-bottom: 56.25%; position: relative;}
+#video #player iframe { height: 100%; left: 0; position: absolute; top: 0; width: 100%;}
 #video p { margin: 1em 0 0;}
-code { background: #f8f8ff; border: 1px solid #000 dashed 1px; display: block; margin: 10px 5%; padding: 6px; width: 90%;}
 /*# sourceMappingURL=stylus.css.map */
