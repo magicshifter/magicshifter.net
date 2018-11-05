@@ -2,10 +2,10 @@
   box-sizing border-box
 
 body
+  background-color $black
   font-family 'Segoe UI', 'Lucida Grande', Ubuntu, Arial, sans-serif
   font-size 16px
   line-height 1.1em
-  background-color $black
 
 img,
 a
@@ -17,20 +17,20 @@ a
     max-width 47%
 
     &.block
-      width auto
-      max-width 75%
       margin 4% auto
+      max-width 75%
+      width auto
 
   &.block
-    width 80%
-    max-width 800px
-    margin 1em auto 0
     display block
+    margin 1em auto 0
+    max-width 800px
+    width 80%
 
 .annotated-image
+  display block
   margin 0 auto
   width 80%
-  display block
 
   &.full-width
     width 100%
@@ -41,13 +41,13 @@ a
     max-width 47%
 
   img
-    width 100%
-    max-width 100%
     margin 0
+    max-width 100%
+    width 100%
 
   span
-    font-style italic
     font-size .9em
+    font-style italic
 
 
 a, a:visited
@@ -55,12 +55,12 @@ a, a:visited
   text-decoration none
 
   &:hover
-    text-decoration underline
     color $link-hover-color
+    text-decoration underline
     text-shadow 3px 3px 3px rgba(0, 0, 0, .4)
 
   &.textflow
-    margin 0 .3em 0
+    margin 0 .3em
 p
   margin 0 0 .5em
 
@@ -107,21 +107,21 @@ header.main
     &:after
       background-size contain
       bg-image('header/header-background.jpg')
-      content ""
-      opacity .8
-      top 0
-      left 0
       bottom 0
-      right 0
+      content ""
+      left 0
+      opacity .8
       position absolute
+      right 0
+      top 0
       z-index -1
 
     .container
       display block
+      margin 0 auto
       max-width $max-page-width
       width 100%
       z-index 1
-      margin 0 auto
 
   nav
     background-color $header-bg-color
@@ -193,7 +193,7 @@ section
     &.software
       margin 3em auto 1em
 
-    lh
+    li.header
       display block
       margin 1em 0 .5em
 
@@ -236,9 +236,9 @@ section
 
   h2
     font-size 1.5em
+    line-height 1.1em
     padding 0 0 .7em
     text-align center
-    line-height 1.1em
 
   h3
     font-size 1.2em
@@ -246,30 +246,30 @@ section
     text-align center
 
   .container
-    max-width $max-page-width
-    margin 0 auto
     display inline-block
+    margin 0 auto
+    max-width $max-page-width
     text-align left
 
   &#hero
-    background-repeat repeat
     background-blend-mode overlay
-    background-image url(WEB_ROOT + 'img/hero/galaxy.jpg'), linear-gradient(left, rgba(0,0,0,1), rgba(0,0,0,0))
+    background-image url(WEB_ROOT + 'img/hero/galaxy.jpg'), $hero-bg-gradient
+    background-repeat repeat
     color $hero-text-color
-    overflow hidden
-    position relative
     margin 0
+    overflow hidden
     padding 0
+    position relative
 
     .container
-      bg-image('hero/ships.gif')
       background-color rgba(0, 0, 0, .666)
       background-repeat no-repeat
       background-size 100% auto
+      bg-image('hero/ships.gif')
       border 3px solid rgba(255, 255, 255, .7)
       border-radius 3px
       display block
-      font-size 0.8em
+      font-size .8em
       margin 20px auto
       min-height 200px
       padding 0 10%
@@ -284,7 +284,7 @@ section
         content ' '
         height 100%
         margin 0 -3px
-        max-height: 100%
+        max-height 100%
         position absolute
         right -66px
         top 0
@@ -295,13 +295,13 @@ section
       max-width $max-page-width
 
     .logo-container
-      margin 50px auto 1em
       display inline-block
+      margin 50px auto 1em
 
     h1
       font-size 1.5em
       line-height 1.3em
-      margin 0 0 .5em 0
+      margin 0 0 .5em
 
     .logo
       float left
@@ -331,13 +331,13 @@ section
     color $description-text-color
 
     img
-      width 80%
-      max-width 900px
-      margin 1em auto
       display block
+      margin 1em auto
+      max-width 900px
+      width 80%
 
     #player
-      height 0px
+      height 0
       overflow hidden
       padding-bottom 56.25%
       padding-top 30px
@@ -345,9 +345,9 @@ section
 
       iframe
         height 100%
-        left 0px
+        left 0
         position absolute
-        top 0px
+        top 0
         width 100%
 
     p
@@ -365,10 +365,10 @@ section
     text-align center
 
     a
-      color #00F
+      color $contact-link-color
 
       &:hover
-        color #00F
+        color $contact-link-color
   p
     img
       margin 1em 0
@@ -404,8 +404,8 @@ footer.main
   #proudowner
     background-color $black
     color $white
-    padding 1em 0
     display inline-block
+    padding 1em 0
     width 100%
 
     p
@@ -420,6 +420,7 @@ body.scrolled
     .menu-toggle
       top 20px
       width 40px
+
       span
         height 3px
         margin 3px 0
@@ -439,11 +440,11 @@ body.scrolled
     text-decoration none
 
     &:hover
-      text-shadow 0 .1em .2em #ff0
       text-decoration underline
+      text-shadow 0 .1em .2em $shop-link-text-color
 
     img
       margin 0
 
 a.shopMenu
-  color #ffff00
+  color $shop-link-text-color

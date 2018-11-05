@@ -24,30 +24,22 @@ global-reset()
   text-align center
 
   .container
-    max-width 1050px
-    width 100%
+    max-width 1050
     text-align center
+    width 100%
 
   #player
-    height 0px
+    height 0
     overflow hidden
     padding-bottom 56.25%
     position relative
 
     iframe
       height 100%
-      left 0px
+      left 0
       position absolute
-      top 0px
+      top 0
       width 100%
 
   p
     margin 1em 0 0
-
-code
-  background #F8F8FF
-  border black dashed 1px
-  display block
-  margin 10px 5%
-  width 90%
-  padding 6px
